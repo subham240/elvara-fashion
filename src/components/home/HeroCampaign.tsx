@@ -16,7 +16,7 @@ interface Slide {
 const slides: Slide[] = [
   {
     id: 1,
-    image: '/images/hero/spring-campaign.jpg',
+    image: '/images/hero/hero-slide-1.jpg',
     badge: 'The Spring Atelier 2026 Collection',
     title: 'TIMELESS BY DESIGN.',
     subtitle: 'Discover a considered collection of contemporary essentials, crafted for the art of everyday living.',
@@ -25,7 +25,7 @@ const slides: Slide[] = [
   },
   {
     id: 2,
-    image: '/images/hero/editorial-reveal.jpg',
+    image: '/images/hero/hero-slide-2.jpg',
     badge: 'Architectural Linen & Tailoring',
     title: 'THE ART OF REDUCTION.',
     subtitle: 'Pure French flax linen, fluid silhouettes, and double-pleated trousers crafted for effortless elegance.',
@@ -34,7 +34,7 @@ const slides: Slide[] = [
   },
   {
     id: 3,
-    image: '/images/editorial/less-but-better.jpg',
+    image: '/images/hero/hero-slide-3.jpg',
     badge: 'Contemporary Menswear',
     title: 'LESS, BUT BETTER.',
     subtitle: 'Substantial Oxford button-downs, 240 GSM combed cotton tees, and unstructured tailored blazers.',
@@ -43,7 +43,7 @@ const slides: Slide[] = [
   },
   {
     id: 4,
-    image: '/images/editorial/craftsmanship.jpg',
+    image: '/images/hero/hero-slide-4.jpg',
     badge: 'Atelier Standards',
     title: 'BUILT BEYOND SEASONS.',
     subtitle: 'French interior seams, river shell buttons, and certified natural fibres woven to endure decades.',

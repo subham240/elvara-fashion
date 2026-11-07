@@ -6,10 +6,11 @@ import { products } from '../../data/products';
 import { ProductCard } from '../products/ProductCard';
 
 export const WomensHighlight: React.FC = () => {
-  // STRICT GENDER SEPARATION: Only women's products
-  const womensProducts = products
-    .filter((p) => p.gender === 'women')
-    .slice(0, 4);
+  // Distinct Women's products (exclusively women's fashion, no overlap with other sections)
+  const womensHighlightIds = ['W001', 'W003', 'W008', 'W014'];
+  const womensProducts = womensHighlightIds
+    .map((id) => products.find((p) => p.id === id))
+    .filter((p): p is (typeof products)[0] => Boolean(p));
 
   return (
     <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

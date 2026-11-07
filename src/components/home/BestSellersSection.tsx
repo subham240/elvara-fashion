@@ -4,10 +4,11 @@ import { products } from '../../data/products';
 import { ProductCard } from '../products/ProductCard';
 
 export const BestSellersSection: React.FC = () => {
-  // STRICT: Only products specifically marked isBestseller === true
-  const bestSellers = products
-    .filter((p) => p.isBestseller)
-    .slice(0, 4);
+  // Distinct Bestsellers across categories (all marked isBestseller, zero overlap with other homepage rows)
+  const bestSellerIds = ['W002', 'M002', 'W004', 'A002'];
+  const bestSellers = bestSellerIds
+    .map((id) => products.find((p) => p.id === id))
+    .filter((p): p is (typeof products)[0] => Boolean(p));
 
   return (
     <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

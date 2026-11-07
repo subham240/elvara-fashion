@@ -8,8 +8,11 @@ import { ProductCard } from '../products/ProductCard';
 export const NewArrivalsCarousel: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Filter 6 strictly new arrival products
-  const newArrivals = products.filter((p) => p.isNewArrival).slice(0, 6);
+  // Distinct new arrival products across categories (no overlap with other homepage sections)
+  const latestEditIds = ['W006', 'M005', 'W009', 'M004', 'W011', 'A004'];
+  const newArrivals = latestEditIds
+    .map((id) => products.find((p) => p.id === id))
+    .filter((p): p is (typeof products)[0] => Boolean(p));
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
