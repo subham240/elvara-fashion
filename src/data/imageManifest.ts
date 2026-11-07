@@ -1,0 +1,253 @@
+export interface ImageManifestEntry {
+  productId: string;
+  productName: string;
+  image: string;
+  category: string;
+  gender: 'women' | 'men' | 'unisex';
+}
+
+export const imageManifest: Record<string, ImageManifestEntry> = {
+  // Women's Collection
+  W001: {
+    productId: 'W001',
+    productName: 'Essential Linen Blouse',
+    image: '/images/women/essential-linen-blouse.jpg',
+    category: "Women's Shirts",
+    gender: 'women',
+  },
+  W002: {
+    productId: 'W002',
+    productName: 'Relaxed Cotton Shirt',
+    image: '/images/women/relaxed-cotton-shirt.jpg',
+    category: "Women's Shirts",
+    gender: 'women',
+  },
+  W003: {
+    productId: 'W003',
+    productName: 'Tailored Wide-Leg Trousers',
+    image: '/images/women/tailored-wide-leg-trousers.jpg',
+    category: "Women's Trousers",
+    gender: 'women',
+  },
+  W004: {
+    productId: 'W004',
+    productName: 'Classic Midi Dress',
+    image: '/images/women/classic-midi-dress.jpg',
+    category: "Women's Dresses",
+    gender: 'women',
+  },
+  W005: {
+    productId: 'W005',
+    productName: 'Minimal Knit Top',
+    image: '/images/women/minimal-knit-top.jpg',
+    category: "Women's Tops",
+    gender: 'women',
+  },
+  W006: {
+    productId: 'W006',
+    productName: 'Structured Blazer',
+    image: '/images/women/structured-blazer.jpg',
+    category: "Women's Outerwear",
+    gender: 'women',
+  },
+  W007: {
+    productId: 'W007',
+    productName: 'Everyday Straight-Fit Jeans',
+    image: '/images/women/everyday-straight-fit-jeans.jpg',
+    category: "Women's Jeans",
+    gender: 'women',
+  },
+  W008: {
+    productId: 'W008',
+    productName: 'Pleated Midi Skirt',
+    image: '/images/women/pleated-midi-skirt.jpg',
+    category: "Women's Skirts",
+    gender: 'women',
+  },
+  W009: {
+    productId: 'W009',
+    productName: 'Cashmere Trench Coat',
+    image: '/images/women/cashmere-trench-coat.jpg',
+    category: "Women's Outerwear",
+    gender: 'women',
+  },
+  W010: {
+    productId: 'W010',
+    productName: 'Ribbed Knit Cardigan',
+    image: '/images/women/ribbed-knit-cardigan.jpg',
+    category: "Women's Knitwear",
+    gender: 'women',
+  },
+  W011: {
+    productId: 'W011',
+    productName: 'Silk Slip Dress',
+    image: '/images/women/silk-slip-dress.jpg',
+    category: "Women's Dresses",
+    gender: 'women',
+  },
+  W012: {
+    productId: 'W012',
+    productName: 'High-Rise Wool Trousers',
+    image: '/images/women/high-rise-wool-trousers.jpg',
+    category: "Women's Trousers",
+    gender: 'women',
+  },
+  W013: {
+    productId: 'W013',
+    productName: 'Oversized Poplin Shirt',
+    image: '/images/women/oversized-poplin-shirt.jpg',
+    category: "Women's Shirts",
+    gender: 'women',
+  },
+  W014: {
+    productId: 'W014',
+    productName: 'Wrap Linen Dress',
+    image: '/images/women/wrap-linen-dress.jpg',
+    category: "Women's Dresses",
+    gender: 'women',
+  },
+
+  // Men's Collection
+  M001: {
+    productId: 'M001',
+    productName: 'Essential Oxford Shirt',
+    image: '/images/men/essential-oxford-shirt.jpg',
+    category: "Men's Shirts",
+    gender: 'men',
+  },
+  M002: {
+    productId: 'M002',
+    productName: 'Relaxed Cotton T-Shirt',
+    image: '/images/men/relaxed-cotton-tee.jpg',
+    category: "Men's T-Shirts",
+    gender: 'men',
+  },
+  M003: {
+    productId: 'M003',
+    productName: 'Tailored Wide-Leg Trousers',
+    image: '/images/men/tailored-wide-leg-trousers.jpg',
+    category: "Men's Trousers",
+    gender: 'men',
+  },
+  M004: {
+    productId: 'M004',
+    productName: 'Minimalist Knit Polo',
+    image: '/images/men/minimalist-knit-polo.jpg',
+    category: "Men's Knitwear",
+    gender: 'men',
+  },
+  M005: {
+    productId: 'M005',
+    productName: 'Structured Overshirt',
+    image: '/images/men/structured-overshirt.jpg',
+    category: "Men's Overshirts",
+    gender: 'men',
+  },
+  M006: {
+    productId: 'M006',
+    productName: 'Everyday Straight-Fit Denim',
+    image: '/images/men/everyday-straight-fit-denim.jpg',
+    category: "Men's Jeans",
+    gender: 'men',
+  },
+  M007: {
+    productId: 'M007',
+    productName: 'Relaxed Blazer',
+    image: '/images/men/relaxed-blazer.jpg',
+    category: "Men's Jackets",
+    gender: 'men',
+  },
+  M008: {
+    productId: 'M008',
+    productName: 'Premium Knit Sweater',
+    image: '/images/men/premium-knit-sweater.jpg',
+    category: "Men's Knitwear",
+    gender: 'men',
+  },
+  M009: {
+    productId: 'M009',
+    productName: 'Classic Wool Overcoat',
+    image: '/images/men/classic-wool-overcoat.jpg',
+    category: "Men's Outerwear",
+    gender: 'men',
+  },
+  M010: {
+    productId: 'M010',
+    productName: 'Minimal Heavyweight Tee',
+    image: '/images/men/minimal-heavyweight-tee.jpg',
+    category: "Men's T-Shirts",
+    gender: 'men',
+  },
+  M011: {
+    productId: 'M011',
+    productName: 'Italian Cotton Chinos',
+    image: '/images/men/italian-cotton-chinos.jpg',
+    category: "Men's Trousers",
+    gender: 'men',
+  },
+  M012: {
+    productId: 'M012',
+    productName: 'Cashmere Crewneck',
+    image: '/images/men/cashmere-crewneck.jpg',
+    category: "Men's Knitwear",
+    gender: 'men',
+  },
+  M013: {
+    productId: 'M013',
+    productName: 'Corduroy Overshirt',
+    image: '/images/men/corduroy-overshirt.jpg',
+    category: "Men's Overshirts",
+    gender: 'men',
+  },
+  M014: {
+    productId: 'M014',
+    productName: 'Raw Denim Jean',
+    image: '/images/men/raw-denim-jean.jpg',
+    category: "Men's Jeans",
+    gender: 'men',
+  },
+
+  // Accessories
+  A001: {
+    productId: 'A001',
+    productName: 'Minimal Leather Belt',
+    image: '/images/accessories/minimal-leather-belt.jpg',
+    category: 'Accessories',
+    gender: 'unisex',
+  },
+  A002: {
+    productId: 'A002',
+    productName: 'Structured Everyday Bag',
+    image: '/images/accessories/structured-everyday-bag.jpg',
+    category: 'Accessories',
+    gender: 'unisex',
+  },
+  A003: {
+    productId: 'A003',
+    productName: 'Classic Cardholder Wallet',
+    image: '/images/accessories/classic-wallet.jpg',
+    category: 'Accessories',
+    gender: 'unisex',
+  },
+  A004: {
+    productId: 'A004',
+    productName: 'Minimalist Cashmere Scarf',
+    image: '/images/accessories/minimalist-scarf.jpg',
+    category: 'Accessories',
+    gender: 'unisex',
+  },
+  A005: {
+    productId: 'A005',
+    productName: 'Handcrafted Leather Loafers',
+    image: '/images/accessories/leather-loafers.jpg',
+    category: 'Accessories',
+    gender: 'unisex',
+  },
+  A006: {
+    productId: 'A006',
+    productName: 'Architectural Canvas Tote',
+    image: '/images/accessories/architectural-tote.jpg',
+    category: 'Accessories',
+    gender: 'unisex',
+  },
+};
