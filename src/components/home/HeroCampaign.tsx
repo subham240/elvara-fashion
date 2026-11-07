@@ -20,7 +20,7 @@ const slides: Slide[] = [
     badge: 'The Spring Atelier 2026 Collection',
     title: 'TIMELESS BY DESIGN.',
     subtitle: 'Discover a considered collection of contemporary essentials, crafted for the art of everyday living.',
-    primaryCta: { label: 'Explore Collection', href: '/collections/women' },
+    primaryCta: { label: 'Explore Collection', href: '/collections/spring-atelier-2026' },
     secondaryCta: { label: 'Discover More', href: '/pages/our-story' },
   },
   {
@@ -29,8 +29,8 @@ const slides: Slide[] = [
     badge: 'Architectural Linen & Tailoring',
     title: 'THE ART OF REDUCTION.',
     subtitle: 'Pure French flax linen, fluid silhouettes, and double-pleated trousers crafted for effortless elegance.',
-    primaryCta: { label: 'Shop Tailoring', href: '/collections/women?category=Women%27s+Trousers' },
-    secondaryCta: { label: 'View Lookbook', href: '/collections/women' },
+    primaryCta: { label: 'Shop Tailoring', href: '/collections/atelier-tailoring' },
+    secondaryCta: { label: 'Spring Edit', href: '/collections/spring-atelier-2026' },
   },
   {
     id: 3,
@@ -39,7 +39,7 @@ const slides: Slide[] = [
     title: 'LESS, BUT BETTER.',
     subtitle: 'Substantial Oxford button-downs, 240 GSM combed cotton tees, and unstructured tailored blazers.',
     primaryCta: { label: 'Explore Menswear', href: '/collections/men' },
-    secondaryCta: { label: 'The Oxford Edit', href: '/collections/men?category=Men%27s+Shirts' },
+    secondaryCta: { label: 'Core Essentials', href: '/collections/core-essentials' },
   },
   {
     id: 4,

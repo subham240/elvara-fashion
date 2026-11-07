@@ -1,9 +1,36 @@
 import React, { useState } from 'react';
-import { Scissors, Feather, Shield, ChevronDown, Mail, Phone, MapPin } from 'lucide-react';
+import { ChevronDown, Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const OurStoryPage: React.FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const commitments = [
+    {
+      num: 'I',
+      index: '01 / FORM & POSTURE',
+      title: 'Architectural Cut',
+      prose:
+        'Every silhouette begins with freedom of posture. By balancing calibrated drop-shoulder seams with deliberate drape and double-pleated rises, each garment accommodates natural human movement without surrendering tailored precision.',
+      footnote: 'Drafted in 0.5cm tolerances in our New Delhi pattern studio.',
+    },
+    {
+      num: 'II',
+      index: '02 / FIBRE INTEGRITY',
+      title: 'Noble Natural Fibres',
+      prose:
+        'We believe elegance starts in the soil and loom. We work exclusively with certified organic French flax linen, GOTS long-staple cotton poplin, and unblended virgin wools. Zero synthetic fillers, zero polyester microplastics—only textiles that soften and age gracefully.',
+      footnote: 'Traceable to certified European mills and ethical cooperatives.',
+    },
+    {
+      num: 'III',
+      index: '03 / CRAFT & PERMANENCE',
+      title: 'Enduring Construction',
+      prose:
+        'Small-batch production finished with reinforced bar-tacks, clean French interior seams, river shell buttons, and generous hem allowances for lifelong tailoring. Built to endure decades in a considered wardrobe, not a single season.',
+      footnote: 'Double-needle stitching with 12 stitches per inch.',
+    },
+  ];
 
   const faqs = [
     {
@@ -65,58 +92,82 @@ export const OurStoryPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="md:col-span-6 aspect-[4/5] bg-[#EAE3D8] overflow-hidden border border-[#D5C7B5]">
+          <div className="md:col-span-6 aspect-[4/5] bg-[#EAE3D8] overflow-hidden border border-[#D5C7B5] shadow-xs">
             <img
               src="/images/editorial/craftsmanship.jpg"
               alt="Atelier Precision"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover filter brightness-[0.95]"
             />
           </div>
         </div>
       </section>
 
-      {/* Narrative Section 2: Craft & Textile Pillars */}
-      <section className="py-20 bg-[#EAE3D8]/50 border-y border-[#D5C7B5]">
+      {/* Narrative Section 2: Editorial Atelier Commitments (CLASSIC & LUXURY) */}
+      <section className="py-24 bg-[#EAE3D8]/45 border-y border-[#D5C7B5]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[10px] tracking-[0.25em] uppercase text-[#A99A87] font-semibold block mb-2">
-              Our Principles
+          {/* Editorial Section Header */}
+          <div className="text-center max-w-2xl mx-auto mb-20">
+            <span className="text-[10px] tracking-[0.3em] uppercase text-[#A99A87] font-semibold block mb-2">
+              Atelier Principles
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl text-[#171717] font-light uppercase tracking-wide">
-              The Three Atelier Commitments
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#171717] font-light uppercase tracking-wide">
+              The Three Sartorial Commitments
             </h2>
+            <p className="text-xs sm:text-sm text-[#6B6963] mt-3 font-light leading-relaxed">
+              A considered design methodology grounded in geometric balance, pure organic fibres, and enduring construction.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-[#F5F1EA] p-8 border border-[#D5C7B5] space-y-4">
-              <div className="w-10 h-10 bg-[#EAE3D8] flex items-center justify-center border border-[#D5C7B5]">
-                <Scissors size={20} className="text-[#171717]" />
-              </div>
-              <h3 className="font-serif text-xl text-[#171717] font-medium">1. Architectural Cuts</h3>
-              <p className="text-xs text-[#6B6963] leading-relaxed font-light">
-                Every silhouette is drafted to create freedom of movement without sacrificing tailoring. From our double-pleated wide trousers to our band-collar linen blouses, each pattern allows the garment to drape naturally.
-              </p>
-            </div>
+          {/* Three Stately Editorial Columns */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+            {commitments.map((item, idx) => (
+              <div
+                key={item.num}
+                className={`space-y-4 md:pr-8 ${
+                  idx < commitments.length - 1 ? 'md:border-r md:border-[#D5C7B5]' : ''
+                }`}
+              >
+                {/* Large Roman Numeral */}
+                <div className="flex items-baseline justify-between border-b border-[#D5C7B5]/60 pb-3">
+                  <span className="font-serif text-3xl sm:text-4xl text-[#A99A87] font-light italic">
+                    {item.num}
+                  </span>
+                  <span className="text-[9px] uppercase tracking-[0.25em] text-[#A99A87] font-medium">
+                    {item.index}
+                  </span>
+                </div>
 
-            <div className="bg-[#F5F1EA] p-8 border border-[#D5C7B5] space-y-4">
-              <div className="w-10 h-10 bg-[#EAE3D8] flex items-center justify-center border border-[#D5C7B5]">
-                <Feather size={20} className="text-[#171717]" />
-              </div>
-              <h3 className="font-serif text-xl text-[#171717] font-medium">2. Uncompromised Fibres</h3>
-              <p className="text-xs text-[#6B6963] leading-relaxed font-light">
-                We believe true elegance begins in the soil and loom. We utilize certified organic flax linen, GOTS long-staple cotton poplin, sand-washed Mulberry silk, and pure virgin wools that breathe and age gracefully.
-              </p>
-            </div>
+                {/* Title */}
+                <h3 className="font-serif text-2xl text-[#171717] font-light tracking-wide pt-1">
+                  {item.title}
+                </h3>
 
-            <div className="bg-[#F5F1EA] p-8 border border-[#D5C7B5] space-y-4">
-              <div className="w-10 h-10 bg-[#EAE3D8] flex items-center justify-center border border-[#D5C7B5]">
-                <Shield size={20} className="text-[#171717]" />
+                {/* Prose */}
+                <p className="text-xs sm:text-sm text-[#6B6963] leading-relaxed font-light">
+                  {item.prose}
+                </p>
+
+                {/* Footnote */}
+                <div className="pt-3 border-t border-[#D5C7B5]/40">
+                  <span className="text-[10px] text-[#A99A87] uppercase tracking-wider block font-sans">
+                    {item.footnote}
+                  </span>
+                </div>
               </div>
-              <h3 className="font-serif text-xl text-[#171717] font-medium">3. Enduring Durability</h3>
-              <p className="text-xs text-[#6B6963] leading-relaxed font-light">
-                Reinforced bar-tacking, French interior seams, river shell buttons, and tailored curtain waistbands ensure every piece remains a dependable wardrobe pillar for years to come.
-              </p>
-            </div>
+            ))}
+          </div>
+
+          {/* Atelier Hallmark Seal */}
+          <div className="mt-20 pt-8 border-t border-[#D5C7B5] flex flex-col sm:flex-row items-center justify-between text-[10px] uppercase tracking-[0.25em] text-[#A99A87] text-center sm:text-left gap-3">
+            <span>ÉLVARA ATELIER ARCHIVE • NEW DELHI</span>
+            <span>DESIGNED FOR REPETITION & LIFELONG WEAR</span>
+            <Link
+              to="/collections/spring-atelier-2026"
+              className="text-[#171717] hover:text-[#A99A87] font-medium flex items-center gap-1 group"
+            >
+              <span>Explore Current Run</span>
+              <ArrowRight size={11} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
         </div>
       </section>
@@ -184,7 +235,7 @@ export const OurStoryPage: React.FC = () => {
           </div>
 
           <Link
-            to="/collections/women"
+            to="/collections/spring-atelier-2026"
             className="px-8 py-3.5 bg-[#171717] text-[#F5F1EA] text-xs uppercase tracking-widest font-medium shrink-0 hover:bg-[#34332F] transition-colors"
           >
             Explore Catalogue

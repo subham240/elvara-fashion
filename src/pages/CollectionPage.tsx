@@ -1,30 +1,47 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 import { X, ChevronDown, SlidersHorizontal } from 'lucide-react';
 import { products } from '../data/products';
+import { COLLECTIONS_DATA } from '../data/collections';
 import { ProductCard } from '../components/products/ProductCard';
 import type { Gender } from '../types';
 
 interface CollectionPageProps {
   genderTarget?: Gender;
-  title: string;
-  subtitle: string;
-  bannerImage: string;
+  collectionTarget?: string;
+  title?: string;
+  subtitle?: string;
+  bannerImage?: string;
   isNewArrivalsOnly?: boolean;
   isAccessoriesOnly?: boolean;
 }
 
 export const CollectionPage: React.FC<CollectionPageProps> = ({
   genderTarget,
-  title,
-  subtitle,
-  bannerImage,
+  collectionTarget,
+  title: propTitle,
+  subtitle: propSubtitle,
+  bannerImage: propBannerImage,
   isNewArrivalsOnly,
   isAccessoriesOnly,
 }) => {
+  const { collectionSlug } = useParams<{ collectionSlug?: string }>();
   const [searchParams, setSearchParams] = useSearchParams();
 
+  // Determine if this is a dedicated collection view
+  const activeCollectionKey = collectionSlug || (collectionTarget ? collectionTarget.toLowerCase().replace(/\s+/g, '-') : null);
+  const collectionMeta = activeCollectionKey ? COLLECTIONS_DATA[activeCollectionKey] : null;
+
+  // Resolved titles and banner
+  const pageTitle = propTitle || collectionMeta?.title || (searchParams.get('collection') ? `${searchParams.get('collection')} Collection` : 'Collection');
+  const pageSubtitle = propSubtitle || collectionMeta?.subtitle || 'Explore a considered selection of contemporary silhouettes.';
+  const pageBanner = propBannerImage || collectionMeta?.bannerImage || '/images/hero/spring-campaign.jpg';
+  const pageBadge = collectionMeta?.badge || (isNewArrivalsOnly ? 'THE LATEST EDIT' : isAccessoriesOnly ? 'ACCESSORIES' : genderTarget ? `${genderTarget.toUpperCase()}'S ATELIER` : 'ÉLVARA CURATION');
+
   // Filters State
+  const [selectedGenderTab, setSelectedGenderTab] = useState<'all' | 'women' | 'men'>(
+    (searchParams.get('gender') as 'women' | 'men') || 'all'
+  );
   const [selectedCategory, setSelectedCategory] = useState<string>(
     searchParams.get('category') || 'all'
   );
@@ -43,36 +60,75 @@ export const CollectionPage: React.FC<CollectionPageProps> = ({
     if (sort) {
       setSelectedSort(sort as any);
     }
+    const gen = searchParams.get('gender');
+    if (gen === 'women' || gen === 'men') {
+      setSelectedGenderTab(gen);
+    }
   }, [searchParams]);
 
-  // 1. Base filtering by gender / category target (STRICT GENDER SEPARATION)
+  // 1. Base filtering by collection / gender / category target
   const baseProducts = useMemo(() => {
     return products.filter((p) => {
+      // If collection-specific page or query param
+      if (collectionMeta) {
+        if (p.collection !== collectionMeta.name) return false;
+      } else if (collectionTarget) {
+        if (p.collection.toLowerCase() !== collectionTarget.toLowerCase()) return false;
+      } else if (searchParams.get('collection')) {
+        if (p.collection.toLowerCase() !== searchParams.get('collection')?.toLowerCase()) return false;
+      }
+
+      // New arrivals constraint
       if (isNewArrivalsOnly) {
         return p.isNewArrival;
       }
+
+      // Accessories constraint
       if (isAccessoriesOnly) {
         return p.category === 'Accessories';
       }
+
+      // Explicit gender target via props (e.g. /collections/women)
       if (genderTarget === 'women') {
-        // Exclusively women's clothing and accessories
         return p.gender === 'women';
       }
       if (genderTarget === 'men') {
-        // Exclusively men's clothing and accessories
         return p.gender === 'men';
       }
+
+      // Gender tab filtering for multi-gender collections
+      if (selectedGenderTab === 'women') {
+        return p.gender === 'women';
+      }
+      if (selectedGenderTab === 'men') {
+        return p.gender === 'men';
+      }
+
       return true;
     });
-  }, [genderTarget, isNewArrivalsOnly, isAccessoriesOnly]);
+  }, [collectionMeta, collectionTarget, searchParams, isNewArrivalsOnly, isAccessoriesOnly, genderTarget, selectedGenderTab]);
 
-  // Available categories within this specific collection
+  // Counts for gender tabs within this collection
+  const collectionGenderCounts = useMemo(() => {
+    if (!collectionMeta && !collectionTarget && !searchParams.get('collection')) {
+      return null;
+    }
+    const collectionName = collectionMeta?.name || collectionTarget || searchParams.get('collection');
+    const matched = products.filter((p) => p.collection.toLowerCase() === collectionName?.toLowerCase());
+    return {
+      all: matched.length,
+      women: matched.filter((p) => p.gender === 'women').length,
+      men: matched.filter((p) => p.gender === 'men').length,
+    };
+  }, [collectionMeta, collectionTarget, searchParams]);
+
+  // Available categories within this specific selection
   const availableCategories = useMemo(() => {
     const set = new Set(baseProducts.map((p) => p.category));
     return ['all', ...Array.from(set)];
   }, [baseProducts]);
 
-  // Available sizes within this collection
+  // Available sizes within this selection
   const availableSizes = useMemo(() => {
     const set = new Set<string>();
     baseProducts.forEach((p) => p.sizes.forEach((s) => set.add(s)));
@@ -120,6 +176,18 @@ export const CollectionPage: React.FC<CollectionPageProps> = ({
     setSearchParams(searchParams);
   };
 
+  const handleGenderTabChange = (tab: 'all' | 'women' | 'men') => {
+    setSelectedGenderTab(tab);
+    setSelectedCategory('all');
+    if (tab === 'all') {
+      searchParams.delete('gender');
+    } else {
+      searchParams.set('gender', tab);
+    }
+    searchParams.delete('category');
+    setSearchParams(searchParams);
+  };
+
   const handleResetFilters = () => {
     setSelectedCategory('all');
     setSelectedSize('all');
@@ -138,28 +206,84 @@ export const CollectionPage: React.FC<CollectionPageProps> = ({
   return (
     <div className="min-h-screen bg-[#F5F1EA]">
       {/* Editorial Banner */}
-      <div className="relative h-64 sm:h-80 md:h-96 bg-[#171717] overflow-hidden">
+      <div className="relative h-64 sm:h-80 md:h-[420px] bg-[#171717] overflow-hidden">
         <img
-          src={bannerImage}
-          alt={title}
-          className="w-full h-full object-cover filter brightness-[0.75]"
+          src={pageBanner}
+          alt={pageTitle}
+          className="w-full h-full object-cover filter brightness-[0.72] scale-100 hover:scale-105 transition-transform duration-1000 ease-out"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/30" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 text-[#F5F1EA]">
-          <span className="text-[10px] tracking-[0.3em] uppercase text-[#D5C7B5] mb-2 font-medium">
-            ÉLVARA Collection
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/30" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6 text-[#F5F1EA]">
+          <span className="text-[10px] tracking-[0.35em] uppercase text-[#D5C7B5] mb-2 font-medium">
+            {pageBadge}
           </span>
-          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl uppercase tracking-wide font-light">
-            {title}
+          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl uppercase tracking-[0.12em] font-light text-[#F5F1EA]">
+            {pageTitle}
           </h1>
-          <p className="text-xs sm:text-sm text-[#EAE3D8] mt-3 max-w-lg font-light leading-relaxed">
-            {subtitle}
+          <p className="text-xs sm:text-sm text-[#EAE3D8] mt-3 max-w-xl font-light leading-relaxed">
+            {pageSubtitle}
           </p>
+
+          {/* If collection view, show subtle indicator */}
+          {(collectionMeta || collectionTarget) && (
+            <div className="mt-4 flex items-center space-x-3 text-[11px] uppercase tracking-[0.25em] text-[#D5C7B5]">
+              <span>Small Batch Atelier</span>
+              <span>•</span>
+              <span>100% Traceable Fibres</span>
+            </div>
+          )}
         </div>
       </div>
 
       {/* Main Listing Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        {/* Curated Collection Gender Segment Tabs (if multi-gender collection) */}
+        {collectionGenderCounts && !genderTarget && (
+          <div className="mb-8 border-b border-[#D5C7B5] pb-4">
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <div className="flex items-center space-x-2 sm:space-x-3">
+                <span className="text-[10px] tracking-[0.25em] uppercase text-[#A99A87] font-semibold mr-2 hidden sm:inline">
+                  Atelier Filter:
+                </span>
+                <button
+                  onClick={() => handleGenderTabChange('all')}
+                  className={`px-4 py-2 text-xs uppercase tracking-[0.18em] transition-all duration-200 ${
+                    selectedGenderTab === 'all'
+                      ? 'bg-[#171717] text-[#F5F1EA] font-medium shadow-xs'
+                      : 'bg-[#EAE3D8]/60 text-[#34332F] hover:bg-[#EAE3D8]'
+                  }`}
+                >
+                  All Silhouettes ({collectionGenderCounts.all})
+                </button>
+                <button
+                  onClick={() => handleGenderTabChange('women')}
+                  className={`px-4 py-2 text-xs uppercase tracking-[0.18em] transition-all duration-200 ${
+                    selectedGenderTab === 'women'
+                      ? 'bg-[#171717] text-[#F5F1EA] font-medium shadow-xs'
+                      : 'bg-[#EAE3D8]/60 text-[#34332F] hover:bg-[#EAE3D8]'
+                  }`}
+                >
+                  Women ({collectionGenderCounts.women})
+                </button>
+                <button
+                  onClick={() => handleGenderTabChange('men')}
+                  className={`px-4 py-2 text-xs uppercase tracking-[0.18em] transition-all duration-200 ${
+                    selectedGenderTab === 'men'
+                      ? 'bg-[#171717] text-[#F5F1EA] font-medium shadow-xs'
+                      : 'bg-[#EAE3D8]/60 text-[#34332F] hover:bg-[#EAE3D8]'
+                  }`}
+                >
+                  Men ({collectionGenderCounts.men})
+                </button>
+              </div>
+
+              <div className="text-xs text-[#A99A87] tracking-wider uppercase font-light">
+                <span>Direct Atelier Dispatch</span>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Top Controls Bar */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 border-b border-[#D5C7B5] gap-4">
           <div className="flex items-center space-x-4">

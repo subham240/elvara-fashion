@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { ShopProvider } from './context/ShopContext';
-import { AnnouncementBar } from './components/layout/AnnouncementBar';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { CartDrawer } from './components/cart/CartDrawer';
@@ -35,10 +34,7 @@ export function App() {
       <Router>
         <ScrollToTop />
         <div className="flex flex-col min-h-screen bg-[#F5F1EA] text-[#171717]">
-          {/* Announcement Bar */}
-          <AnnouncementBar />
-
-          {/* Navigation Header */}
+          {/* Main Navigation Header - Centered ÉLVARA Brand */}
           <Navbar />
 
           {/* Interactive Drawers & Overlays */}
@@ -50,6 +46,42 @@ export function App() {
             <Routes>
               {/* Page 1: Homepage */}
               <Route path="/" element={<HomePage />} />
+
+              {/* Dedicated Curated Collection Routes */}
+              <Route
+                path="/collections/spring-atelier-2026"
+                element={
+                  <CollectionPage
+                    collectionTarget="Spring Atelier 2026"
+                    title="Spring Atelier 2026"
+                    subtitle="Sculptural drapery, organic French flax linen, and fluid silhouettes designed for unhurried living."
+                    bannerImage="/images/hero/spring-campaign.jpg"
+                  />
+                }
+              />
+              <Route
+                path="/collections/core-essentials"
+                element={
+                  <CollectionPage
+                    collectionTarget="Core Essentials"
+                    title="Core Essentials"
+                    subtitle="Enduring wardrobe foundations cut from GOTS-certified organic cotton poplin, European linen, and pure virgin wool."
+                    bannerImage="/images/editorial/less-but-better.jpg"
+                  />
+                }
+              />
+              <Route
+                path="/collections/atelier-tailoring"
+                element={
+                  <CollectionPage
+                    collectionTarget="Atelier Tailoring"
+                    title="Atelier Tailoring"
+                    subtitle="Double-pleated trousers, architectural blazers, and virgin wool overcoats drafted with meticulous proportions."
+                    bannerImage="/images/categories/men.jpg"
+                  />
+                }
+              />
+              <Route path="/collections/:collectionSlug" element={<CollectionPage />} />
 
               {/* Strict Gender Collection Pages */}
               <Route
@@ -121,5 +153,4 @@ export function App() {
     </ShopProvider>
   );
 }
-
 export default App;
