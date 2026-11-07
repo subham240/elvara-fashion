@@ -47,7 +47,7 @@ export const Navbar: React.FC = () => {
 
   const collectionsList = [
     { name: 'Spring Atelier 2026', desc: 'Fluid linen, sculptural tailoring, and organic cotton silhouettes.', href: '/collections/women?collection=Spring+Atelier+2026' },
-    { name: 'Core Essentials', desc: 'Permanent collection designed for the art of everyday living.', href: '/collections/men?collection=Core+Essentials' },
+    { name: 'Core Essentials', desc: 'Everyday staples in organic cotton, French linen, and fine wool.', href: '/collections/men?collection=Core+Essentials' },
     { name: 'Atelier Tailoring', desc: 'Double-pleated trousers, structured blazers, and virgin wool coats.', href: '/collections/women?collection=Atelier+Tailoring' },
   ];
 

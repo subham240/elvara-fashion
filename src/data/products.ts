@@ -11,7 +11,7 @@ export const products: Product[] = [
     gender: 'women',
     category: "Women's Shirts",
     subcategory: 'Shirts',
-    description: 'Crafted from 100% French flax linen, this relaxed-fit blouse features a clean band collar, dropped shoulders, and natural shell buttons for effortless warm-weather tailoring.',
+    description: 'Woven from 100% French flax linen, this relaxed blouse features a band collar, dropped shoulders, and natural river shell buttons.',
     details: [
       '100% organic French flax linen',
       'Relaxed, fluid silhouette with subtle side vents',
@@ -48,7 +48,7 @@ export const products: Product[] = [
     gender: 'women',
     category: "Women's Shirts",
     subcategory: 'Shirts',
-    description: 'An architectural take on the classic tailored shirt. Cut from crisp 80s two-ply organic cotton poplin with generous proportioning and extended cuffs.',
+    description: 'Cut from crisp 80s two-ply organic cotton poplin with extended cuffs, a point collar, and a curved hemline.',
     details: [
       '100% GOTS-certified long-staple cotton poplin',
       'Modern point collar and clean mother-of-pearl buttons',
@@ -85,7 +85,7 @@ export const products: Product[] = [
     gender: 'women',
     category: "Women's Trousers",
     subcategory: 'Trousers',
-    description: 'Impeccably tailored with sharp double front pleats and a flattering high-rise waistband. Designed with an elongated wide leg that drapes gracefully over footwear.',
+    description: 'Tailored with double front pleats, a structured high-rise waistband, and an elongated wide-leg cut that breaks over footwear.',
     details: [
       'Premium lightweight wool-viscose blend with natural stretch',
       'High waist with structured inner waistband and bar-tack closure',
@@ -122,7 +122,7 @@ export const products: Product[] = [
     gender: 'women',
     category: "Women's Dresses",
     subcategory: 'Dresses',
-    description: 'An understated column midi dress with clean architectural seams and a sculpted boat neck. Crafted from breathable structured crepe for effortless day-to-night versatility.',
+    description: 'A column midi dress cut from structured matte crepe with clean seams, a boat neckline, and a subtle back slit.',
     details: [
       'Substantial matte crepe with graceful drape',
       'Subtle back slit for ease of movement',
@@ -158,7 +158,7 @@ export const products: Product[] = [
     gender: 'women',
     category: "Women's Tops",
     subcategory: 'Tops',
-    description: 'A finely gauge ribbed knit top featuring a sculptural mock neck and clean seamless armholes. An indispensable layering essential for transitional seasons.',
+    description: 'A 16-gauge micro-ribbed knit top in mercerized cotton with a mock neck and clean-finished armholes.',
     details: [
       'Fine 16-gauge mercerised cotton with silk touch finish',
       'Refined micro-rib stitch with excellent recovery',
@@ -267,7 +267,7 @@ export const products: Product[] = [
     gender: 'women',
     category: "Women's Skirts",
     subcategory: 'Skirts',
-    description: 'Precision knife-pleated midi skirt engineered to hold its crisp structure. Features an elasticated grosgrain waistband for comfortable everyday elegance.',
+    description: 'Precision knife-pleated midi skirt engineered to hold its shape. Features permanent heat-set pleats and an elasticated grosgrain waistband.',
     details: [
       'Permanent heat-set sharp pleats in fine twill',
       'Comfort-stretch concealed inner waist band',
@@ -338,7 +338,7 @@ export const products: Product[] = [
     gender: 'women',
     category: "Women's Knitwear",
     subcategory: 'Knitwear',
-    description: 'Plush ribbed cardigan with a modern V-neckline and chunky tortoiseshell buttons. Cut slightly cropped to pair seamlessly with high-waisted denim and tailored trousers.',
+    description: 'A 7-gauge organic cotton cardigan with a V-neckline, tortoiseshell buttons, and a slightly cropped hem.',
     details: [
       'Pure organic combed cotton in a chunky 7-gauge fisherman rib',
       'Dropped shoulder seam with generous sleeves',
@@ -443,7 +443,7 @@ export const products: Product[] = [
     gender: 'women',
     category: "Women's Shirts",
     subcategory: 'Shirts',
-    description: 'An effortless wardrobe cornerstone cut with voluminous sleeves and a curved hem. Wear open over tank tops or buttoned with tailored trousers.',
+    description: 'An oversized shirt in organic cotton poplin with dropped shoulders, a chest patch pocket, and a curved hem.',
     details: [
       'Crisp 100% organic cotton poplin',
       'Generous exaggerated silhouette with dropped shoulders',
@@ -478,7 +478,7 @@ export const products: Product[] = [
     gender: 'women',
     category: "Women's Dresses",
     subcategory: 'Dresses',
-    description: 'An effortless wrap silhouette crafted from midweight pure Belgian linen. Features an adjustable interior tie, kimono-inspired sleeves, and deep on-seam side pockets.',
+    description: 'A wrap dress made from midweight Belgian flax linen with an interior tie, kimono-style sleeves, and deep on-seam side pockets.',
     details: [
       '100% Pure certified Belgian flax linen',
       'True wrap construction with tailored interior safety button',
@@ -517,7 +517,7 @@ export const products: Product[] = [
     gender: 'men',
     category: "Men's Shirts",
     subcategory: 'Shirts',
-    description: 'A contemporary evolution of the traditional button-down. Tailored from a substantial 100% organic cotton Oxford cloth with refined collar roll and clean mother-of-pearl buttons.',
+    description: 'A button-down shirt cut from heavy organic cotton Oxford cloth with mother-of-pearl buttons, a chest pocket, and a rear box pleat.',
     details: [
       '100% GOTS-certified organic cotton heavy Oxford weave',
       'Reinforced button-down collar with natural roll',
@@ -592,7 +592,7 @@ export const products: Product[] = [
     gender: 'men',
     category: "Men's Trousers",
     subcategory: 'Trousers',
-    description: 'Modern relaxed tailoring at its finest. Cut with front pleats, a clean straight drape through the leg, and internal waistband curtaining for maximum comfort.',
+    description: 'Tailored trousers in a wool-viscose blend with forward front pleats, an extension waistband, and a straight-leg drape.',
     details: [
       'Super 110s virgin wool and technical viscose blend',
       'Single forward pleat for ease of movement and sharp silhouette',
@@ -628,7 +628,7 @@ export const products: Product[] = [
     gender: 'men',
     category: "Men's Knitwear",
     subcategory: 'Knitwear',
-    description: 'An elevated alternative to casual polos. Knitted in a fine 14-gauge Italian merino and silk blend with an open spread collar and seamless placket.',
+    description: 'A knit polo in 14-gauge Italian merino wool and silk with an open spread collar and ribbed hems.',
     details: [
       '70% Extrafine Merino Wool, 30% Mulberry Silk',
       'Buttonless johnny collar with clean ribbed edges',
@@ -664,7 +664,7 @@ export const products: Product[] = [
     gender: 'men',
     category: "Men's Overshirts",
     subcategory: 'Overshirts',
-    description: 'A versatile transitional layer engineered in a heavy 320 GSM cotton twill. Features dual chest flap pockets, horn button closures, and reinforced side gussets.',
+    description: 'An overshirt cut from 320 GSM combed cotton twill with dual chest flap pockets, horn buttons, and reinforced side gussets.',
     details: [
       '100% Heavyweight combed cotton twill',
       'Oversized chest patch pockets with concealed buttons',
@@ -701,7 +701,7 @@ export const products: Product[] = [
     gender: 'men',
     category: "Men's Jeans",
     subcategory: 'Jeans',
-    description: 'Rooted in heritage workwear, updated with modern ease. Cut from 14 oz selvedge-style cotton denim in a true straight leg from knee to ankle.',
+    description: 'Straight-leg jeans cut from 14 oz ring-spun cotton denim with solid copper rivets, a button fly, and chain-stitched hems.',
     details: [
       '100% Long-staple ring-spun cotton denim',
       'Solid copper hardware and reinforced stress points',
@@ -737,7 +737,7 @@ export const products: Product[] = [
     gender: 'men',
     category: "Men's Jackets",
     subcategory: 'Jackets',
-    description: 'An unstructured jacket tailored with soft shoulders, patch pockets, and unlined interior for effortless elegance and travel comfort.',
+    description: 'An unstructured two-button jacket in washed linen-cotton with soft unpadded shoulders, dual patch pockets, and an unlined interior.',
     details: [
       'Italian washed linen-cotton blend with subtle slub texture',
       'Completely unstructured chest with zero canvas padding',
@@ -845,7 +845,7 @@ export const products: Product[] = [
     gender: 'men',
     category: "Men's T-Shirts",
     subcategory: 'T-Shirts',
-    description: 'An architectural boxy tee cut from dry-hand 280 GSM jersey. Sits clean on the collar and falls straight down for a modern boxy silhouette.',
+    description: 'A boxy tee cut from dry-hand 280 GSM carded organic cotton with a 3cm ribbed crew collar.',
     details: [
       '280 GSM heavy carded organic cotton',
       'Thick 3cm ribbed crew collar',
@@ -1026,7 +1026,7 @@ export const products: Product[] = [
     gender: 'unisex',
     category: 'Accessories',
     subcategory: 'Belts',
-    description: 'Meticulously crafted from full-grain Tuscan vegetable-tanned leather. Finished with a brushed solid brass buckle and hand-burnished edge paint.',
+    description: 'A 30mm belt cut from full-grain Tuscan vegetable-tanned leather with a brushed solid brass buckle and beveled wax edges.',
     details: [
       '30mm width, ideal for both denim loops and tailored trousers',
       'Full-grain Italian vegetable-tanned leather that patinas with age',
@@ -1061,7 +1061,7 @@ export const products: Product[] = [
     gender: 'unisex',
     category: 'Accessories',
     subcategory: 'Bags',
-    description: 'An architectural shoulder bag featuring structured geometric lines, magnetic fold-over flap, and an adjustable wide leather strap.',
+    description: 'A structured shoulder bag in Italian calf leather with a magnetic fold-over closure, wide adjustable strap, and an interior zip pocket.',
     details: [
       'Smooth Italian calf leather with micro-grain finish',
       'Custom gold-finish magnetic lock hardware',

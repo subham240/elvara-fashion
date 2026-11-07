@@ -44,11 +44,11 @@ export const BrandStorySection: React.FC = () => {
             </div>
 
             <p className="text-sm sm:text-base text-[#6B6963] font-light leading-relaxed">
-              We founded ÉLVARA with a singular conviction: that contemporary fashion should be quiet, generous, and enduring. Rather than chasing seasonal hype cycles, we craft timeless clothing that gives voice to calm confidence.
+              We cut our clothes for longevity, not trend cycles. Every pattern starts in our New Delhi workshop with natural European linen, long-staple cotton, and Mongolian cashmere. The focus is simple: clean proportions, solid construction, and fabrics that soften with age.
             </p>
 
             <p className="text-xs sm:text-sm text-[#6B6963] font-light leading-relaxed">
-              Every seam, shell button, and drape is resolved with rigorous precision in our design atelier. We design essentials that seamlessly bridge relaxed comfort with tailored polish.
+              Each garment is finished with French interior seams, river shell buttons, and reinforced stress points for dependable daily wear.
             </p>
 
             {/* Three Pillars */}

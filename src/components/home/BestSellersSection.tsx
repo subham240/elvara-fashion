@@ -19,7 +19,7 @@ export const BestSellersSection: React.FC = () => {
           Best Sellers
         </h2>
         <p className="text-xs sm:text-sm text-[#6B6963] mt-2 font-light leading-relaxed">
-          The perennial favourites that define our aesthetic and remain staples in considered wardrobes season after season.
+          Our most requested pieces, built from organic cotton, French linen, and pure wool.
         </p>
       </div>
 

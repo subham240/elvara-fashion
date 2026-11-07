@@ -58,10 +58,10 @@ export const OurStoryPage: React.FC = () => {
               Quiet Confidence in an Age of Excess
             </h2>
             <p className="text-sm text-[#6B6963] leading-relaxed font-light">
-              In an era dominated by hyper-fast fashion trends and disposable garments, ÉLVARA was conceived as an intentional antidote. We craft clothing that honors timeless proportions, refined textures, and serene silhouettes.
+              Most modern clothing is built to be discarded after one season. ÉLVARA started with a direct premise: make durable, well-cut clothes from natural fabrics, sell them directly, and price them fairly.
             </p>
             <p className="text-sm text-[#6B6963] leading-relaxed font-light">
-              We operate under the philosophy of accessible contemporary luxury: offering discerning individuals the craftsmanship, hand-finished detailing, and organic textile integrity of high fashion houses, priced transparently for real everyday living.
+              We work directly with certified organic linen mills in France, small weaving cooperatives in India, and ethical knitters in Mongolia. By skipping middle distributors and avoiding runway markups, we use 22-momme silk, 14 oz selvedge cotton, and French-seam tailoring without five-figure prices.
             </p>
           </div>
 

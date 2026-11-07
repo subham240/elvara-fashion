@@ -17,7 +17,7 @@ export const ShopByCategory: React.FC = () => {
           </h2>
         </div>
         <p className="text-xs sm:text-sm text-[#6B6963] max-w-md mt-3 md:mt-0 font-light leading-relaxed">
-          Refined wardrobe cornerstones designed to be worn together in endless harmonious permutations.
+          Wardrobe staples designed to be mixed, layered, and worn year-round.
         </p>
       </div>
 

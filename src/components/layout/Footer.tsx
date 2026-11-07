@@ -19,7 +19,7 @@ export const Footer: React.FC = () => {
               </span>
             </div>
             <p className="text-xs text-[#A99A87] leading-relaxed max-w-xs font-light">
-              Accessible premium contemporary fashion crafted with uncompromising quality and understated elegance.
+              Everyday tailoring and contemporary essentials made from certified natural fabrics.
             </p>
             <div className="flex items-center space-x-4 pt-1 text-[#D5C7B5]">
               {/* Subtle Instagram Icon */}
