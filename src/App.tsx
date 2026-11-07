@@ -6,6 +6,7 @@ import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { CartDrawer } from './components/cart/CartDrawer';
 import { SearchModal } from './components/search/SearchModal';
+import { BrandIntroAnimation } from './components/common/BrandIntroAnimation';
 
 // Pages
 import { HomePage } from './pages/HomePage';
@@ -28,6 +29,9 @@ function ScrollToTop() {
 export function App() {
   return (
     <ShopProvider>
+      {/* Luxury Brand Intro & Logo Reveal Animation */}
+      <BrandIntroAnimation />
+
       <Router>
         <ScrollToTop />
         <div className="flex flex-col min-h-screen bg-[#F5F1EA] text-[#171717]">
