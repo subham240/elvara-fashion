@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { ShopProvider } from './context/ShopContext';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
@@ -26,14 +27,33 @@ function ScrollToTop() {
 }
 
 export function App() {
+  const [pageRevealed, setPageRevealed] = useState(false);
+
+  useEffect(() => {
+    // Safety fallback: ensure page is revealed smoothly after max 3.2s
+    const fallback = setTimeout(() => {
+      setPageRevealed(true);
+    }, 3200);
+    return () => clearTimeout(fallback);
+  }, []);
+
   return (
     <ShopProvider>
       {/* Luxury Brand Intro & Logo Reveal Animation */}
-      <BrandIntroAnimation />
+      <BrandIntroAnimation onStartReveal={() => setPageRevealed(true)} />
 
       <Router>
         <ScrollToTop />
-        <div className="flex flex-col min-h-screen bg-[#F5F1EA] text-[#171717]">
+        <motion.div
+          initial={{ opacity: 0, y: 18, scale: 0.995 }}
+          animate={
+            pageRevealed
+              ? { opacity: 1, y: 0, scale: 1 }
+              : { opacity: 0, y: 18, scale: 0.995 }
+          }
+          transition={{ duration: 1.15, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-col min-h-screen bg-[#F5F1EA] text-[#171717]"
+        >
           {/* Main Navigation Header - Centered ÉLVARA Brand */}
           <Navbar />
 
@@ -148,7 +168,7 @@ export function App() {
 
           {/* Compact Premium Footer */}
           <Footer />
-        </div>
+        </motion.div>
       </Router>
     </ShopProvider>
   );

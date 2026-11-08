@@ -1,40 +1,66 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export const BrandIntroAnimation: React.FC = () => {
+interface BrandIntroAnimationProps {
+  onStartReveal?: () => void;
+  onComplete?: () => void;
+}
+
+export const BrandIntroAnimation: React.FC<BrandIntroAnimationProps> = ({
+  onStartReveal,
+  onComplete,
+}) => {
   const [isVisible, setIsVisible] = useState(true);
+  const [isDone, setIsDone] = useState(false);
 
   useEffect(() => {
-    // Stage 1 & 2: Logo and Typography reveal
-    // Stage 3: Curtain wipes open (2600ms)
+    // Stage 1 & 2: Logo and Typography reveal (0 - 2.4s)
+    // Stage 3: Smooth curtain wipe & page unveil begins (2.4s)
     const timer = setTimeout(() => {
+      onStartReveal?.();
       setIsVisible(false);
-    }, 2800);
+    }, 2400);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [onStartReveal]);
 
-  if (!isVisible) return null;
+  if (isDone) return null;
 
   const brandLetters = ['É', 'L', 'V', 'A', 'R', 'A'];
 
   return (
-    <AnimatePresence>
+    <AnimatePresence
+      onExitComplete={() => {
+        setIsDone(true);
+        onComplete?.();
+      }}
+    >
       {isVisible && (
         <motion.div
           key="brand-intro"
           initial={{ opacity: 1 }}
           exit={{
-            clipPath: 'inset(0 0 100% 0)',
-            transition: { duration: 0.9, ease: [0.77, 0, 0.175, 1] },
+            y: '-100%',
+            transition: {
+              duration: 1.1,
+              ease: [0.77, 0, 0.175, 1],
+            },
           }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[#141413] text-[#F5F1EA] overflow-hidden select-none"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-[#141413] text-[#F5F1EA] overflow-hidden select-none border-b border-[#D5C7B5]/25 shadow-2xl"
         >
           {/* Subtle luxury ambient glow in background */}
           <div className="absolute w-[500px] h-[500px] bg-[#A99A87]/10 rounded-full blur-[140px] pointer-events-none" />
 
-          {/* Center Brand Container */}
-          <div className="relative z-10 flex flex-col items-center text-center px-6">
+          {/* Center Brand Container with graceful exit fade */}
+          <motion.div
+            exit={{
+              opacity: 0,
+              y: -30,
+              scale: 0.95,
+              transition: { duration: 0.45, ease: 'easeOut' },
+            }}
+            className="relative z-10 flex flex-col items-center text-center px-6"
+          >
             {/* Architectural Monogram Logo SVG */}
             <motion.div
               initial={{ scale: 0.85, opacity: 0 }}
@@ -117,7 +143,7 @@ export const BrandIntroAnimation: React.FC = () => {
             >
               Timeless by Design
             </motion.div>
-          </div>
+          </motion.div>
 
           {/* Bottom Luxury Progress Indicator */}
           <div className="absolute bottom-8 inset-x-0 flex justify-center">
