@@ -78,30 +78,34 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Column 3 — CUSTOMER CARE */}
+          {/* Column 3 — CUSTOMER CARE & ATELIER CONCIERGE */}
           <div>
             <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#F5F1EA] block mb-4">
-              Customer Care
+              Atelier Concierge
             </span>
             <ul className="space-y-2.5 text-xs text-[#A99A87]">
               <li>
-                <Link to="/pages/our-story" className="hover:text-[#F5F1EA] transition-colors">
-                  Contact Us
-                </Link>
+                <a
+                  href="mailto:subhamacharya731@gmail.com"
+                  className="hover:text-[#F5F1EA] transition-colors block text-[11px] tracking-wide"
+                >
+                  subhamacharya731@gmail.com
+                </a>
               </li>
               <li>
-                <Link to="/pages/our-story" className="hover:text-[#F5F1EA] transition-colors">
-                  Shipping Information
-                </Link>
+                <a
+                  href="tel:6371830731"
+                  className="hover:text-[#F5F1EA] transition-colors block text-[11px] tracking-wide"
+                >
+                  +91 6371830731
+                </a>
               </li>
-              <li>
-                <Link to="/pages/our-story" className="hover:text-[#F5F1EA] transition-colors">
-                  Returns & Exchanges
-                </Link>
+              <li className="text-[11px] text-[#A99A87] pt-1">
+                Atelier: Brahmapur, Odisha
               </li>
-              <li>
-                <Link to="/pages/our-story" className="hover:text-[#F5F1EA] transition-colors">
-                  FAQs
+              <li className="pt-2">
+                <Link to="/pages/our-story" className="hover:text-[#F5F1EA] transition-colors block">
+                  Shipping, FAQs & Care Guide
                 </Link>
               </li>
             </ul>

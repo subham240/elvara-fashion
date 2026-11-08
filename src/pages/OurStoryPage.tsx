@@ -12,7 +12,7 @@ export const OurStoryPage: React.FC = () => {
       title: 'Architectural Cut',
       prose:
         'Every silhouette begins with freedom of posture. By balancing calibrated drop-shoulder seams with deliberate drape and double-pleated rises, each garment accommodates natural human movement without surrendering tailored precision.',
-      footnote: 'Drafted in 0.5cm tolerances in our New Delhi pattern studio.',
+      footnote: 'Drafted in 0.5cm tolerances in our Brahmapur, Odisha pattern studio.',
     },
     {
       num: 'II',
@@ -35,7 +35,7 @@ export const OurStoryPage: React.FC = () => {
   const faqs = [
     {
       q: 'What is the shipping timeline and delivery cost?',
-      a: 'We provide complimentary standard shipping on all orders above ₹2,999 across India. For orders below this threshold, a flat delivery fee of ₹199 applies. Orders are dispatched from our New Delhi atelier within 24–48 hours and typically arrive within 3–5 business days in metro cities and 5–7 business days pan-India.',
+      a: 'We provide complimentary standard shipping on all orders above ₹2,999 across India. For orders below this threshold, a flat delivery fee of ₹199 applies. Orders are dispatched from our Brahmapur, Odisha atelier within 24–48 hours and typically arrive within 3–5 business days in metro cities and 5–7 business days pan-India.',
     },
     {
       q: 'How does your 15-day return and exchange policy work?',
@@ -159,7 +159,7 @@ export const OurStoryPage: React.FC = () => {
 
           {/* Atelier Hallmark Seal */}
           <div className="mt-20 pt-8 border-t border-[#D5C7B5] flex flex-col sm:flex-row items-center justify-between text-[10px] uppercase tracking-[0.25em] text-[#A99A87] text-center sm:text-left gap-3">
-            <span>ÉLVARA ATELIER ARCHIVE • NEW DELHI</span>
+            <span>ÉLVARA ATELIER ARCHIVE • BRAHMAPUR, ODISHA</span>
             <span>DESIGNED FOR REPETITION & LIFELONG WEAR</span>
             <Link
               to="/collections/spring-atelier-2026"
@@ -214,22 +214,28 @@ export const OurStoryPage: React.FC = () => {
         </div>
 
         {/* Contact Concierge Box */}
-        <div className="mt-16 bg-[#EAE3D8] border border-[#D5C7B5] p-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="mt-16 bg-[#EAE3D8] border border-[#D5C7B5] p-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xs">
           <div>
             <h3 className="font-serif text-2xl text-[#171717] font-medium">Need Assistance from our Concierge?</h3>
-            <p className="text-xs text-[#6B6963] mt-1">Our styling advisors are available Monday to Saturday, 10:00 AM – 7:00 PM IST.</p>
+            <p className="text-xs text-[#6B6963] mt-1 font-light">Our styling advisors are available Monday to Saturday, 10:00 AM – 7:00 PM IST.</p>
             <div className="flex flex-wrap items-center gap-6 mt-4 text-xs text-[#171717]">
-              <span className="flex items-center space-x-1.5 font-medium">
+              <a
+                href="mailto:subhamacharya731@gmail.com"
+                className="flex items-center space-x-2 font-medium hover:text-[#A99A87] transition-colors"
+              >
                 <Mail size={14} className="text-[#34332F]" />
-                <span>concierge@elvara.com</span>
-              </span>
-              <span className="flex items-center space-x-1.5 font-medium">
+                <span>subhamacharya731@gmail.com</span>
+              </a>
+              <a
+                href="tel:6371830731"
+                className="flex items-center space-x-2 font-medium hover:text-[#A99A87] transition-colors"
+              >
                 <Phone size={14} className="text-[#34332F]" />
-                <span>+91 11 4987 2300</span>
-              </span>
-              <span className="flex items-center space-x-1.5 font-medium">
+                <span>+91 6371830731</span>
+              </a>
+              <span className="flex items-center space-x-2 font-medium">
                 <MapPin size={14} className="text-[#34332F]" />
-                <span>Atelier: Lodhi Estate, New Delhi</span>
+                <span>Atelier: Brahmapur, Odisha</span>
               </span>
             </div>
           </div>

@@ -117,16 +117,6 @@ export const BrandIntroAnimation: React.FC = () => {
             >
               Timeless by Design
             </motion.div>
-
-            {/* Subtle Atelier Hallmark */}
-            <motion.span
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.6 }}
-              transition={{ duration: 0.8, delay: 1.6 }}
-              className="text-[8px] uppercase tracking-[0.3em] text-[#D5C7B5] mt-4"
-            >
-              New Delhi • Est. 2026
-            </motion.span>
           </div>
 
           {/* Bottom Luxury Progress Indicator */}

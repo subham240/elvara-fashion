@@ -153,7 +153,7 @@ export const QuickViewModal: React.FC<QuickViewModalProps> = ({ product, isOpen,
                           className={`px-3 py-1.5 text-xs font-medium border transition-colors ${
                             selectedSize === s
                               ? 'border-[#171717] bg-[#171717] text-[#F5F1EA]'
-                              : 'border-[#D5C7B5] bg-white text-[#171717] hover:border-[#34332F]'
+                              : 'border-[#D5C7B5] bg-[#EAE3D8]/50 text-[#171717] hover:bg-[#EAE3D8] hover:border-[#34332F]'
                           }`}
                         >
                           {s}

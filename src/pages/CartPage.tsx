@@ -38,7 +38,7 @@ export const CartPage: React.FC = () => {
         </div>
 
         {cart.length === 0 ? (
-          <div className="py-24 text-center max-w-md mx-auto bg-white/40 border border-[#D5C7B5]/60 p-8">
+          <div className="py-24 text-center max-w-md mx-auto bg-[#EAE3D8]/45 border border-[#D5C7B5] p-8 shadow-xs">
             <ShoppingBag size={48} strokeWidth={1} className="text-[#A99A87] mx-auto mb-4" />
             <h3 className="font-serif text-2xl text-[#171717]">Your shopping bag is empty</h3>
             <p className="text-xs text-[#6B6963] mt-2 leading-relaxed">
@@ -47,13 +47,13 @@ export const CartPage: React.FC = () => {
             <div className="mt-6 flex justify-center gap-3">
               <Link
                 to="/collections/women"
-                className="px-6 py-3 bg-[#171717] text-[#F5F1EA] text-xs uppercase tracking-widest font-medium"
+                className="px-6 py-3 bg-[#171717] text-[#F5F1EA] text-xs uppercase tracking-widest font-medium hover:bg-[#34332F] transition-colors shadow-xs"
               >
                 Shop Women
               </Link>
               <Link
                 to="/collections/men"
-                className="px-6 py-3 bg-white border border-[#D5C7B5] text-[#171717] text-xs uppercase tracking-widest font-medium"
+                className="px-6 py-3 bg-[#EAE3D8] border border-[#D5C7B5] text-[#171717] text-xs uppercase tracking-widest font-medium hover:bg-[#D5C7B5]/60 transition-colors"
               >
                 Shop Men
               </Link>
@@ -82,7 +82,7 @@ export const CartPage: React.FC = () => {
               </div>
 
               {/* Items List */}
-              <div className="divide-y divide-[#D5C7B5] border-y border-[#D5C7B5] bg-white/40 px-4 sm:px-6">
+              <div className="divide-y divide-[#D5C7B5] border-y border-[#D5C7B5] bg-[#EAE3D8]/35 px-4 sm:px-6 shadow-xs">
                 {cart.map((item) => (
                   <div key={item.id} className="py-6 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
                     <div className="flex gap-4 items-center">
@@ -126,7 +126,7 @@ export const CartPage: React.FC = () => {
 
                     <div className="flex items-center justify-between sm:justify-end w-full sm:w-auto gap-6 pt-3 sm:pt-0 border-t sm:border-0 border-[#D5C7B5]/40">
                       {/* Quantity Selector */}
-                      <div className="flex items-center border border-[#D5C7B5] bg-white">
+                      <div className="flex items-center border border-[#D5C7B5] bg-[#EAE3D8]/60">
                         <button
                           onClick={() => updateQuantity(item.id, item.quantity - 1)}
                           className="p-2 text-[#34332F] hover:bg-[#EAE3D8] transition-colors"

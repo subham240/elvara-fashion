@@ -118,7 +118,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
                         required
                         value={formData.firstName}
                         onChange={handleChange}
-                        className="w-full bg-white border border-[#D5C7B5] px-3 py-2 text-[#171717] focus:outline-hidden focus:border-[#171717]"
+                        className="w-full bg-[#EAE3D8]/45 focus:bg-[#FAF8F5] border border-[#D5C7B5] px-3 py-2 text-[#171717] focus:outline-hidden focus:border-[#171717] transition-colors"
                       />
                     </div>
                     <div>
@@ -129,7 +129,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
                         required
                         value={formData.lastName}
                         onChange={handleChange}
-                        className="w-full bg-white border border-[#D5C7B5] px-3 py-2 text-[#171717] focus:outline-hidden focus:border-[#171717]"
+                        className="w-full bg-[#EAE3D8]/45 focus:bg-[#FAF8F5] border border-[#D5C7B5] px-3 py-2 text-[#171717] focus:outline-hidden focus:border-[#171717] transition-colors"
                       />
                     </div>
                     <div className="sm:col-span-2">
@@ -140,7 +140,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
                         required
                         value={formData.address}
                         onChange={handleChange}
-                        className="w-full bg-white border border-[#D5C7B5] px-3 py-2 text-[#171717] focus:outline-hidden focus:border-[#171717]"
+                        className="w-full bg-[#EAE3D8]/45 focus:bg-[#FAF8F5] border border-[#D5C7B5] px-3 py-2 text-[#171717] focus:outline-hidden focus:border-[#171717] transition-colors"
                       />
                     </div>
                     <div>
@@ -151,7 +151,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
                         required
                         value={formData.city}
                         onChange={handleChange}
-                        className="w-full bg-white border border-[#D5C7B5] px-3 py-2 text-[#171717] focus:outline-hidden focus:border-[#171717]"
+                        className="w-full bg-[#EAE3D8]/45 focus:bg-[#FAF8F5] border border-[#D5C7B5] px-3 py-2 text-[#171717] focus:outline-hidden focus:border-[#171717] transition-colors"
                       />
                     </div>
                     <div>
@@ -162,7 +162,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
                         required
                         value={formData.state}
                         onChange={handleChange}
-                        className="w-full bg-white border border-[#D5C7B5] px-3 py-2 text-[#171717] focus:outline-hidden focus:border-[#171717]"
+                        className="w-full bg-[#EAE3D8]/45 focus:bg-[#FAF8F5] border border-[#D5C7B5] px-3 py-2 text-[#171717] focus:outline-hidden focus:border-[#171717] transition-colors"
                       />
                     </div>
                     <div>
@@ -173,7 +173,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
                         required
                         value={formData.pincode}
                         onChange={handleChange}
-                        className="w-full bg-white border border-[#D5C7B5] px-3 py-2 text-[#171717] focus:outline-hidden focus:border-[#171717]"
+                        className="w-full bg-[#EAE3D8]/45 focus:bg-[#FAF8F5] border border-[#D5C7B5] px-3 py-2 text-[#171717] focus:outline-hidden focus:border-[#171717] transition-colors"
                       />
                     </div>
                     <div>
@@ -184,7 +184,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
                         required
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full bg-white border border-[#D5C7B5] px-3 py-2 text-[#171717] focus:outline-hidden focus:border-[#171717]"
+                        className="w-full bg-[#EAE3D8]/45 focus:bg-[#FAF8F5] border border-[#D5C7B5] px-3 py-2 text-[#171717] focus:outline-hidden focus:border-[#171717] transition-colors"
                       />
                     </div>
                   </div>
@@ -196,7 +196,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
                     2. Payment Method
                   </h4>
                   <div className="grid grid-cols-3 gap-3 text-xs">
-                    <label className={`border p-3 flex flex-col items-center text-center cursor-pointer transition-colors ${formData.paymentMethod === 'upi' ? 'border-[#171717] bg-[#EAE3D8]' : 'border-[#D5C7B5] bg-white'}`}>
+                    <label className={`border p-3 flex flex-col items-center text-center cursor-pointer transition-colors ${formData.paymentMethod === 'upi' ? 'border-[#171717] bg-[#EAE3D8]' : 'border-[#D5C7B5] bg-[#EAE3D8]/50'}`}>
                       <input
                         type="radio"
                         name="paymentMethod"
@@ -210,7 +210,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
                       <span className="text-[10px] text-[#6B6963]">Google Pay, PhonePe</span>
                     </label>
 
-                    <label className={`border p-3 flex flex-col items-center text-center cursor-pointer transition-colors ${formData.paymentMethod === 'card' ? 'border-[#171717] bg-[#EAE3D8]' : 'border-[#D5C7B5] bg-white'}`}>
+                    <label className={`border p-3 flex flex-col items-center text-center cursor-pointer transition-colors ${formData.paymentMethod === 'card' ? 'border-[#171717] bg-[#EAE3D8]' : 'border-[#D5C7B5] bg-[#EAE3D8]/50'}`}>
                       <input
                         type="radio"
                         name="paymentMethod"
@@ -224,7 +224,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
                       <span className="text-[10px] text-[#6B6963]">Visa, Mastercard, RuPay</span>
                     </label>
 
-                    <label className={`border p-3 flex flex-col items-center text-center cursor-pointer transition-colors ${formData.paymentMethod === 'cod' ? 'border-[#171717] bg-[#EAE3D8]' : 'border-[#D5C7B5] bg-white'}`}>
+                    <label className={`border p-3 flex flex-col items-center text-center cursor-pointer transition-colors ${formData.paymentMethod === 'cod' ? 'border-[#171717] bg-[#EAE3D8]' : 'border-[#D5C7B5] bg-[#EAE3D8]/50'}`}>
                       <input
                         type="radio"
                         name="paymentMethod"

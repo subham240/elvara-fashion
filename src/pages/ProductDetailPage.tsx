@@ -229,8 +229,8 @@ export const ProductDetailPage: React.FC = () => {
                     onClick={() => setSelectedSize(s)}
                     className={`py-2.5 text-xs font-medium border text-center transition-all ${
                       selectedSize === s
-                        ? 'border-[#171717] bg-[#171717] text-[#F5F1EA]'
-                        : 'border-[#D5C7B5] bg-white text-[#171717] hover:border-[#34332F]'
+                        ? 'border-[#171717] bg-[#171717] text-[#F5F1EA] shadow-xs'
+                        : 'border-[#D5C7B5] bg-[#EAE3D8]/50 text-[#171717] hover:bg-[#EAE3D8] hover:border-[#34332F]'
                     }`}
                   >
                     {s}
@@ -243,7 +243,7 @@ export const ProductDetailPage: React.FC = () => {
             <div className="pt-4 space-y-3">
               <div className="flex space-x-3">
                 {/* Quantity */}
-                <div className="flex items-center border border-[#D5C7B5] bg-white px-3 py-2">
+                <div className="flex items-center border border-[#D5C7B5] bg-[#EAE3D8]/50 px-3 py-2">
                   <button
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
                     className="text-sm font-medium text-[#6B6963] hover:text-[#171717]"
@@ -262,7 +262,7 @@ export const ProductDetailPage: React.FC = () => {
                 {/* Add to Bag Button */}
                 <button
                   onClick={handleAddToCart}
-                  className="flex-1 bg-[#171717] hover:bg-[#34332F] text-[#F5F1EA] py-3.5 px-6 text-xs uppercase tracking-[0.2em] font-medium transition-colors flex items-center justify-center space-x-2"
+                  className="flex-1 bg-[#171717] hover:bg-[#34332F] text-[#F5F1EA] py-3.5 px-6 text-xs uppercase tracking-[0.2em] font-medium transition-colors flex items-center justify-center space-x-2 shadow-xs"
                 >
                   <ShoppingBag size={15} />
                   <span>Add to Bag • {formatCurrency(product.price * quantity)}</span>
@@ -272,7 +272,7 @@ export const ProductDetailPage: React.FC = () => {
                 <button
                   onClick={() => toggleWishlist(product.id)}
                   aria-label="Toggle Wishlist"
-                  className="p-3.5 border border-[#D5C7B5] bg-white hover:bg-[#EAE3D8] transition-colors"
+                  className="p-3.5 border border-[#D5C7B5] bg-[#EAE3D8]/50 hover:bg-[#EAE3D8] transition-colors"
                 >
                   <Heart
                     size={18}

@@ -47,7 +47,7 @@ export const BrandStorySection: React.FC = () => {
             </div>
 
             <p className="text-sm sm:text-base text-[#6B6963] font-light leading-relaxed">
-              We cut our clothes for longevity, not trend cycles. Every pattern starts in our New Delhi workshop with natural European linen, long-staple cotton, and Mongolian cashmere. The focus is simple: clean proportions, solid construction, and fabrics that soften with age.
+              We cut our clothes for longevity, not trend cycles. Every pattern starts in our Brahmapur, Odisha workshop with natural European linen, long-staple cotton, and Mongolian cashmere. The focus is simple: clean proportions, solid construction, and fabrics that soften with age.
             </p>
 
             <p className="text-xs sm:text-sm text-[#6B6963] font-light leading-relaxed">
@@ -107,7 +107,7 @@ export const BrandStorySection: React.FC = () => {
                   Small Batch Production
                 </span>
                 <h3 className="font-serif text-xl sm:text-2xl font-light tracking-wide mt-1">
-                  Engineered in New Delhi, Sourced Globally
+                  Engineered in Brahmapur, Odisha, Sourced Globally
                 </h3>
               </div>
             </div>

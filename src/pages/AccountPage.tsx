@@ -43,7 +43,7 @@ export const AccountPage: React.FC = () => {
 
             <button
               onClick={logoutUser}
-              className="inline-flex items-center space-x-2 text-xs uppercase tracking-widest text-[#171717] hover:text-red-700 transition-colors border border-[#D5C7B5] bg-white px-4 py-2"
+              className="inline-flex items-center space-x-2 text-xs uppercase tracking-widest text-[#171717] hover:text-red-700 transition-colors border border-[#D5C7B5] bg-[#EAE3D8] hover:bg-[#D5C7B5]/60 px-4 py-2"
             >
               <LogOut size={13} />
               <span>Sign Out</span>
@@ -64,7 +64,7 @@ export const AccountPage: React.FC = () => {
                 {user.orders.map((order) => (
                   <div
                     key={order.id}
-                    className="bg-white border border-[#D5C7B5] p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+                    className="bg-[#EAE3D8]/45 border border-[#D5C7B5] p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xs"
                   >
                     <div>
                       <div className="flex items-center space-x-3">
@@ -111,10 +111,10 @@ export const AccountPage: React.FC = () => {
                 {user.addresses.map((addr) => (
                   <div
                     key={addr.id}
-                    className="bg-white border border-[#D5C7B5] p-5 space-y-2 text-xs text-[#6B6963] relative"
+                    className="bg-[#EAE3D8]/45 border border-[#D5C7B5] p-5 space-y-2 text-xs text-[#6B6963] relative shadow-xs"
                   >
                     {addr.isDefault && (
-                      <span className="bg-[#EAE3D8] text-[#171717] text-[9px] uppercase tracking-widest px-2 py-0.5 font-medium absolute top-4 right-4">
+                      <span className="bg-[#171717] text-[#F5F1EA] text-[9px] uppercase tracking-widest px-2 py-0.5 font-medium absolute top-4 right-4">
                         Default
                       </span>
                     )}
@@ -134,7 +134,7 @@ export const AccountPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#F5F1EA] py-16 flex items-center justify-center px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full bg-white border border-[#D5C7B5] shadow-xl p-8 sm:p-10">
+      <div className="max-w-md w-full bg-[#EAE3D8]/60 border border-[#D5C7B5] shadow-xl p-8 sm:p-10">
         <div className="text-center mb-8">
           <span className="font-serif text-3xl tracking-[0.2em] text-[#171717] uppercase block">
             ÉLVARA

@@ -80,7 +80,7 @@ export const SearchPage: React.FC = () => {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search by garment, fabric (linen, silk, wool), or style..."
-              className="w-full bg-white border border-[#D5C7B5] pl-12 pr-12 py-3.5 text-sm text-[#171717] placeholder-[#A99A87] focus:outline-hidden focus:border-[#171717] transition-colors"
+              className="w-full bg-[#EAE3D8]/50 focus:bg-[#FAF8F5] border border-[#D5C7B5] pl-12 pr-12 py-3.5 text-sm text-[#171717] placeholder-[#A99A87] focus:outline-hidden focus:border-[#171717] transition-colors shadow-2xs"
             />
             {query && (
               <button
@@ -120,7 +120,7 @@ export const SearchPage: React.FC = () => {
 
             <div className="flex items-center space-x-4 text-xs">
               {/* Gender selector */}
-              <div className="flex border border-[#D5C7B5] bg-white">
+              <div className="flex border border-[#D5C7B5] bg-[#EAE3D8]/50">
                 {(['all', 'women', 'men'] as const).map((g) => (
                   <button
                     key={g}
@@ -140,7 +140,7 @@ export const SearchPage: React.FC = () => {
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as any)}
-                className="bg-transparent border border-[#D5C7B5] px-3 py-1.5 text-xs text-[#171717] focus:outline-hidden"
+                className="bg-[#EAE3D8]/50 border border-[#D5C7B5] px-3 py-1.5 text-xs text-[#171717] focus:outline-hidden"
               >
                 <option value="relevance">Relevance</option>
                 <option value="price-asc">Price: Low to High</option>
@@ -153,7 +153,7 @@ export const SearchPage: React.FC = () => {
         {/* Results Grid */}
         {query.trim() ? (
           searchResults.length === 0 ? (
-            <div className="py-20 text-center bg-white/40 border border-[#D5C7B5]/60 p-8">
+            <div className="py-20 text-center bg-[#EAE3D8]/45 border border-[#D5C7B5] p-8 shadow-xs">
               <h3 className="font-serif text-2xl text-[#171717]">No results found for "{query}"</h3>
               <p className="text-xs text-[#6B6963] mt-2 max-w-sm mx-auto leading-relaxed">
                 Try searching with terms like "linen", "shirt", "dress", "trousers", or "overcoat".
@@ -161,13 +161,13 @@ export const SearchPage: React.FC = () => {
               <div className="mt-6 flex justify-center gap-3">
                 <Link
                   to="/collections/women"
-                  className="px-6 py-2.5 bg-[#171717] text-[#F5F1EA] text-xs uppercase tracking-widest font-medium"
+                  className="px-6 py-2.5 bg-[#171717] text-[#F5F1EA] text-xs uppercase tracking-widest font-medium hover:bg-[#34332F] transition-colors shadow-xs"
                 >
                   Browse Women
                 </Link>
                 <Link
                   to="/collections/men"
-                  className="px-6 py-2.5 bg-white border border-[#D5C7B5] text-[#171717] text-xs uppercase tracking-widest font-medium"
+                  className="px-6 py-2.5 bg-[#EAE3D8] border border-[#D5C7B5] text-[#171717] text-xs uppercase tracking-widest font-medium hover:bg-[#D5C7B5]/60 transition-colors"
                 >
                   Browse Men
                 </Link>

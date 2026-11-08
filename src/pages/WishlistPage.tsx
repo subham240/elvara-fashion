@@ -27,7 +27,7 @@ export const WishlistPage: React.FC = () => {
         </div>
 
         {wishlistProducts.length === 0 ? (
-          <div className="py-24 text-center max-w-md mx-auto bg-white/40 border border-[#D5C7B5]/60 p-8">
+          <div className="py-24 text-center max-w-md mx-auto bg-[#EAE3D8]/45 border border-[#D5C7B5] p-8 shadow-xs">
             <Heart size={44} strokeWidth={1} className="text-[#A99A87] mx-auto mb-4" />
             <h3 className="font-serif text-2xl text-[#171717]">Your wishlist is currently empty</h3>
             <p className="text-xs text-[#6B6963] mt-2 leading-relaxed">
@@ -36,13 +36,13 @@ export const WishlistPage: React.FC = () => {
             <div className="mt-6 flex justify-center gap-3">
               <Link
                 to="/collections/women"
-                className="px-6 py-3 bg-[#171717] text-[#F5F1EA] text-xs uppercase tracking-widest font-medium"
+                className="px-6 py-3 bg-[#171717] text-[#F5F1EA] text-xs uppercase tracking-widest font-medium hover:bg-[#34332F] transition-colors shadow-xs"
               >
                 Explore Women
               </Link>
               <Link
                 to="/collections/men"
-                className="px-6 py-3 bg-white border border-[#D5C7B5] text-[#171717] text-xs uppercase tracking-widest font-medium"
+                className="px-6 py-3 bg-[#EAE3D8] border border-[#D5C7B5] text-[#171717] text-xs uppercase tracking-widest font-medium hover:bg-[#D5C7B5]/60 transition-colors"
               >
                 Explore Men
               </Link>
@@ -53,7 +53,7 @@ export const WishlistPage: React.FC = () => {
             {wishlistProducts.map((product) => (
               <div
                 key={product.id}
-                className="bg-white border border-[#D5C7B5]/70 flex flex-col justify-between group overflow-hidden"
+                className="bg-[#EAE3D8]/40 border border-[#D5C7B5] flex flex-col justify-between group overflow-hidden shadow-xs"
               >
                 {/* Image */}
                 <div className="relative aspect-[3/4] bg-[#EAE3D8] overflow-hidden">

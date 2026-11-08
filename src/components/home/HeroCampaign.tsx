@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, ChevronLeft, ChevronRight, Compass, Pause, Play } from 'lucide-react';
+import { ArrowRight, ChevronLeft, ChevronRight, Compass } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface Slide {
@@ -55,17 +55,15 @@ const slides: Slide[] = [
 export const HeroCampaign: React.FC = () => {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState<1 | -1>(1); // 1 = right to left, -1 = left to right
-  const [isPaused, setIsPaused] = useState(false);
   const touchStartX = useRef<number | null>(null);
 
-  // Auto-slide right-to-left every 5.5 seconds
+  // Auto-slide right-to-left continuously every 5.5 seconds by default
   useEffect(() => {
-    if (isPaused) return;
     const interval = setInterval(() => {
       paginate(1);
     }, 5500);
     return () => clearInterval(interval);
-  }, [current, isPaused]);
+  }, [current]);
 
   const paginate = (newDirection: 1 | -1) => {
     setDirection(newDirection);
@@ -125,8 +123,6 @@ export const HeroCampaign: React.FC = () => {
   return (
     <section
       className="relative min-h-[85vh] sm:min-h-[92vh] flex items-center justify-center overflow-hidden bg-[#141413] select-none"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
@@ -267,7 +263,7 @@ export const HeroCampaign: React.FC = () => {
                     initial={{ width: 0 }}
                     animate={{ width: '100%' }}
                     transition={{
-                      duration: isPaused ? 0 : 5.5,
+                      duration: 5.5,
                       ease: 'linear',
                     }}
                   />
@@ -277,16 +273,10 @@ export const HeroCampaign: React.FC = () => {
           ))}
         </div>
 
-        {/* Play / Pause toggle */}
-        <div className="hidden sm:flex items-center space-x-3 text-xs tracking-widest text-[#D5C7B5]">
-          <button
-            onClick={() => setIsPaused(!isPaused)}
-            className="flex items-center space-x-1.5 hover:text-white transition-colors"
-            aria-label={isPaused ? 'Resume autoplay' : 'Pause autoplay'}
-          >
-            {isPaused ? <Play size={12} /> : <Pause size={12} />}
-            <span className="text-[10px] uppercase tracking-widest font-sans">{isPaused ? 'Play' : 'Auto'}</span>
-          </button>
+        {/* Continuous Autoplay Indicator */}
+        <div className="hidden sm:flex items-center space-x-2 text-[10px] tracking-[0.25em] text-[#A99A87] uppercase font-light">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#D5C7B5] animate-pulse" />
+          <span>Atelier Runway Edit</span>
         </div>
       </div>
     </section>

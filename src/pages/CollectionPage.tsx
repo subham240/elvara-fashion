@@ -380,7 +380,7 @@ export const CollectionPage: React.FC<CollectionPageProps> = ({
                     className={`px-3 py-1 text-xs border transition-colors ${
                       selectedSize === size
                         ? 'border-[#171717] bg-[#171717] text-[#F5F1EA] font-medium'
-                        : 'border-[#D5C7B5] bg-white text-[#171717] hover:border-[#34332F]'
+                        : 'border-[#D5C7B5] bg-[#EAE3D8]/50 text-[#171717] hover:bg-[#EAE3D8] hover:border-[#34332F]'
                     }`}
                   >
                     {size === 'all' ? 'All Sizes' : size}
@@ -439,7 +439,7 @@ export const CollectionPage: React.FC<CollectionPageProps> = ({
                         className={`px-3 py-1.5 text-xs border ${
                           selectedCategory === cat
                             ? 'bg-[#171717] text-white border-[#171717]'
-                            : 'bg-white text-[#171717] border-[#D5C7B5]'
+                            : 'bg-[#EAE3D8]/60 text-[#171717] border-[#D5C7B5]'
                         }`}
                       >
                         {cat === 'all' ? 'All Pieces' : cat}
@@ -460,7 +460,7 @@ export const CollectionPage: React.FC<CollectionPageProps> = ({
                         className={`px-3 py-1.5 text-xs border ${
                           selectedSize === size
                             ? 'bg-[#171717] text-white border-[#171717]'
-                            : 'bg-white text-[#171717] border-[#D5C7B5]'
+                            : 'bg-[#EAE3D8]/60 text-[#171717] border-[#D5C7B5]'
                         }`}
                       >
                         {size === 'all' ? 'All Sizes' : size}
@@ -507,7 +507,7 @@ export const CollectionPage: React.FC<CollectionPageProps> = ({
           {/* Product Grid */}
           <div className="lg:col-span-3">
             {filteredProducts.length === 0 ? (
-              <div className="py-24 text-center border border-[#D5C7B5]/60 bg-white/40 p-8">
+              <div className="py-24 text-center border border-[#D5C7B5] bg-[#EAE3D8]/40 p-8 shadow-xs">
                 <h3 className="font-serif text-2xl text-[#171717]">No pieces matched your selection</h3>
                 <p className="text-xs text-[#6B6963] mt-2 max-w-sm mx-auto leading-relaxed">
                   Adjust your filters or reset to browse the complete collection.

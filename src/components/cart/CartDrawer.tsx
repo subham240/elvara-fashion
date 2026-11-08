@@ -154,7 +154,7 @@ export const CartDrawer: React.FC = () => {
 
                           <div className="flex items-center justify-between mt-3">
                             {/* Quantity Controls */}
-                            <div className="flex items-center border border-[#D5C7B5] bg-white">
+                            <div className="flex items-center border border-[#D5C7B5] bg-[#EAE3D8]/60">
                               <button
                                 onClick={() => updateQuantity(item.id, item.quantity - 1)}
                                 className="p-1.5 text-[#34332F] hover:bg-[#EAE3D8] transition-colors"

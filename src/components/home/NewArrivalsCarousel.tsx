@@ -22,14 +22,14 @@ export const NewArrivalsCarousel: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-[#EAE3D8]/40 border-y border-[#D5C7B5]/60 overflow-hidden">
+    <section className="py-24 bg-[#EAE3D8]/50 border-y border-[#D5C7B5]/80 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-end justify-between mb-10">
+        <div className="flex items-end justify-between mb-12">
           <div>
-            <span className="text-[10px] tracking-[0.25em] uppercase text-[#A99A87] font-semibold block mb-2">
+            <span className="text-[10px] tracking-[0.3em] uppercase text-[#8C7D6B] font-semibold block mb-2">
               Spring Atelier 2026
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl text-[#171717] font-light uppercase tracking-wide">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#171717] font-light uppercase tracking-wide">
               The Latest Edit
             </h2>
           </div>
@@ -38,23 +38,23 @@ export const NewArrivalsCarousel: React.FC = () => {
           <div className="flex items-center space-x-4">
             <Link
               to="/collections/new-arrivals"
-              className="hidden sm:inline-flex items-center text-xs uppercase tracking-[0.2em] font-medium text-[#171717] hover:text-[#A99A87] transition-colors group mr-2"
+              className="hidden sm:inline-flex items-center text-xs uppercase tracking-[0.2em] font-medium text-[#171717] hover:text-[#8C7D6B] transition-colors group mr-2"
             >
               <span>View All New</span>
-              <ArrowRight size={13} className="ml-1 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight size={13} className="ml-1 group-hover:translate-x-1.5 transition-transform" />
             </Link>
 
             <div className="flex space-x-2">
               <button
                 onClick={() => scroll('left')}
-                className="w-9 h-9 border border-[#D5C7B5] bg-[#F5F1EA] hover:bg-white text-[#171717] flex items-center justify-center transition-colors"
+                className="w-10 h-10 border border-[#D5C7B5] bg-[#F5F1EA] hover:bg-[#EAE3D8] text-[#171717] flex items-center justify-center transition-colors shadow-2xs"
                 aria-label="Previous Products"
               >
                 <ChevronLeft size={16} />
               </button>
               <button
                 onClick={() => scroll('right')}
-                className="w-9 h-9 border border-[#D5C7B5] bg-[#F5F1EA] hover:bg-white text-[#171717] flex items-center justify-center transition-colors"
+                className="w-10 h-10 border border-[#D5C7B5] bg-[#F5F1EA] hover:bg-[#EAE3D8] text-[#171717] flex items-center justify-center transition-colors shadow-2xs"
                 aria-label="Next Products"
               >
                 <ChevronRight size={16} />

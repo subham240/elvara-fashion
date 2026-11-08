@@ -129,7 +129,7 @@ export const SearchModal: React.FC = () => {
                         key={item.name}
                         to={item.path}
                         onClick={() => setIsSearchOpen(false)}
-                        className="p-3 bg-white border border-[#D5C7B5]/60 hover:border-[#171717] transition-all text-xs font-medium text-[#171717] block group"
+                        className="p-3 bg-[#EAE3D8]/50 border border-[#D5C7B5] hover:bg-[#EAE3D8] hover:border-[#171717] transition-all text-xs font-medium text-[#171717] block group shadow-2xs"
                       >
                         <span>{item.name}</span>
                         <ArrowRight size={12} className="mt-1 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -167,7 +167,7 @@ export const SearchModal: React.FC = () => {
                     {searchResults.slice(0, 6).map((product) => (
                       <div
                         key={product.id}
-                        className="flex space-x-3 p-3 bg-white border border-[#D5C7B5]/60 hover:border-[#171717] transition-all group relative"
+                        className="flex space-x-3 p-3 bg-[#EAE3D8]/50 border border-[#D5C7B5] hover:border-[#171717] hover:bg-[#EAE3D8] transition-all group relative shadow-2xs"
                       >
                         <Link
                           to={`/products/${product.slug}`}

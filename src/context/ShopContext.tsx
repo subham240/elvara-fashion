@@ -36,15 +36,15 @@ const STANDARD_SHIPPING_COST = 199;
 const ShopContext = createContext<ShopContextType | undefined>(undefined);
 
 const initialMockUser: UserAccount = {
-  name: 'Aria Sharma',
-  email: 'aria.sharma@elvara.com',
+  name: 'Subham Acharya',
+  email: 'subhamacharya731@gmail.com',
   addresses: [
     {
       id: 'addr-1',
-      street: '42, Lodhi Estate, Near India Habitat Centre',
-      city: 'New Delhi',
-      state: 'Delhi',
-      postalCode: '110003',
+      street: 'Hillpatna Main Road, Near Ramalingam Park',
+      city: 'Brahmapur',
+      state: 'Odisha',
+      postalCode: '760001',
       isDefault: true,
     },
     {
