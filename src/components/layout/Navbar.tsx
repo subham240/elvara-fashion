@@ -73,7 +73,7 @@ export const Navbar: React.FC = () => {
     <header
       className={`sticky top-0 z-40 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
         isScrolled
-          ? 'bg-[#F5F1EA]/92 backdrop-blur-md shadow-[0_4px_24px_-4px_rgba(23,23,23,0.06)] border-b border-[#D5C7B5]/60 py-1 sm:py-1.5'
+          ? 'bg-[#F5F1EA]/75 backdrop-blur-xl shadow-[0_4px_24px_-4px_rgba(23,23,23,0.06)] border-b border-[#D5C7B5]/60 py-1 sm:py-1.5'
           : 'bg-[#F5F1EA] py-3 sm:py-4 border-b border-[#EAE3D8]'
       }`}
       onMouseLeave={() => setActiveMegaMenu(null)}
@@ -274,7 +274,7 @@ export const Navbar: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 4 }}
             transition={{ duration: 0.22, ease: 'easeOut' }}
-            className="hidden lg:block absolute top-full left-0 w-full bg-[#F5F1EA] border-b border-[#D5C7B5] shadow-xl z-30"
+            className="hidden lg:block absolute top-full left-0 w-full bg-[#F5F1EA]/80 backdrop-blur-md border-b border-[#D5C7B5] shadow-xl z-30"
             onMouseEnter={() => setActiveMegaMenu(activeMegaMenu)}
             onMouseLeave={() => setActiveMegaMenu(null)}
           >
