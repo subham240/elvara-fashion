@@ -71,15 +71,19 @@ export const Navbar: React.FC = () => {
 
   return (
     <header
-      className={`sticky top-0 z-40 transition-all duration-300 ${
+      className={`sticky top-0 z-40 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
         isScrolled
-          ? 'bg-[#F5F1EA]/95 backdrop-blur-md shadow-xs border-b border-[#D5C7B5]/60 py-1.5 sm:py-2'
-          : 'bg-[#F5F1EA] py-2 sm:py-2.5 border-b border-[#EAE3D8]'
+          ? 'bg-[#F5F1EA]/92 backdrop-blur-md shadow-[0_4px_24px_-4px_rgba(23,23,23,0.06)] border-b border-[#D5C7B5]/60 py-1 sm:py-1.5'
+          : 'bg-[#F5F1EA] py-3 sm:py-4 border-b border-[#EAE3D8]'
       }`}
       onMouseLeave={() => setActiveMegaMenu(null)}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-11 sm:h-12">
+        <div
+          className={`flex items-center justify-between transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            isScrolled ? 'h-9 sm:h-10' : 'h-12 sm:h-14'
+          }`}
+        >
           {/* Left Column: Category Navigation */}
           <div className="flex items-center justify-start flex-1">
             {/* Mobile hamburger on left */}
@@ -94,7 +98,11 @@ export const Navbar: React.FC = () => {
             </div>
 
             {/* Desktop Left Nav Links */}
-            <nav className="hidden lg:flex items-center space-x-6 text-[10.5px] font-medium uppercase tracking-[0.18em] text-[#34332F]">
+            <nav
+              className={`hidden lg:flex items-center space-x-5 xl:space-x-6 uppercase tracking-[0.18em] text-[#34332F] font-medium transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                isScrolled ? 'text-[10px]' : 'text-[11px]'
+              }`}
+            >
               {/* Women Mega Menu trigger */}
               <div
                 className="relative py-1.5 cursor-pointer"
@@ -155,21 +163,39 @@ export const Navbar: React.FC = () => {
           {/* Center Column: EXACT PERFECT CENTER LOGO */}
           <div className="flex-none text-center px-4">
             <Link to="/" className="inline-block group text-center select-none py-0.5">
-              <span className="font-serif text-xl sm:text-2xl md:text-[25px] tracking-[0.24em] text-[#171717] uppercase font-light transition-all group-hover:tracking-[0.26em] duration-300 block leading-tight">
+              <span
+                className={`font-serif tracking-[0.24em] text-[#171717] uppercase font-light transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:tracking-[0.27em] block leading-tight ${
+                  isScrolled
+                    ? 'text-lg sm:text-xl md:text-[21px]'
+                    : 'text-2xl sm:text-3xl md:text-[27px]'
+                }`}
+              >
                 ÉLVARA
               </span>
-              <span className="block text-[7px] sm:text-[7.5px] tracking-[0.38em] text-[#A99A87] uppercase -mt-0.5 font-sans font-medium">
+              <span
+                className={`block uppercase font-sans font-medium transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                  isScrolled
+                    ? 'text-[6px] sm:text-[6.5px] tracking-[0.34em] text-[#A99A87]/80 -mt-0.5'
+                    : 'text-[7.5px] sm:text-[8px] tracking-[0.4em] text-[#A99A87] -mt-0.5'
+                }`}
+              >
                 TIMELESS BY DESIGN
               </span>
             </Link>
           </div>
 
           {/* Right Column: Actions & Story */}
-          <div className="flex items-center justify-end flex-1 space-x-3 sm:space-x-5 text-[#171717]">
+          <div
+            className={`flex items-center justify-end flex-1 space-x-2.5 sm:space-x-4 xl:space-x-5 text-[#171717] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              isScrolled ? 'scale-[0.97] origin-right' : 'scale-100 origin-right'
+            }`}
+          >
             {/* Our Story Link */}
             <Link
               to="/pages/our-story"
-              className="hidden lg:inline-block text-[10.5px] font-medium uppercase tracking-[0.18em] text-[#34332F] hover:text-[#171717] transition-colors py-1 mr-1"
+              className={`hidden lg:inline-block font-medium uppercase tracking-[0.18em] text-[#34332F] hover:text-[#171717] transition-all duration-500 py-1 mr-1 ${
+                isScrolled ? 'text-[10px]' : 'text-[11px]'
+              }`}
             >
               Our Story
             </Link>
