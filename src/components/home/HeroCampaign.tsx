@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, ChevronLeft, ChevronRight, Compass } from 'lucide-react';
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface Slide {
@@ -163,22 +163,11 @@ export const HeroCampaign: React.FC = () => {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="space-y-4 sm:space-y-6"
           >
-            {/* Slide Category Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-              className="inline-flex items-center space-x-2 text-[10px] sm:text-xs uppercase tracking-[0.35em] text-[#D5C7B5] bg-black/45 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/10 shadow-sm"
-            >
-              <Compass size={12} className="animate-spin-slow text-[#D5C7B5]" />
-              <span>{activeSlide.badge}</span>
-            </motion.div>
-
             {/* Main Editorial Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
               className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-[0.08em] uppercase font-light leading-[1.04] text-[#F5F1EA] drop-shadow-sm"
             >
               {activeSlide.title}
@@ -239,11 +228,9 @@ export const HeroCampaign: React.FC = () => {
       </div>
 
       {/* Bottom Editorial Slide Indicators & Progress */}
-      <div className="absolute bottom-8 inset-x-0 z-20 flex items-center justify-between max-w-7xl mx-auto px-6 sm:px-10">
-        <div className="w-32 hidden sm:block" />
-
+      <div className="absolute bottom-8 inset-x-0 z-20 flex items-center justify-center max-w-7xl mx-auto px-6">
         {/* Slide Navigation Bars */}
-        <div className="flex items-center space-x-2.5 mx-auto sm:mx-0">
+        <div className="flex items-center space-x-3">
           {slides.map((slide, idx) => (
             <button
               key={slide.id}
@@ -266,12 +253,6 @@ export const HeroCampaign: React.FC = () => {
               </div>
             </button>
           ))}
-        </div>
-
-        {/* Continuous Autoplay Indicator */}
-        <div className="hidden sm:flex items-center space-x-2 text-[10px] tracking-[0.25em] text-[#A99A87] uppercase font-light">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#D5C7B5] animate-pulse" />
-          <span>Atelier Runway Edit</span>
         </div>
       </div>
     </section>

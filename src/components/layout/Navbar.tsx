@@ -78,113 +78,110 @@ export const Navbar: React.FC = () => {
       }`}
       onMouseLeave={() => setActiveMegaMenu(null)}
     >
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-11 sm:h-12">
-          {/* Mobile hamburger on left */}
-          <div className="flex items-center lg:hidden z-10">
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-1.5 -ml-1.5 text-[#171717] hover:text-[#A99A87] transition-colors"
-              aria-label="Toggle Navigation Menu"
-            >
-              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
-            </button>
+          {/* Left Column: Category Navigation */}
+          <div className="flex items-center justify-start flex-1">
+            {/* Mobile hamburger on left */}
+            <div className="flex items-center lg:hidden">
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="p-1 -ml-1 text-[#171717] hover:text-[#A99A87] transition-colors"
+                aria-label="Toggle Navigation Menu"
+              >
+                {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+              </button>
+            </div>
+
+            {/* Desktop Left Nav Links */}
+            <nav className="hidden lg:flex items-center space-x-6 text-[10.5px] font-medium uppercase tracking-[0.18em] text-[#34332F]">
+              {/* Women Mega Menu trigger */}
+              <div
+                className="relative py-1.5 cursor-pointer"
+                onMouseEnter={() => setActiveMegaMenu('women')}
+              >
+                <Link
+                  to="/collections/women"
+                  className={`flex items-center space-x-1 hover:text-[#171717] transition-colors ${
+                    activeMegaMenu === 'women' ? 'text-[#171717]' : ''
+                  }`}
+                >
+                  <span>Women</span>
+                  <ChevronDown size={10} className={`transition-transform duration-200 ${activeMegaMenu === 'women' ? 'rotate-180' : ''}`} />
+                </Link>
+              </div>
+
+              {/* Men Mega Menu trigger */}
+              <div
+                className="relative py-1.5 cursor-pointer"
+                onMouseEnter={() => setActiveMegaMenu('men')}
+              >
+                <Link
+                  to="/collections/men"
+                  className={`flex items-center space-x-1 hover:text-[#171717] transition-colors ${
+                    activeMegaMenu === 'men' ? 'text-[#171717]' : ''
+                  }`}
+                >
+                  <span>Men</span>
+                  <ChevronDown size={10} className={`transition-transform duration-200 ${activeMegaMenu === 'men' ? 'rotate-180' : ''}`} />
+                </Link>
+              </div>
+
+              {/* Accessories Link */}
+              <Link
+                to="/collections/accessories"
+                className="hover:text-[#171717] transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#171717] hover:after:w-full after:transition-all after:duration-300"
+              >
+                Accessories
+              </Link>
+
+              {/* Collections Mega Menu trigger */}
+              <div
+                className="relative py-1.5 cursor-pointer"
+                onMouseEnter={() => setActiveMegaMenu('collections')}
+              >
+                <span
+                  className={`flex items-center space-x-1 hover:text-[#171717] transition-colors ${
+                    activeMegaMenu === 'collections' ? 'text-[#171717]' : ''
+                  }`}
+                >
+                  <span>Collections</span>
+                  <ChevronDown size={10} className={`transition-transform duration-200 ${activeMegaMenu === 'collections' ? 'rotate-180' : ''}`} />
+                </span>
+              </div>
+            </nav>
           </div>
 
-          {/* Desktop Left Nav Links */}
-          <nav className="hidden lg:flex items-center space-x-5 text-[10.5px] font-medium uppercase tracking-[0.18em] text-[#34332F]">
-            {/* Women Mega Menu trigger */}
-            <div
-              className="relative py-1.5 cursor-pointer"
-              onMouseEnter={() => setActiveMegaMenu('women')}
-            >
-              <Link
-                to="/collections/women"
-                className={`flex items-center space-x-1 hover:text-[#171717] transition-colors ${
-                  activeMegaMenu === 'women' ? 'text-[#171717]' : ''
-                }`}
-              >
-                <span>Women</span>
-                <ChevronDown size={10} className={`transition-transform duration-200 ${activeMegaMenu === 'women' ? 'rotate-180' : ''}`} />
-              </Link>
-            </div>
-
-            {/* Men Mega Menu trigger */}
-            <div
-              className="relative py-1.5 cursor-pointer"
-              onMouseEnter={() => setActiveMegaMenu('men')}
-            >
-              <Link
-                to="/collections/men"
-                className={`flex items-center space-x-1 hover:text-[#171717] transition-colors ${
-                  activeMegaMenu === 'men' ? 'text-[#171717]' : ''
-                }`}
-              >
-                <span>Men</span>
-                <ChevronDown size={10} className={`transition-transform duration-200 ${activeMegaMenu === 'men' ? 'rotate-180' : ''}`} />
-              </Link>
-            </div>
-
-            {/* Accessories Link */}
-            <Link
-              to="/collections/accessories"
-              className="hover:text-[#171717] transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#171717] hover:after:w-full after:transition-all after:duration-300"
-            >
-              Accessories
-            </Link>
-
-            {/* Collections Mega Menu trigger */}
-            <div
-              className="relative py-1.5 cursor-pointer"
-              onMouseEnter={() => setActiveMegaMenu('collections')}
-            >
-              <span
-                className={`flex items-center space-x-1 hover:text-[#171717] transition-colors ${
-                  activeMegaMenu === 'collections' ? 'text-[#171717]' : ''
-                }`}
-              >
-                <span>Collections</span>
-                <ChevronDown size={10} className={`transition-transform duration-200 ${activeMegaMenu === 'collections' ? 'rotate-180' : ''}`} />
-              </span>
-            </div>
-
-            <Link
-              to="/collections/new-arrivals"
-              className="hover:text-[#171717] transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#171717] hover:after:w-full after:transition-all after:duration-300"
-            >
-              The Edit
-            </Link>
-
-            <Link
-              to="/pages/our-story"
-              className="hover:text-[#171717] transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#171717] hover:after:w-full after:transition-all after:duration-300"
-            >
-              Our Story
-            </Link>
-          </nav>
-
-          {/* EXACT DEAD-CENTER BRAND LOGO */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-auto z-10">
+          {/* Center Column: EXACT PERFECT CENTER LOGO */}
+          <div className="flex-none text-center px-4">
             <Link to="/" className="inline-block group text-center select-none py-0.5">
-              <span className="font-serif text-xl sm:text-2xl md:text-[25px] tracking-[0.24em] text-[#171717] uppercase font-light transition-all group-hover:tracking-[0.27em] duration-300 block leading-tight">
+              <span className="font-serif text-xl sm:text-2xl md:text-[25px] tracking-[0.24em] text-[#171717] uppercase font-light transition-all group-hover:tracking-[0.26em] duration-300 block leading-tight">
                 ÉLVARA
               </span>
-              <span className="block text-[7px] sm:text-[8px] tracking-[0.38em] text-[#A99A87] uppercase -mt-0.5 font-sans font-medium">
+              <span className="block text-[7px] sm:text-[7.5px] tracking-[0.38em] text-[#A99A87] uppercase -mt-0.5 font-sans font-medium">
                 TIMELESS BY DESIGN
               </span>
             </Link>
           </div>
 
-          {/* Desktop & Mobile Right Actions */}
-          <div className="flex items-center space-x-2.5 sm:space-x-4 text-[#171717] z-10">
+          {/* Right Column: Actions & Story */}
+          <div className="flex items-center justify-end flex-1 space-x-3 sm:space-x-5 text-[#171717]">
+            {/* Our Story Link */}
+            <Link
+              to="/pages/our-story"
+              className="hidden lg:inline-block text-[10.5px] font-medium uppercase tracking-[0.18em] text-[#34332F] hover:text-[#171717] transition-colors py-1 mr-1"
+            >
+              Our Story
+            </Link>
+
             {/* Search Trigger */}
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="p-1 hover:text-[#A99A87] transition-colors relative group"
+              className="p-1 hover:text-[#A99A87] transition-colors relative flex items-center space-x-1"
               aria-label="Search Products"
             >
               <Search size={17} strokeWidth={1.65} />
-              <span className="hidden xl:inline-block ml-1 text-[10.5px] uppercase tracking-widest text-[#6B6963] group-hover:text-[#171717] transition-colors">
+              <span className="hidden xl:inline-block text-[10.5px] uppercase tracking-widest text-[#6B6963] font-medium">
                 Search
               </span>
             </button>
@@ -219,7 +216,7 @@ export const Navbar: React.FC = () => {
             {/* Shopping Bag Trigger */}
             <button
               onClick={() => setIsCartOpen(true)}
-              className="p-1 hover:text-[#A99A87] transition-colors relative flex items-center group"
+              className="p-1 hover:text-[#A99A87] transition-colors relative flex items-center space-x-1"
               aria-label="Shopping Bag"
             >
               <ShoppingBag size={17} strokeWidth={1.65} />
@@ -233,7 +230,7 @@ export const Navbar: React.FC = () => {
                   {cartCount}
                 </motion.span>
               )}
-              <span className="hidden xl:inline-block ml-1 text-[10.5px] uppercase tracking-widest text-[#6B6963] group-hover:text-[#171717] font-medium transition-colors">
+              <span className="hidden xl:inline-block text-[10.5px] uppercase tracking-widest text-[#6B6963] font-medium">
                 Bag {cartCount > 0 && `(${cartCount})`}
               </span>
             </button>
@@ -459,14 +456,14 @@ export const Navbar: React.FC = () => {
           >
             <div className="px-6 py-8 space-y-6">
               <div className="space-y-4 text-sm uppercase tracking-[0.16em] font-medium text-[#171717]">
-                <Link to="/collections/new-arrivals" className="block py-2 border-b border-[#EAE3D8]">
-                  The Edit (New Arrivals)
-                </Link>
                 <Link to="/collections/women" className="block py-2 border-b border-[#EAE3D8]">
                   Women's Atelier
                 </Link>
                 <Link to="/collections/men" className="block py-2 border-b border-[#EAE3D8]">
                   Men's Atelier
+                </Link>
+                <Link to="/collections/accessories" className="block py-2 border-b border-[#EAE3D8]">
+                  Accessories & Leather
                 </Link>
 
                 <div className="py-2 border-b border-[#EAE3D8]">
