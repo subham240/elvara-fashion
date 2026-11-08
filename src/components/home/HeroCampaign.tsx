@@ -240,12 +240,7 @@ export const HeroCampaign: React.FC = () => {
 
       {/* Bottom Editorial Slide Indicators & Progress */}
       <div className="absolute bottom-8 inset-x-0 z-20 flex items-center justify-between max-w-7xl mx-auto px-6 sm:px-10">
-        {/* Slide Counter: e.g. 01 / 04 */}
-        <div className="hidden sm:flex items-center space-x-2 text-xs tracking-widest text-[#D5C7B5] font-light">
-          <span className="font-semibold text-white">0{current + 1}</span>
-          <span className="text-[#A99A87]">/</span>
-          <span>0{slides.length}</span>
-        </div>
+        <div className="w-32 hidden sm:block" />
 
         {/* Slide Navigation Bars */}
         <div className="flex items-center space-x-2.5 mx-auto sm:mx-0">

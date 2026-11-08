@@ -73,29 +73,29 @@ export const Navbar: React.FC = () => {
     <header
       className={`sticky top-0 z-40 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#F5F1EA]/95 backdrop-blur-md shadow-xs border-b border-[#D5C7B5]/60 py-3 sm:py-3.5'
-          : 'bg-[#F5F1EA] py-4 sm:py-5 border-b border-[#EAE3D8]'
+          ? 'bg-[#F5F1EA]/95 backdrop-blur-md shadow-xs border-b border-[#D5C7B5]/60 py-1.5 sm:py-2'
+          : 'bg-[#F5F1EA] py-2 sm:py-2.5 border-b border-[#EAE3D8]'
       }`}
       onMouseLeave={() => setActiveMegaMenu(null)}
     >
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-14 sm:h-16">
+        <div className="flex items-center justify-between h-11 sm:h-12">
           {/* Mobile hamburger on left */}
           <div className="flex items-center lg:hidden z-10">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 -ml-2 text-[#171717] hover:text-[#A99A87] transition-colors"
+              className="p-1.5 -ml-1.5 text-[#171717] hover:text-[#A99A87] transition-colors"
               aria-label="Toggle Navigation Menu"
             >
-              {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
 
           {/* Desktop Left Nav Links */}
-          <nav className="hidden lg:flex items-center space-x-7 text-[11px] font-medium uppercase tracking-[0.2em] text-[#34332F]">
+          <nav className="hidden lg:flex items-center space-x-5 text-[10.5px] font-medium uppercase tracking-[0.18em] text-[#34332F]">
             {/* Women Mega Menu trigger */}
             <div
-              className="relative py-2 cursor-pointer"
+              className="relative py-1.5 cursor-pointer"
               onMouseEnter={() => setActiveMegaMenu('women')}
             >
               <Link
@@ -105,13 +105,13 @@ export const Navbar: React.FC = () => {
                 }`}
               >
                 <span>Women</span>
-                <ChevronDown size={11} className={`transition-transform duration-200 ${activeMegaMenu === 'women' ? 'rotate-180' : ''}`} />
+                <ChevronDown size={10} className={`transition-transform duration-200 ${activeMegaMenu === 'women' ? 'rotate-180' : ''}`} />
               </Link>
             </div>
 
             {/* Men Mega Menu trigger */}
             <div
-              className="relative py-2 cursor-pointer"
+              className="relative py-1.5 cursor-pointer"
               onMouseEnter={() => setActiveMegaMenu('men')}
             >
               <Link
@@ -121,13 +121,21 @@ export const Navbar: React.FC = () => {
                 }`}
               >
                 <span>Men</span>
-                <ChevronDown size={11} className={`transition-transform duration-200 ${activeMegaMenu === 'men' ? 'rotate-180' : ''}`} />
+                <ChevronDown size={10} className={`transition-transform duration-200 ${activeMegaMenu === 'men' ? 'rotate-180' : ''}`} />
               </Link>
             </div>
 
+            {/* Accessories Link */}
+            <Link
+              to="/collections/accessories"
+              className="hover:text-[#171717] transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#171717] hover:after:w-full after:transition-all after:duration-300"
+            >
+              Accessories
+            </Link>
+
             {/* Collections Mega Menu trigger */}
             <div
-              className="relative py-2 cursor-pointer"
+              className="relative py-1.5 cursor-pointer"
               onMouseEnter={() => setActiveMegaMenu('collections')}
             >
               <span
@@ -136,7 +144,7 @@ export const Navbar: React.FC = () => {
                 }`}
               >
                 <span>Collections</span>
-                <ChevronDown size={11} className={`transition-transform duration-200 ${activeMegaMenu === 'collections' ? 'rotate-180' : ''}`} />
+                <ChevronDown size={10} className={`transition-transform duration-200 ${activeMegaMenu === 'collections' ? 'rotate-180' : ''}`} />
               </span>
             </div>
 
@@ -157,26 +165,26 @@ export const Navbar: React.FC = () => {
 
           {/* EXACT DEAD-CENTER BRAND LOGO */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-auto z-10">
-            <Link to="/" className="inline-block group text-center select-none">
-              <span className="font-serif text-2xl sm:text-3xl md:text-[32px] tracking-[0.24em] text-[#171717] uppercase font-light transition-all group-hover:tracking-[0.27em] duration-300 block">
+            <Link to="/" className="inline-block group text-center select-none py-0.5">
+              <span className="font-serif text-xl sm:text-2xl md:text-[25px] tracking-[0.24em] text-[#171717] uppercase font-light transition-all group-hover:tracking-[0.27em] duration-300 block leading-tight">
                 ÉLVARA
               </span>
-              <span className="block text-[8px] sm:text-[9px] tracking-[0.38em] text-[#A99A87] uppercase -mt-0.5 font-sans font-medium">
+              <span className="block text-[7px] sm:text-[8px] tracking-[0.38em] text-[#A99A87] uppercase -mt-0.5 font-sans font-medium">
                 TIMELESS BY DESIGN
               </span>
             </Link>
           </div>
 
           {/* Desktop & Mobile Right Actions */}
-          <div className="flex items-center space-x-3 sm:space-x-5 text-[#171717] z-10">
+          <div className="flex items-center space-x-2.5 sm:space-x-4 text-[#171717] z-10">
             {/* Search Trigger */}
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="p-1.5 hover:text-[#A99A87] transition-colors relative group"
+              className="p-1 hover:text-[#A99A87] transition-colors relative group"
               aria-label="Search Products"
             >
-              <Search size={19} strokeWidth={1.65} />
-              <span className="hidden xl:inline-block ml-1 text-[11px] uppercase tracking-widest text-[#6B6963] group-hover:text-[#171717] transition-colors">
+              <Search size={17} strokeWidth={1.65} />
+              <span className="hidden xl:inline-block ml-1 text-[10.5px] uppercase tracking-widest text-[#6B6963] group-hover:text-[#171717] transition-colors">
                 Search
               </span>
             </button>
@@ -184,24 +192,24 @@ export const Navbar: React.FC = () => {
             {/* Account Link */}
             <Link
               to="/account"
-              className="p-1.5 hover:text-[#A99A87] transition-colors hidden sm:block"
+              className="p-1 hover:text-[#A99A87] transition-colors hidden sm:block"
               aria-label="Account"
             >
-              <User size={19} strokeWidth={1.65} />
+              <User size={17} strokeWidth={1.65} />
             </Link>
 
             {/* Wishlist Link */}
             <Link
               to="/wishlist"
-              className="p-1.5 hover:text-[#A99A87] transition-colors relative"
+              className="p-1 hover:text-[#A99A87] transition-colors relative"
               aria-label="Wishlist"
             >
-              <Heart size={19} strokeWidth={1.65} />
+              <Heart size={17} strokeWidth={1.65} />
               {wishlistCount > 0 && (
                 <motion.span
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
-                  className="absolute -top-1 -right-1 bg-[#34332F] text-[#F5F1EA] text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-medium font-sans"
+                  className="absolute -top-1 -right-1 bg-[#34332F] text-[#F5F1EA] text-[9px] w-3.5 h-3.5 rounded-full flex items-center justify-center font-medium font-sans"
                 >
                   {wishlistCount}
                 </motion.span>
@@ -211,21 +219,21 @@ export const Navbar: React.FC = () => {
             {/* Shopping Bag Trigger */}
             <button
               onClick={() => setIsCartOpen(true)}
-              className="p-1.5 hover:text-[#A99A87] transition-colors relative flex items-center group"
+              className="p-1 hover:text-[#A99A87] transition-colors relative flex items-center group"
               aria-label="Shopping Bag"
             >
-              <ShoppingBag size={19} strokeWidth={1.65} />
+              <ShoppingBag size={17} strokeWidth={1.65} />
               {cartCount > 0 && (
                 <motion.span
                   key={cartCount}
                   initial={{ scale: 0.8 }}
                   animate={{ scale: 1 }}
-                  className="absolute -top-1 -right-1 bg-[#171717] text-[#F5F1EA] text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-medium font-sans"
+                  className="absolute -top-1 -right-1 bg-[#171717] text-[#F5F1EA] text-[9px] w-3.5 h-3.5 rounded-full flex items-center justify-center font-medium font-sans"
                 >
                   {cartCount}
                 </motion.span>
               )}
-              <span className="hidden xl:inline-block ml-1 text-[11px] uppercase tracking-widest text-[#6B6963] group-hover:text-[#171717] font-medium transition-colors">
+              <span className="hidden xl:inline-block ml-1 text-[10.5px] uppercase tracking-widest text-[#6B6963] group-hover:text-[#171717] font-medium transition-colors">
                 Bag {cartCount > 0 && `(${cartCount})`}
               </span>
             </button>
