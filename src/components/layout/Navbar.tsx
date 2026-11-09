@@ -190,16 +190,6 @@ export const Navbar: React.FC = () => {
               isScrolled ? 'scale-[0.97] origin-right' : 'scale-100 origin-right'
             }`}
           >
-            {/* Our Story Link */}
-            <Link
-              to="/pages/our-story"
-              className={`hidden lg:inline-block font-medium uppercase tracking-[0.18em] text-[#34332F] hover:text-[#171717] transition-all duration-500 py-1 mr-1 ${
-                isScrolled ? 'text-[10px]' : 'text-[11px]'
-              }`}
-            >
-              Our Story
-            </Link>
-
             {/* Search Trigger */}
             <button
               onClick={() => setIsSearchOpen(true)}
@@ -511,9 +501,6 @@ export const Navbar: React.FC = () => {
 
                 <Link to="/collections/accessories" className="block py-2 border-b border-[#EAE3D8]">
                   Accessories & Leather
-                </Link>
-                <Link to="/pages/our-story" className="block py-2 border-b border-[#EAE3D8]">
-                  Our Story & Philosophy
                 </Link>
                 <Link to="/account" className="block py-2 border-b border-[#EAE3D8]">
                   My Account
