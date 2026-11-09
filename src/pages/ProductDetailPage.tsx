@@ -149,7 +149,7 @@ export const ProductDetailPage: React.FC = () => {
               </div>
 
               {/* Hover Zoom Hint */}
-              <div className="hidden sm:block absolute bottom-3 right-3 bg-black/60 backdrop-blur-xs text-white text-[10px] uppercase tracking-widest px-2.5 py-1 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+              <div className="hidden sm:block absolute bottom-3 right-3 bg-black/60 backdrop-blur-xs text-[#F9EDF0] text-[10px] uppercase tracking-widest px-2.5 py-1 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
                 Hover to Zoom
               </div>
             </div>

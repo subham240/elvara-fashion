@@ -122,7 +122,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, variant = 'li
               className={`flex-1 py-2 text-[10px] uppercase tracking-[0.16em] font-medium transition-colors shadow-xs flex items-center justify-center space-x-1 backdrop-blur-xs ${
                 isDark
                   ? 'bg-[#49111C]/95 hover:bg-[#49111C] text-[#F9EDF0] border border-[#49111C]'
-                  : 'bg-[#F9EDF0]/95 hover:bg-[#F9EDF0] text-[#49111C] border border-[#E1A140]/60'
+                  : 'bg-[#F9EDF0]/95 hover:bg-[#E1A140] hover:text-[#49111C] border border-[#E1A140]/60'
               }`}
             >
               <Eye size={12} />
@@ -132,8 +132,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, variant = 'li
               onClick={handleQuickAdd}
               className={`flex-1 py-2 text-[10px] uppercase tracking-[0.16em] font-medium transition-colors shadow-xs flex items-center justify-center space-x-1 ${
                 isDark
-                  ? 'bg-[#F9EDF0] hover:bg-[#F9EDF0] text-[#49111C]'
-                  : 'bg-[#49111C] hover:bg-[#49111C] text-[#F9EDF0]'
+                  ? 'bg-[#E1A140] hover:bg-[#F9EDF0] text-[#49111C]'
+                  : 'bg-[#49111C] hover:bg-[#E1A140] hover:text-[#49111C] text-[#F9EDF0]'
               }`}
             >
               <ShoppingBag size={12} />
@@ -155,7 +155,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, variant = 'li
                     className={`w-2.5 h-2.5 rounded-full border transition-all ${
                       selectedColor?.name === c.name
                         ? isDark
-                          ? 'border-white scale-125 ring-1 ring-white/50'
+                          ? 'border-[#E1A140] scale-125 ring-1 ring-[#E1A140]/50'
                           : 'border-[#49111C] scale-125 ring-1 ring-[#49111C]/30'
                         : 'border-transparent hover:scale-110'
                     }`}

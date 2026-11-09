@@ -192,7 +192,7 @@ export const HeroCampaign: React.FC = () => {
             >
               <Link
                 to={activeSlide.primaryCta.href}
-                className="w-full sm:w-auto px-8 py-4 bg-[#F9EDF0] text-[#49111C] text-xs uppercase tracking-[0.22em] font-medium hover:bg-white transition-all duration-300 shadow-xl flex items-center justify-center space-x-2 group"
+                className="w-full sm:w-auto px-8 py-4 bg-[#F9EDF0] text-[#49111C] text-xs uppercase tracking-[0.22em] font-medium hover:bg-[#E1A140] hover:text-[#49111C] transition-all duration-300 shadow-xl flex items-center justify-center space-x-2 group"
               >
                 <span>{activeSlide.primaryCta.label}</span>
                 <ArrowRight size={14} className="group-hover:translate-x-1.5 transition-transform" />
@@ -200,7 +200,7 @@ export const HeroCampaign: React.FC = () => {
 
               <Link
                 to={activeSlide.secondaryCta.href}
-                className="w-full sm:w-auto px-8 py-4 bg-transparent border border-[#F9EDF0]/70 text-[#F9EDF0] text-xs uppercase tracking-[0.22em] font-medium hover:bg-white/10 hover:border-white transition-all duration-300 backdrop-blur-xs flex items-center justify-center"
+                className="w-full sm:w-auto px-8 py-4 bg-transparent border border-[#F9EDF0]/70 text-[#F9EDF0] text-xs uppercase tracking-[0.22em] font-medium hover:bg-[#E1A140]/20 hover:border-[#E1A140] hover:text-[#E1A140] transition-all duration-300 backdrop-blur-xs flex items-center justify-center"
               >
                 <span>{activeSlide.secondaryCta.label}</span>
               </Link>
@@ -213,14 +213,14 @@ export const HeroCampaign: React.FC = () => {
       <div className="absolute inset-y-0 inset-x-4 sm:inset-x-8 flex items-center justify-between pointer-events-none z-20">
         <button
           onClick={() => paginate(-1)}
-          className="pointer-events-auto w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-black/30 hover:bg-black/60 text-white backdrop-blur-md border border-white/15 flex items-center justify-center transition-all duration-300 group shadow-lg"
+          className="pointer-events-auto w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#49111C]/40 hover:bg-[#49111C]/80 text-[#F9EDF0] backdrop-blur-md border border-[#E1A140]/30 flex items-center justify-center transition-all duration-300 group shadow-lg"
           aria-label="Previous Slide"
         >
           <ChevronLeft size={20} className="group-hover:-translate-x-0.5 transition-transform" />
         </button>
         <button
           onClick={() => paginate(1)}
-          className="pointer-events-auto w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-black/30 hover:bg-black/60 text-white backdrop-blur-md border border-white/15 flex items-center justify-center transition-all duration-300 group shadow-lg"
+          className="pointer-events-auto w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#49111C]/40 hover:bg-[#49111C]/80 text-[#F9EDF0] backdrop-blur-md border border-[#E1A140]/30 flex items-center justify-center transition-all duration-300 group shadow-lg"
           aria-label="Next Slide"
         >
           <ChevronRight size={20} className="group-hover:translate-x-0.5 transition-transform" />
@@ -238,10 +238,10 @@ export const HeroCampaign: React.FC = () => {
               className="relative py-2 group focus:outline-hidden"
               aria-label={`Go to slide ${idx + 1}`}
             >
-              <div className="w-8 sm:w-12 h-[2px] bg-white/25 rounded-full overflow-hidden transition-all group-hover:bg-white/40">
+              <div className="w-8 sm:w-12 h-[2px] bg-[#F9EDF0]/30 rounded-full overflow-hidden transition-all group-hover:bg-[#E1A140] hover:text-[#49111C]/40">
                 {current === idx && (
                   <motion.div
-                    className="h-full bg-white"
+                    className="h-full bg-[#E1A140]"
                     initial={{ width: 0 }}
                     animate={{ width: '100%' }}
                     transition={{

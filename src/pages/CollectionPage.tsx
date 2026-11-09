@@ -438,7 +438,7 @@ export const CollectionPage: React.FC<CollectionPageProps> = ({
                         onClick={() => handleCategoryChange(cat)}
                         className={`px-3 py-1.5 text-xs border ${
                           selectedCategory === cat
-                            ? 'bg-[#49111C] text-white border-[#49111C]'
+                            ? 'bg-[#49111C] text-[#F9EDF0] border-[#49111C]'
                             : 'bg-[#F9EDF0]/60 text-[#49111C] border-[#E1A140]'
                         }`}
                       >
@@ -459,7 +459,7 @@ export const CollectionPage: React.FC<CollectionPageProps> = ({
                         onClick={() => setSelectedSize(size)}
                         className={`px-3 py-1.5 text-xs border ${
                           selectedSize === size
-                            ? 'bg-[#49111C] text-white border-[#49111C]'
+                            ? 'bg-[#49111C] text-[#F9EDF0] border-[#49111C]'
                             : 'bg-[#F9EDF0]/60 text-[#49111C] border-[#E1A140]'
                         }`}
                       >

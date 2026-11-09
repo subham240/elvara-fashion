@@ -201,7 +201,7 @@ export const SearchPage: React.FC = () => {
                     alt={item.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-4 text-white">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-4 text-[#F9EDF0]">
                     <span className="text-[9px] uppercase tracking-widest text-[#E1A140]">{item.count}</span>
                     <h3 className="font-serif text-lg font-medium">{item.name}</h3>
                   </div>

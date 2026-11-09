@@ -26,7 +26,7 @@ export const BrandStorySection: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-[#F9EDF0]/40 border-t border-[#E1A140]">
+    <section className="py-24 bg-[#F9EDF0] border-t border-[#E1A140]/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Text Story Column */}
@@ -102,7 +102,7 @@ export const BrandStorySection: React.FC = () => {
                 loading="lazy"
                 className="w-full h-full object-cover filter brightness-[0.95] hover:scale-105 transition-transform duration-1000 ease-out"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent flex flex-col justify-end p-6 sm:p-8 text-white">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent flex flex-col justify-end p-6 sm:p-8 text-[#F9EDF0]">
                 <span className="text-[10px] tracking-[0.3em] uppercase text-[#E1A140]">
                   Small Batch Production
                 </span>

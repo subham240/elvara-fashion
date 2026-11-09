@@ -25,10 +25,13 @@
   --border-subtle: #E1A140;
 }
 
-body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+html,
+body,
+#root {
+  background-color: #F9EDF0 !important;
+  color: #49111C;
   font-family: var(--font-sans);
+  min-height: 100vh;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

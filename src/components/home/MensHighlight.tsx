@@ -13,7 +13,7 @@ export const MensHighlight: React.FC = () => {
     .filter((p): p is (typeof products)[0] => Boolean(p));
 
   return (
-    <section className="py-24 bg-[#F9EDF0]/55 border-y border-[#E1A140]/80">
+    <section className="py-24 bg-[#F9EDF0] border-y border-[#E1A140]/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-4 border-b border-[#E1A140]">
           <div>

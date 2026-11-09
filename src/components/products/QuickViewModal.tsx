@@ -80,7 +80,7 @@ export const QuickViewModal: React.FC<QuickViewModalProps> = ({ product, isOpen,
                 />
                 <button
                   onClick={() => toggleWishlist(product.id)}
-                  className="absolute bottom-4 left-4 p-2.5 bg-white/90 backdrop-blur-xs rounded-full text-[#49111C] hover:text-red-700 transition-colors shadow-sm"
+                  className="absolute bottom-4 left-4 p-2.5 bg-[#F9EDF0]/90 backdrop-blur-xs rounded-full text-[#49111C] hover:text-red-700 transition-colors shadow-sm"
                   aria-label="Wishlist"
                 >
                   <Heart

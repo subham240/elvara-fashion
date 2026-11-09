@@ -12,7 +12,7 @@ import { NewsletterSection } from '../components/home/NewsletterSection';
 
 export const HomePage: React.FC = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#F9EDF0]">
       {/* Hero Campaign */}
       <HeroCampaign />
 

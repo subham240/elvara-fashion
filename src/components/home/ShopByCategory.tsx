@@ -6,7 +6,7 @@ import { categoriesData } from '../../data/products';
 
 export const ShopByCategory: React.FC = () => {
   return (
-    <section className="py-24 bg-[#F9EDF0]/35 border-b border-[#E1A140]/60">
+    <section className="py-24 bg-[#F9EDF0] border-b border-[#E1A140]/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div>
@@ -48,11 +48,11 @@ export const ShopByCategory: React.FC = () => {
                       <span className="text-[9px] tracking-widest uppercase text-[#E1A140] block">
                         {cat.count}
                       </span>
-                      <h3 className="font-serif text-lg text-white font-medium group-hover:text-[#F9EDF0] transition-colors">
+                      <h3 className="font-serif text-lg text-[#F9EDF0] font-medium group-hover:text-[#F9EDF0] transition-colors">
                         {cat.name}
                       </h3>
                     </div>
-                    <div className="w-6 h-6 rounded-full bg-white/20 backdrop-blur-xs flex items-center justify-center text-white group-hover:bg-[#F9EDF0] group-hover:text-[#49111C] transition-all">
+                    <div className="w-6 h-6 rounded-full bg-[#F9EDF0]/20 backdrop-blur-xs flex items-center justify-center text-[#F9EDF0] group-hover:bg-[#F9EDF0] group-hover:text-[#49111C] transition-all">
                       <ArrowUpRight size={13} />
                     </div>
                   </div>

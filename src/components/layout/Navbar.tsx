@@ -264,7 +264,7 @@ export const Navbar: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 4 }}
             transition={{ duration: 0.22, ease: 'easeOut' }}
-            className="hidden lg:block absolute top-full left-0 w-full bg-[#F9EDF0]/80 backdrop-blur-md border-b border-[#E1A140] shadow-xl z-30"
+            className="hidden lg:block absolute top-full left-0 w-full bg-[#F9EDF0] border-b border-[#E1A140] shadow-xl z-30"
             onMouseEnter={() => setActiveMegaMenu(activeMegaMenu)}
             onMouseLeave={() => setActiveMegaMenu(null)}
           >

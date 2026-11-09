@@ -13,7 +13,7 @@ export const WomensHighlight: React.FC = () => {
     .filter((p): p is (typeof products)[0] => Boolean(p));
 
   return (
-    <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-[#F9EDF0] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-4 border-b border-[#E1A140]">
         <div>
           <span className="text-[10px] tracking-[0.3em] uppercase text-[#E1A140] font-semibold block mb-2">
