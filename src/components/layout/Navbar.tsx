@@ -73,8 +73,8 @@ export const Navbar: React.FC = () => {
     <header
       className={`sticky top-0 z-40 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
         isScrolled
-          ? 'bg-[#F5F1EA]/75 backdrop-blur-xl shadow-[0_4px_24px_-4px_rgba(23,23,23,0.06)] border-b border-[#D5C7B5]/60 py-1 sm:py-1.5'
-          : 'bg-[#F5F1EA] py-3 sm:py-4 border-b border-[#EAE3D8]'
+          ? 'bg-[#F9EDF0]/75 backdrop-blur-xl shadow-[0_4px_24px_-4px_rgba(23,23,23,0.06)] border-b border-[#E1A140]/60 py-1 sm:py-1.5'
+          : 'bg-[#F9EDF0] py-3 sm:py-4 border-b border-[#F9EDF0]'
       }`}
       onMouseLeave={() => setActiveMegaMenu(null)}
     >
@@ -90,7 +90,7 @@ export const Navbar: React.FC = () => {
             <div className="flex items-center lg:hidden">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-1 -ml-1 text-[#171717] hover:text-[#A99A87] transition-colors"
+                className="p-1 -ml-1 text-[#49111C] hover:text-[#E1A140] transition-colors"
                 aria-label="Toggle Navigation Menu"
               >
                 {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -99,7 +99,7 @@ export const Navbar: React.FC = () => {
 
             {/* Desktop Left Nav Links */}
             <nav
-              className={`hidden lg:flex items-center space-x-5 xl:space-x-6 uppercase tracking-[0.18em] text-[#34332F] font-medium transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              className={`hidden lg:flex items-center space-x-5 xl:space-x-6 uppercase tracking-[0.18em] text-[#49111C] font-medium transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                 isScrolled ? 'text-[10px]' : 'text-[11px]'
               }`}
             >
@@ -110,8 +110,8 @@ export const Navbar: React.FC = () => {
               >
                 <Link
                   to="/collections/women"
-                  className={`flex items-center space-x-1 hover:text-[#171717] transition-colors ${
-                    activeMegaMenu === 'women' ? 'text-[#171717]' : ''
+                  className={`flex items-center space-x-1 hover:text-[#49111C] transition-colors ${
+                    activeMegaMenu === 'women' ? 'text-[#49111C]' : ''
                   }`}
                 >
                   <span>Women</span>
@@ -126,8 +126,8 @@ export const Navbar: React.FC = () => {
               >
                 <Link
                   to="/collections/men"
-                  className={`flex items-center space-x-1 hover:text-[#171717] transition-colors ${
-                    activeMegaMenu === 'men' ? 'text-[#171717]' : ''
+                  className={`flex items-center space-x-1 hover:text-[#49111C] transition-colors ${
+                    activeMegaMenu === 'men' ? 'text-[#49111C]' : ''
                   }`}
                 >
                   <span>Men</span>
@@ -138,7 +138,7 @@ export const Navbar: React.FC = () => {
               {/* Accessories Link */}
               <Link
                 to="/collections/accessories"
-                className="hover:text-[#171717] transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#171717] hover:after:w-full after:transition-all after:duration-300"
+                className="hover:text-[#49111C] transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#49111C] hover:after:w-full after:transition-all after:duration-300"
               >
                 Accessories
               </Link>
@@ -149,8 +149,8 @@ export const Navbar: React.FC = () => {
                 onMouseEnter={() => setActiveMegaMenu('collections')}
               >
                 <span
-                  className={`flex items-center space-x-1 hover:text-[#171717] transition-colors ${
-                    activeMegaMenu === 'collections' ? 'text-[#171717]' : ''
+                  className={`flex items-center space-x-1 hover:text-[#49111C] transition-colors ${
+                    activeMegaMenu === 'collections' ? 'text-[#49111C]' : ''
                   }`}
                 >
                   <span>Collections</span>
@@ -164,7 +164,7 @@ export const Navbar: React.FC = () => {
           <div className="flex-none text-center px-4">
             <Link to="/" className="inline-block group text-center select-none py-0.5">
               <span
-                className={`font-serif tracking-[0.24em] text-[#171717] uppercase font-light transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:tracking-[0.27em] block leading-tight ${
+                className={`font-serif tracking-[0.24em] text-[#49111C] uppercase font-light transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:tracking-[0.27em] block leading-tight ${
                   isScrolled
                     ? 'text-lg sm:text-xl md:text-[21px]'
                     : 'text-2xl sm:text-3xl md:text-[27px]'
@@ -175,8 +175,8 @@ export const Navbar: React.FC = () => {
               <span
                 className={`block uppercase font-sans font-medium transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                   isScrolled
-                    ? 'text-[6px] sm:text-[6.5px] tracking-[0.34em] text-[#A99A87]/80 -mt-0.5'
-                    : 'text-[7.5px] sm:text-[8px] tracking-[0.4em] text-[#A99A87] -mt-0.5'
+                    ? 'text-[6px] sm:text-[6.5px] tracking-[0.34em] text-[#E1A140]/80 -mt-0.5'
+                    : 'text-[7.5px] sm:text-[8px] tracking-[0.4em] text-[#E1A140] -mt-0.5'
                 }`}
               >
                 TIMELESS BY DESIGN
@@ -186,18 +186,18 @@ export const Navbar: React.FC = () => {
 
           {/* Right Column: Actions & Story */}
           <div
-            className={`flex items-center justify-end flex-1 space-x-2.5 sm:space-x-4 xl:space-x-5 text-[#171717] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            className={`flex items-center justify-end flex-1 space-x-2.5 sm:space-x-4 xl:space-x-5 text-[#49111C] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
               isScrolled ? 'scale-[0.97] origin-right' : 'scale-100 origin-right'
             }`}
           >
             {/* Search Trigger */}
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="p-1 hover:text-[#A99A87] transition-colors relative flex items-center space-x-1"
+              className="p-1 hover:text-[#E1A140] transition-colors relative flex items-center space-x-1"
               aria-label="Search Products"
             >
               <Search size={17} strokeWidth={1.65} />
-              <span className="hidden xl:inline-block text-[10.5px] uppercase tracking-widest text-[#6B6963] font-medium">
+              <span className="hidden xl:inline-block text-[10.5px] uppercase tracking-widest text-[#49111C]/75 font-medium">
                 Search
               </span>
             </button>
@@ -205,7 +205,7 @@ export const Navbar: React.FC = () => {
             {/* Account Link */}
             <Link
               to="/account"
-              className="p-1 hover:text-[#A99A87] transition-colors hidden sm:block"
+              className="p-1 hover:text-[#E1A140] transition-colors hidden sm:block"
               aria-label="Account"
             >
               <User size={17} strokeWidth={1.65} />
@@ -214,7 +214,7 @@ export const Navbar: React.FC = () => {
             {/* Wishlist Link */}
             <Link
               to="/wishlist"
-              className="p-1 hover:text-[#A99A87] transition-colors relative"
+              className="p-1 hover:text-[#E1A140] transition-colors relative"
               aria-label="Wishlist"
             >
               <Heart size={17} strokeWidth={1.65} />
@@ -222,7 +222,7 @@ export const Navbar: React.FC = () => {
                 <motion.span
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
-                  className="absolute -top-1 -right-1 bg-[#34332F] text-[#F5F1EA] text-[9px] w-3.5 h-3.5 rounded-full flex items-center justify-center font-medium font-sans"
+                  className="absolute -top-1 -right-1 bg-[#49111C] text-[#F9EDF0] text-[9px] w-3.5 h-3.5 rounded-full flex items-center justify-center font-medium font-sans"
                 >
                   {wishlistCount}
                 </motion.span>
@@ -232,7 +232,7 @@ export const Navbar: React.FC = () => {
             {/* Shopping Bag Trigger */}
             <button
               onClick={() => setIsCartOpen(true)}
-              className="p-1 hover:text-[#A99A87] transition-colors relative flex items-center space-x-1"
+              className="p-1 hover:text-[#E1A140] transition-colors relative flex items-center space-x-1"
               aria-label="Shopping Bag"
             >
               <ShoppingBag size={17} strokeWidth={1.65} />
@@ -241,12 +241,12 @@ export const Navbar: React.FC = () => {
                   key={cartCount}
                   initial={{ scale: 0.8 }}
                   animate={{ scale: 1 }}
-                  className="absolute -top-1 -right-1 bg-[#171717] text-[#F5F1EA] text-[9px] w-3.5 h-3.5 rounded-full flex items-center justify-center font-medium font-sans"
+                  className="absolute -top-1 -right-1 bg-[#49111C] text-[#F9EDF0] text-[9px] w-3.5 h-3.5 rounded-full flex items-center justify-center font-medium font-sans"
                 >
                   {cartCount}
                 </motion.span>
               )}
-              <span className="hidden xl:inline-block text-[10.5px] uppercase tracking-widest text-[#6B6963] font-medium">
+              <span className="hidden xl:inline-block text-[10.5px] uppercase tracking-widest text-[#49111C]/75 font-medium">
                 Bag {cartCount > 0 && `(${cartCount})`}
               </span>
             </button>
@@ -264,7 +264,7 @@ export const Navbar: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 4 }}
             transition={{ duration: 0.22, ease: 'easeOut' }}
-            className="hidden lg:block absolute top-full left-0 w-full bg-[#F5F1EA]/80 backdrop-blur-md border-b border-[#D5C7B5] shadow-xl z-30"
+            className="hidden lg:block absolute top-full left-0 w-full bg-[#F9EDF0]/80 backdrop-blur-md border-b border-[#E1A140] shadow-xl z-30"
             onMouseEnter={() => setActiveMegaMenu(activeMegaMenu)}
             onMouseLeave={() => setActiveMegaMenu(null)}
           >
@@ -273,7 +273,7 @@ export const Navbar: React.FC = () => {
               {activeMegaMenu === 'women' && (
                 <div className="grid grid-cols-12 gap-8 items-start">
                   <div className="col-span-4">
-                    <span className="text-[10px] tracking-[0.25em] uppercase text-[#A99A87] font-semibold block mb-4">
+                    <span className="text-[10px] tracking-[0.25em] uppercase text-[#E1A140] font-semibold block mb-4">
                       Browse Women's Atelier
                     </span>
                     <ul className="space-y-3">
@@ -281,7 +281,7 @@ export const Navbar: React.FC = () => {
                         <li key={cat.name}>
                           <Link
                             to={cat.href}
-                            className="text-sm text-[#171717] hover:text-[#A99A87] transition-colors flex items-center group font-medium"
+                            className="text-sm text-[#49111C] hover:text-[#E1A140] transition-colors flex items-center group font-medium"
                           >
                             <span>{cat.name}</span>
                             <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1.5 transition-all ml-2" />
@@ -291,24 +291,24 @@ export const Navbar: React.FC = () => {
                     </ul>
                   </div>
 
-                  <div className="col-span-4 border-l border-[#D5C7B5]/60 pl-8">
-                    <span className="text-[10px] tracking-[0.25em] uppercase text-[#A99A87] font-semibold block mb-4">
+                  <div className="col-span-4 border-l border-[#E1A140]/60 pl-8">
+                    <span className="text-[10px] tracking-[0.25em] uppercase text-[#E1A140] font-semibold block mb-4">
                       Curated Series
                     </span>
                     <div className="space-y-4">
                       <Link to="/collections/spring-atelier-2026?gender=women" className="block group">
-                        <h4 className="text-sm font-serif text-[#171717] group-hover:text-[#A99A87] transition-colors font-medium">
+                        <h4 className="text-sm font-serif text-[#49111C] group-hover:text-[#E1A140] transition-colors font-medium">
                           Spring Atelier 2026 Edit
                         </h4>
-                        <p className="text-xs text-[#6B6963] mt-1 leading-relaxed">
+                        <p className="text-xs text-[#49111C]/75 mt-1 leading-relaxed">
                           French linen blouses, fluid silk midi dresses, and pleated trousers.
                         </p>
                       </Link>
                       <Link to="/collections/women?category=Women%27s+Trousers" className="block group">
-                        <h4 className="text-sm font-serif text-[#171717] group-hover:text-[#A99A87] transition-colors font-medium">
+                        <h4 className="text-sm font-serif text-[#49111C] group-hover:text-[#E1A140] transition-colors font-medium">
                           The Wide-Leg Trouser
                         </h4>
-                        <p className="text-xs text-[#6B6963] mt-1 leading-relaxed">
+                        <p className="text-xs text-[#49111C]/75 mt-1 leading-relaxed">
                           Double-pleated tailoring engineered for natural drape.
                         </p>
                       </Link>
@@ -318,7 +318,7 @@ export const Navbar: React.FC = () => {
                   <div className="col-span-4">
                     <Link
                       to="/collections/women"
-                      className="group block relative overflow-hidden aspect-[4/3] rounded-xs border border-[#D5C7B5]"
+                      className="group block relative overflow-hidden aspect-[4/3] rounded-xs border border-[#E1A140]"
                     >
                       <img
                         src="/images/categories/women.jpg"
@@ -326,9 +326,9 @@ export const Navbar: React.FC = () => {
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-5 text-white">
-                        <span className="text-[10px] tracking-[0.25em] uppercase text-[#EAE3D8]">Spring Atelier 2026</span>
+                        <span className="text-[10px] tracking-[0.25em] uppercase text-[#F9EDF0]">Spring Atelier 2026</span>
                         <h3 className="font-serif text-lg tracking-wide mt-1">Sculptural Feminine Tailoring</h3>
-                        <span className="text-xs tracking-widest uppercase mt-2 text-[#D5C7B5] group-hover:underline flex items-center">
+                        <span className="text-xs tracking-widest uppercase mt-2 text-[#E1A140] group-hover:underline flex items-center">
                           Explore Women's <ArrowRight size={12} className="ml-1" />
                         </span>
                       </div>
@@ -341,7 +341,7 @@ export const Navbar: React.FC = () => {
               {activeMegaMenu === 'men' && (
                 <div className="grid grid-cols-12 gap-8 items-start">
                   <div className="col-span-4">
-                    <span className="text-[10px] tracking-[0.25em] uppercase text-[#A99A87] font-semibold block mb-4">
+                    <span className="text-[10px] tracking-[0.25em] uppercase text-[#E1A140] font-semibold block mb-4">
                       Browse Men's Atelier
                     </span>
                     <ul className="space-y-3">
@@ -349,7 +349,7 @@ export const Navbar: React.FC = () => {
                         <li key={cat.name}>
                           <Link
                             to={cat.href}
-                            className="text-sm text-[#171717] hover:text-[#A99A87] transition-colors flex items-center group font-medium"
+                            className="text-sm text-[#49111C] hover:text-[#E1A140] transition-colors flex items-center group font-medium"
                           >
                             <span>{cat.name}</span>
                             <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1.5 transition-all ml-2" />
@@ -359,24 +359,24 @@ export const Navbar: React.FC = () => {
                     </ul>
                   </div>
 
-                  <div className="col-span-4 border-l border-[#D5C7B5]/60 pl-8">
-                    <span className="text-[10px] tracking-[0.25em] uppercase text-[#A99A87] font-semibold block mb-4">
+                  <div className="col-span-4 border-l border-[#E1A140]/60 pl-8">
+                    <span className="text-[10px] tracking-[0.25em] uppercase text-[#E1A140] font-semibold block mb-4">
                       Curated Series
                     </span>
                     <div className="space-y-4">
                       <Link to="/collections/core-essentials?gender=men" className="block group">
-                        <h4 className="text-sm font-serif text-[#171717] group-hover:text-[#A99A87] transition-colors font-medium">
+                        <h4 className="text-sm font-serif text-[#49111C] group-hover:text-[#E1A140] transition-colors font-medium">
                           The Core Essentials Edit
                         </h4>
-                        <p className="text-xs text-[#6B6963] mt-1 leading-relaxed">
+                        <p className="text-xs text-[#49111C]/75 mt-1 leading-relaxed">
                           Substantial cotton poplins, button-downs, and textured overshirts.
                         </p>
                       </Link>
                       <Link to="/collections/atelier-tailoring?gender=men" className="block group">
-                        <h4 className="text-sm font-serif text-[#171717] group-hover:text-[#A99A87] transition-colors font-medium">
+                        <h4 className="text-sm font-serif text-[#49111C] group-hover:text-[#E1A140] transition-colors font-medium">
                           Atelier Tailoring & Chinos
                         </h4>
-                        <p className="text-xs text-[#6B6963] mt-1 leading-relaxed">
+                        <p className="text-xs text-[#49111C]/75 mt-1 leading-relaxed">
                           Italian cotton chinos and relaxed tailored wool trousers.
                         </p>
                       </Link>
@@ -386,7 +386,7 @@ export const Navbar: React.FC = () => {
                   <div className="col-span-4">
                     <Link
                       to="/collections/men"
-                      className="group block relative overflow-hidden aspect-[4/3] rounded-xs border border-[#D5C7B5]"
+                      className="group block relative overflow-hidden aspect-[4/3] rounded-xs border border-[#E1A140]"
                     >
                       <img
                         src="/images/categories/men.jpg"
@@ -394,9 +394,9 @@ export const Navbar: React.FC = () => {
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-5 text-white">
-                        <span className="text-[10px] tracking-[0.25em] uppercase text-[#EAE3D8]">Featured Campaign</span>
+                        <span className="text-[10px] tracking-[0.25em] uppercase text-[#F9EDF0]">Featured Campaign</span>
                         <h3 className="font-serif text-lg tracking-wide mt-1">Effortless Modern Staples</h3>
-                        <span className="text-xs tracking-widest uppercase mt-2 text-[#D5C7B5] group-hover:underline flex items-center">
+                        <span className="text-xs tracking-widest uppercase mt-2 text-[#E1A140] group-hover:underline flex items-center">
                           Explore Men's <ArrowRight size={12} className="ml-1" />
                         </span>
                       </div>
@@ -408,11 +408,11 @@ export const Navbar: React.FC = () => {
               {/* Collections Mega Menu - Accurate Dedicated Links */}
               {activeMegaMenu === 'collections' && (
                 <div>
-                  <div className="mb-6 flex items-center justify-between border-b border-[#D5C7B5]/60 pb-3">
-                    <span className="text-[10px] tracking-[0.25em] uppercase text-[#A99A87] font-semibold">
+                  <div className="mb-6 flex items-center justify-between border-b border-[#E1A140]/60 pb-3">
+                    <span className="text-[10px] tracking-[0.25em] uppercase text-[#E1A140] font-semibold">
                       Curated Atelier Series
                     </span>
-                    <span className="text-[11px] text-[#6B6963] tracking-widest uppercase font-light">
+                    <span className="text-[11px] text-[#49111C]/75 tracking-widest uppercase font-light">
                       All Collections Feature Men's & Women's Pieces
                     </span>
                   </div>
@@ -422,29 +422,29 @@ export const Navbar: React.FC = () => {
                       <Link
                         key={col.name}
                         to={col.href}
-                        className="group bg-[#EAE3D8]/50 hover:bg-[#EAE3D8] transition-all duration-300 border border-[#D5C7B5]/60 overflow-hidden flex flex-col"
+                        className="group bg-[#F9EDF0]/50 hover:bg-[#F9EDF0] transition-all duration-300 border border-[#E1A140]/60 overflow-hidden flex flex-col"
                       >
-                        <div className="aspect-[16/9] w-full overflow-hidden bg-[#171717] relative">
+                        <div className="aspect-[16/9] w-full overflow-hidden bg-[#49111C] relative">
                           <img
                             src={col.image}
                             alt={col.name}
                             className="w-full h-full object-cover filter brightness-[0.85] group-hover:scale-105 transition-transform duration-700"
                           />
-                          <div className="absolute top-3 left-3 bg-[#171717]/85 backdrop-blur-xs text-[#F5F1EA] text-[9px] px-2.5 py-1 tracking-[0.2em] uppercase font-medium">
+                          <div className="absolute top-3 left-3 bg-[#49111C]/85 backdrop-blur-xs text-[#F9EDF0] text-[9px] px-2.5 py-1 tracking-[0.2em] uppercase font-medium">
                             {col.badge}
                           </div>
                         </div>
 
                         <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
                           <div>
-                            <h4 className="font-serif text-lg text-[#171717] font-medium group-hover:text-[#A99A87] transition-colors">
+                            <h4 className="font-serif text-lg text-[#49111C] font-medium group-hover:text-[#E1A140] transition-colors">
                               {col.name}
                             </h4>
-                            <p className="text-xs text-[#6B6963] mt-1.5 leading-relaxed font-light">
+                            <p className="text-xs text-[#49111C]/75 mt-1.5 leading-relaxed font-light">
                               {col.desc}
                             </p>
                           </div>
-                          <span className="inline-flex items-center text-[11px] tracking-[0.2em] uppercase text-[#171717] font-medium pt-2 group-hover:translate-x-1 transition-transform">
+                          <span className="inline-flex items-center text-[11px] tracking-[0.2em] uppercase text-[#49111C] font-medium pt-2 group-hover:translate-x-1 transition-transform">
                             Explore Collection <ArrowRight size={12} className="ml-1.5" />
                           </span>
                         </div>
@@ -468,46 +468,46 @@ export const Navbar: React.FC = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-[#F5F1EA] border-b border-[#D5C7B5] overflow-hidden"
+            className="lg:hidden bg-[#F9EDF0] border-b border-[#E1A140] overflow-hidden"
           >
             <div className="px-6 py-8 space-y-6">
-              <div className="space-y-4 text-sm uppercase tracking-[0.16em] font-medium text-[#171717]">
-                <Link to="/collections/women" className="block py-2 border-b border-[#EAE3D8]">
+              <div className="space-y-4 text-sm uppercase tracking-[0.16em] font-medium text-[#49111C]">
+                <Link to="/collections/women" className="block py-2 border-b border-[#F9EDF0]">
                   Women's Atelier
                 </Link>
-                <Link to="/collections/men" className="block py-2 border-b border-[#EAE3D8]">
+                <Link to="/collections/men" className="block py-2 border-b border-[#F9EDF0]">
                   Men's Atelier
                 </Link>
-                <Link to="/collections/accessories" className="block py-2 border-b border-[#EAE3D8]">
+                <Link to="/collections/accessories" className="block py-2 border-b border-[#F9EDF0]">
                   Accessories & Leather
                 </Link>
 
-                <div className="py-2 border-b border-[#EAE3D8]">
-                  <span className="text-[10px] text-[#A99A87] tracking-widest uppercase block mb-2 font-semibold">
+                <div className="py-2 border-b border-[#F9EDF0]">
+                  <span className="text-[10px] text-[#E1A140] tracking-widest uppercase block mb-2 font-semibold">
                     Curated Collections
                   </span>
-                  <div className="pl-3 space-y-2 text-xs tracking-wider normal-case font-serif text-[#34332F]">
-                    <Link to="/collections/spring-atelier-2026" className="block hover:text-[#171717]">
+                  <div className="pl-3 space-y-2 text-xs tracking-wider normal-case font-serif text-[#49111C]">
+                    <Link to="/collections/spring-atelier-2026" className="block hover:text-[#49111C]">
                       • Spring Atelier 2026
                     </Link>
-                    <Link to="/collections/core-essentials" className="block hover:text-[#171717]">
+                    <Link to="/collections/core-essentials" className="block hover:text-[#49111C]">
                       • Core Essentials
                     </Link>
-                    <Link to="/collections/atelier-tailoring" className="block hover:text-[#171717]">
+                    <Link to="/collections/atelier-tailoring" className="block hover:text-[#49111C]">
                       • Atelier Tailoring
                     </Link>
                   </div>
                 </div>
 
-                <Link to="/collections/accessories" className="block py-2 border-b border-[#EAE3D8]">
+                <Link to="/collections/accessories" className="block py-2 border-b border-[#F9EDF0]">
                   Accessories & Leather
                 </Link>
-                <Link to="/account" className="block py-2 border-b border-[#EAE3D8]">
+                <Link to="/account" className="block py-2 border-b border-[#F9EDF0]">
                   My Account
                 </Link>
               </div>
 
-              <div className="pt-2 flex items-center justify-between text-[11px] text-[#A99A87] tracking-widest uppercase">
+              <div className="pt-2 flex items-center justify-between text-[11px] text-[#E1A140] tracking-widest uppercase">
                 <span>Direct Atelier Shipping</span>
                 <span>Hassle-Free Returns</span>
               </div>

@@ -4,30 +4,30 @@ import { Globe } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#171717] text-[#D5C7B5] pt-14 pb-8 border-t border-[#34332F]">
+    <footer className="bg-[#49111C] text-[#E1A140] pt-14 pb-8 border-t border-[#49111C]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* 4 Main Columns */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-[#34332F]/80">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-[#49111C]/80">
           {/* Column 1 — ÉLVARA */}
           <div className="space-y-4">
             <div>
-              <span className="font-serif text-2xl tracking-[0.22em] text-[#F5F1EA] uppercase block">
+              <span className="font-serif text-2xl tracking-[0.22em] text-[#F9EDF0] uppercase block">
                 ÉLVARA
               </span>
-              <span className="text-[9px] tracking-[0.3em] uppercase text-[#A99A87] block mt-0.5">
+              <span className="text-[9px] tracking-[0.3em] uppercase text-[#E1A140] block mt-0.5">
                 Timeless by Design
               </span>
             </div>
-            <p className="text-xs text-[#A99A87] leading-relaxed max-w-xs font-light">
+            <p className="text-xs text-[#E1A140] leading-relaxed max-w-xs font-light">
               Everyday tailoring and contemporary essentials made from certified natural fabrics.
             </p>
-            <div className="flex items-center space-x-4 pt-1 text-[#D5C7B5]">
+            <div className="flex items-center space-x-4 pt-1 text-[#E1A140]">
               {/* Subtle Instagram Icon */}
               <a
                 href="https://instagram.com"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-[#F5F1EA] transition-colors p-1"
+                className="hover:text-[#F9EDF0] transition-colors p-1"
                 aria-label="Instagram"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -39,7 +39,7 @@ export const Footer: React.FC = () => {
                 href="https://pinterest.com"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-[#F5F1EA] transition-colors p-1"
+                className="hover:text-[#F9EDF0] transition-colors p-1"
                 aria-label="Pinterest"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -51,27 +51,27 @@ export const Footer: React.FC = () => {
 
           {/* Column 2 — SHOP */}
           <div>
-            <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#F5F1EA] block mb-4">
+            <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#F9EDF0] block mb-4">
               Shop
             </span>
-            <ul className="space-y-2.5 text-xs text-[#A99A87]">
+            <ul className="space-y-2.5 text-xs text-[#E1A140]">
               <li>
-                <Link to="/collections/new-arrivals" className="hover:text-[#F5F1EA] transition-colors">
+                <Link to="/collections/new-arrivals" className="hover:text-[#F9EDF0] transition-colors">
                   New Arrivals
                 </Link>
               </li>
               <li>
-                <Link to="/collections/women" className="hover:text-[#F5F1EA] transition-colors">
+                <Link to="/collections/women" className="hover:text-[#F9EDF0] transition-colors">
                   Women
                 </Link>
               </li>
               <li>
-                <Link to="/collections/men" className="hover:text-[#F5F1EA] transition-colors">
+                <Link to="/collections/men" className="hover:text-[#F9EDF0] transition-colors">
                   Men
                 </Link>
               </li>
               <li>
-                <Link to="/collections/accessories" className="hover:text-[#F5F1EA] transition-colors">
+                <Link to="/collections/accessories" className="hover:text-[#F9EDF0] transition-colors">
                   Accessories
                 </Link>
               </li>
@@ -80,14 +80,14 @@ export const Footer: React.FC = () => {
 
           {/* Column 3 — CUSTOMER CARE & ATELIER CONCIERGE */}
           <div>
-            <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#F5F1EA] block mb-4">
+            <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#F9EDF0] block mb-4">
               Atelier Concierge
             </span>
-            <ul className="space-y-2.5 text-xs text-[#A99A87]">
+            <ul className="space-y-2.5 text-xs text-[#E1A140]">
               <li>
                 <a
                   href="mailto:subhamacharya731@gmail.com"
-                  className="hover:text-[#F5F1EA] transition-colors block text-[11px] tracking-wide"
+                  className="hover:text-[#F9EDF0] transition-colors block text-[11px] tracking-wide"
                 >
                   subhamacharya731@gmail.com
                 </a>
@@ -95,16 +95,16 @@ export const Footer: React.FC = () => {
               <li>
                 <a
                   href="tel:6371830731"
-                  className="hover:text-[#F5F1EA] transition-colors block text-[11px] tracking-wide"
+                  className="hover:text-[#F9EDF0] transition-colors block text-[11px] tracking-wide"
                 >
                   +91 6371830731
                 </a>
               </li>
-              <li className="text-[11px] text-[#A99A87] pt-1">
+              <li className="text-[11px] text-[#E1A140] pt-1">
                 Atelier: Brahmapur, Odisha
               </li>
               <li className="pt-2">
-                <Link to="/pages/our-story" className="hover:text-[#F5F1EA] transition-colors block">
+                <Link to="/pages/our-story" className="hover:text-[#F9EDF0] transition-colors block">
                   Shipping, FAQs & Care Guide
                 </Link>
               </li>
@@ -113,22 +113,22 @@ export const Footer: React.FC = () => {
 
           {/* Column 4 — INFORMATION */}
           <div>
-            <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#F5F1EA] block mb-4">
+            <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#F9EDF0] block mb-4">
               Information
             </span>
-            <ul className="space-y-2.5 text-xs text-[#A99A87]">
+            <ul className="space-y-2.5 text-xs text-[#E1A140]">
               <li>
-                <Link to="/pages/our-story" className="hover:text-[#F5F1EA] transition-colors">
+                <Link to="/pages/our-story" className="hover:text-[#F9EDF0] transition-colors">
                   Our Story
                 </Link>
               </li>
               <li>
-                <Link to="/pages/our-story" className="hover:text-[#F5F1EA] transition-colors">
+                <Link to="/pages/our-story" className="hover:text-[#F9EDF0] transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link to="/pages/our-story" className="hover:text-[#F5F1EA] transition-colors">
+                <Link to="/pages/our-story" className="hover:text-[#F9EDF0] transition-colors">
                   Terms & Conditions
                 </Link>
               </li>
@@ -137,12 +137,12 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom footer */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#A99A87]/80 gap-4">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#E1A140]/80 gap-4">
           <div>
             <span>Copyright © 2026 ÉLVARA. All Rights Reserved.</span>
           </div>
 
-          <div className="flex items-center space-x-2 text-[#D5C7B5]">
+          <div className="flex items-center space-x-2 text-[#E1A140]">
             <Globe size={13} />
             <span>India / INR (₹)</span>
           </div>

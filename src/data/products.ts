@@ -29,9 +29,9 @@ export const products: Product[] = [
     ],
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
     colors: [
-      { name: 'Warm Ivory', hex: '#F5F1EA' },
-      { name: 'Sand', hex: '#D5C7B5' },
-      { name: 'Charcoal', hex: '#34332F' }
+      { name: 'Warm Ivory', hex: '#F9EDF0' },
+      { name: 'Sand', hex: '#E1A140' },
+      { name: 'Charcoal', hex: '#49111C' }
     ],
     inStock: true,
     collection: 'Spring Atelier 2026',
@@ -66,9 +66,9 @@ export const products: Product[] = [
     ],
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
     colors: [
-      { name: 'Pure White', hex: '#FAF9F6' },
-      { name: 'Cream', hex: '#EAE3D8' },
-      { name: 'Taupe', hex: '#A99A87' }
+      { name: 'Pure White', hex: '#F9EDF0' },
+      { name: 'Cream', hex: '#F9EDF0' },
+      { name: 'Taupe', hex: '#E1A140' }
     ],
     inStock: true,
     collection: 'Core Essentials',
@@ -103,9 +103,9 @@ export const products: Product[] = [
     ],
     sizes: ['26', '28', '30', '32', '34'],
     colors: [
-      { name: 'Sand', hex: '#D5C7B5' },
-      { name: 'Taupe', hex: '#A99A87' },
-      { name: 'Black', hex: '#171717' }
+      { name: 'Sand', hex: '#E1A140' },
+      { name: 'Taupe', hex: '#E1A140' },
+      { name: 'Black', hex: '#49111C' }
     ],
     inStock: true,
     collection: 'Atelier Tailoring',
@@ -140,8 +140,8 @@ export const products: Product[] = [
     ],
     sizes: ['XS', 'S', 'M', 'L'],
     colors: [
-      { name: 'Cream', hex: '#EAE3D8' },
-      { name: 'Charcoal', hex: '#34332F' }
+      { name: 'Cream', hex: '#F9EDF0' },
+      { name: 'Charcoal', hex: '#49111C' }
     ],
     inStock: true,
     collection: 'Spring Atelier 2026',
@@ -176,9 +176,9 @@ export const products: Product[] = [
     ],
     sizes: ['XS', 'S', 'M', 'L'],
     colors: [
-      { name: 'Warm Ivory', hex: '#F5F1EA' },
-      { name: 'Taupe', hex: '#A99A87' },
-      { name: 'Black', hex: '#171717' }
+      { name: 'Warm Ivory', hex: '#F9EDF0' },
+      { name: 'Taupe', hex: '#E1A140' },
+      { name: 'Black', hex: '#49111C' }
     ],
     inStock: true,
     collection: 'Core Essentials',
@@ -213,8 +213,8 @@ export const products: Product[] = [
     ],
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
     colors: [
-      { name: 'Sand', hex: '#D5C7B5' },
-      { name: 'Charcoal', hex: '#34332F' }
+      { name: 'Sand', hex: '#E1A140' },
+      { name: 'Charcoal', hex: '#49111C' }
     ],
     inStock: true,
     collection: 'Atelier Tailoring',
@@ -249,8 +249,8 @@ export const products: Product[] = [
     sizes: ['26', '28', '30', '32', '34'],
     colors: [
       { name: 'Vintage Blue', hex: '#4B6B94' },
-      { name: 'Washed Black', hex: '#2A2926' },
-      { name: 'Ecru', hex: '#ECE8DF' }
+      { name: 'Washed Black', hex: '#49111C' },
+      { name: 'Ecru', hex: '#F9EDF0' }
     ],
     inStock: true,
     collection: 'Core Essentials',
@@ -284,9 +284,9 @@ export const products: Product[] = [
     ],
     sizes: ['XS', 'S', 'M', 'L'],
     colors: [
-      { name: 'Cream', hex: '#EAE3D8' },
-      { name: 'Sand', hex: '#D5C7B5' },
-      { name: 'Charcoal', hex: '#34332F' }
+      { name: 'Cream', hex: '#F9EDF0' },
+      { name: 'Sand', hex: '#E1A140' },
+      { name: 'Charcoal', hex: '#49111C' }
     ],
     inStock: true,
     collection: 'Spring Atelier 2026',
@@ -320,8 +320,8 @@ export const products: Product[] = [
     ],
     sizes: ['XS', 'S', 'M', 'L'],
     colors: [
-      { name: 'Sand', hex: '#D5C7B5' },
-      { name: 'Charcoal', hex: '#34332F' }
+      { name: 'Sand', hex: '#E1A140' },
+      { name: 'Charcoal', hex: '#49111C' }
     ],
     inStock: true,
     collection: 'Atelier Tailoring',
@@ -355,8 +355,8 @@ export const products: Product[] = [
     ],
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
     colors: [
-      { name: 'Warm Ivory', hex: '#F5F1EA' },
-      { name: 'Taupe', hex: '#A99A87' }
+      { name: 'Warm Ivory', hex: '#F9EDF0' },
+      { name: 'Taupe', hex: '#E1A140' }
     ],
     inStock: true,
     collection: 'Core Essentials',
@@ -390,8 +390,8 @@ export const products: Product[] = [
     ],
     sizes: ['XS', 'S', 'M', 'L'],
     colors: [
-      { name: 'Cream', hex: '#EAE3D8' },
-      { name: 'Charcoal', hex: '#34332F' }
+      { name: 'Cream', hex: '#F9EDF0' },
+      { name: 'Charcoal', hex: '#49111C' }
     ],
     inStock: true,
     collection: 'Spring Atelier 2026',
@@ -425,8 +425,8 @@ export const products: Product[] = [
     ],
     sizes: ['26', '28', '30', '32'],
     colors: [
-      { name: 'Charcoal', hex: '#34332F' },
-      { name: 'Sand', hex: '#D5C7B5' }
+      { name: 'Charcoal', hex: '#49111C' },
+      { name: 'Sand', hex: '#E1A140' }
     ],
     inStock: true,
     collection: 'Atelier Tailoring',
@@ -460,8 +460,8 @@ export const products: Product[] = [
     ],
     sizes: ['XS', 'S', 'M', 'L'],
     colors: [
-      { name: 'Pure White', hex: '#FAF9F6' },
-      { name: 'Sand', hex: '#D5C7B5' }
+      { name: 'Pure White', hex: '#F9EDF0' },
+      { name: 'Sand', hex: '#E1A140' }
     ],
     inStock: true,
     collection: 'Core Essentials',
@@ -495,8 +495,8 @@ export const products: Product[] = [
     ],
     sizes: ['XS', 'S', 'M', 'L'],
     colors: [
-      { name: 'Warm Ivory', hex: '#F5F1EA' },
-      { name: 'Taupe', hex: '#A99A87' }
+      { name: 'Warm Ivory', hex: '#F9EDF0' },
+      { name: 'Taupe', hex: '#E1A140' }
     ],
     inStock: true,
     collection: 'Spring Atelier 2026',
@@ -535,9 +535,9 @@ export const products: Product[] = [
     ],
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     colors: [
-      { name: 'Pure White', hex: '#FAF9F6' },
-      { name: 'Sand', hex: '#D5C7B5' },
-      { name: 'Charcoal', hex: '#34332F' }
+      { name: 'Pure White', hex: '#F9EDF0' },
+      { name: 'Sand', hex: '#E1A140' },
+      { name: 'Charcoal', hex: '#49111C' }
     ],
     inStock: true,
     collection: 'Core Essentials',
@@ -572,10 +572,10 @@ export const products: Product[] = [
     ],
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     colors: [
-      { name: 'Warm Ivory', hex: '#F5F1EA' },
-      { name: 'Charcoal', hex: '#34332F' },
-      { name: 'Taupe', hex: '#A99A87' },
-      { name: 'Black', hex: '#171717' }
+      { name: 'Warm Ivory', hex: '#F9EDF0' },
+      { name: 'Charcoal', hex: '#49111C' },
+      { name: 'Taupe', hex: '#E1A140' },
+      { name: 'Black', hex: '#49111C' }
     ],
     inStock: true,
     collection: 'Core Essentials',
@@ -609,9 +609,9 @@ export const products: Product[] = [
     ],
     sizes: ['30', '32', '34', '36', '38'],
     colors: [
-      { name: 'Charcoal', hex: '#34332F' },
-      { name: 'Sand', hex: '#D5C7B5' },
-      { name: 'Black', hex: '#171717' }
+      { name: 'Charcoal', hex: '#49111C' },
+      { name: 'Sand', hex: '#E1A140' },
+      { name: 'Black', hex: '#49111C' }
     ],
     inStock: true,
     collection: 'Atelier Tailoring',
@@ -645,9 +645,9 @@ export const products: Product[] = [
     ],
     sizes: ['S', 'M', 'L', 'XL'],
     colors: [
-      { name: 'Cream', hex: '#EAE3D8' },
-      { name: 'Charcoal', hex: '#34332F' },
-      { name: 'Taupe', hex: '#A99A87' }
+      { name: 'Cream', hex: '#F9EDF0' },
+      { name: 'Charcoal', hex: '#49111C' },
+      { name: 'Taupe', hex: '#E1A140' }
     ],
     inStock: true,
     collection: 'Spring Atelier 2026',
@@ -682,9 +682,9 @@ export const products: Product[] = [
     ],
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     colors: [
-      { name: 'Taupe', hex: '#A99A87' },
-      { name: 'Charcoal', hex: '#34332F' },
-      { name: 'Sand', hex: '#D5C7B5' }
+      { name: 'Taupe', hex: '#E1A140' },
+      { name: 'Charcoal', hex: '#49111C' },
+      { name: 'Sand', hex: '#E1A140' }
     ],
     inStock: true,
     collection: 'Core Essentials',
@@ -720,7 +720,7 @@ export const products: Product[] = [
     sizes: ['30', '32', '34', '36', '38'],
     colors: [
       { name: 'Indigo Rinse', hex: '#263852' },
-      { name: 'Washed Black', hex: '#2A2926' }
+      { name: 'Washed Black', hex: '#49111C' }
     ],
     inStock: true,
     collection: 'Core Essentials',
@@ -755,8 +755,8 @@ export const products: Product[] = [
     ],
     sizes: ['38', '40', '42', '44'],
     colors: [
-      { name: 'Sand', hex: '#D5C7B5' },
-      { name: 'Charcoal', hex: '#34332F' }
+      { name: 'Sand', hex: '#E1A140' },
+      { name: 'Charcoal', hex: '#49111C' }
     ],
     inStock: true,
     collection: 'Atelier Tailoring',
@@ -791,9 +791,9 @@ export const products: Product[] = [
     ],
     sizes: ['S', 'M', 'L', 'XL'],
     colors: [
-      { name: 'Cream', hex: '#EAE3D8' },
-      { name: 'Charcoal', hex: '#34332F' },
-      { name: 'Taupe', hex: '#A99A87' }
+      { name: 'Cream', hex: '#F9EDF0' },
+      { name: 'Charcoal', hex: '#49111C' },
+      { name: 'Taupe', hex: '#E1A140' }
     ],
     inStock: true,
     collection: 'Core Essentials',
@@ -827,8 +827,8 @@ export const products: Product[] = [
     ],
     sizes: ['38', '40', '42', '44'],
     colors: [
-      { name: 'Charcoal', hex: '#34332F' },
-      { name: 'Sand', hex: '#D5C7B5' }
+      { name: 'Charcoal', hex: '#49111C' },
+      { name: 'Sand', hex: '#E1A140' }
     ],
     inStock: true,
     collection: 'Atelier Tailoring',
@@ -862,9 +862,9 @@ export const products: Product[] = [
     ],
     sizes: ['S', 'M', 'L', 'XL'],
     colors: [
-      { name: 'Charcoal', hex: '#34332F' },
-      { name: 'Warm Ivory', hex: '#F5F1EA' },
-      { name: 'Black', hex: '#171717' }
+      { name: 'Charcoal', hex: '#49111C' },
+      { name: 'Warm Ivory', hex: '#F9EDF0' },
+      { name: 'Black', hex: '#49111C' }
     ],
     inStock: true,
     collection: 'Core Essentials',
@@ -898,9 +898,9 @@ export const products: Product[] = [
     ],
     sizes: ['30', '32', '34', '36'],
     colors: [
-      { name: 'Sand', hex: '#D5C7B5' },
-      { name: 'Charcoal', hex: '#34332F' },
-      { name: 'Taupe', hex: '#A99A87' }
+      { name: 'Sand', hex: '#E1A140' },
+      { name: 'Charcoal', hex: '#49111C' },
+      { name: 'Taupe', hex: '#E1A140' }
     ],
     inStock: true,
     collection: 'Core Essentials',
@@ -934,9 +934,9 @@ export const products: Product[] = [
     ],
     sizes: ['S', 'M', 'L', 'XL'],
     colors: [
-      { name: 'Warm Ivory', hex: '#F5F1EA' },
-      { name: 'Cream', hex: '#EAE3D8' },
-      { name: 'Taupe', hex: '#A99A87' }
+      { name: 'Warm Ivory', hex: '#F9EDF0' },
+      { name: 'Cream', hex: '#F9EDF0' },
+      { name: 'Taupe', hex: '#E1A140' }
     ],
     inStock: true,
     collection: 'Spring Atelier 2026',
@@ -970,8 +970,8 @@ export const products: Product[] = [
     ],
     sizes: ['S', 'M', 'L', 'XL'],
     colors: [
-      { name: 'Taupe', hex: '#A99A87' },
-      { name: 'Charcoal', hex: '#34332F' }
+      { name: 'Taupe', hex: '#E1A140' },
+      { name: 'Charcoal', hex: '#49111C' }
     ],
     inStock: true,
     collection: 'Core Essentials',
@@ -1044,7 +1044,7 @@ export const products: Product[] = [
     sizes: ['80cm (30")', '85cm (32")', '90cm (34")', '95cm (36")'],
     colors: [
       { name: 'Cognac Brown', hex: '#6E472B' },
-      { name: 'Onyx Black', hex: '#171717' }
+      { name: 'Onyx Black', hex: '#49111C' }
     ],
     inStock: true,
     collection: 'Core Essentials',
@@ -1079,9 +1079,9 @@ export const products: Product[] = [
     ],
     sizes: ['One Size'],
     colors: [
-      { name: 'Sand', hex: '#D5C7B5' },
-      { name: 'Charcoal', hex: '#34332F' },
-      { name: 'Black', hex: '#171717' }
+      { name: 'Sand', hex: '#E1A140' },
+      { name: 'Charcoal', hex: '#49111C' },
+      { name: 'Black', hex: '#49111C' }
     ],
     inStock: true,
     collection: 'Spring Atelier 2026',
@@ -1115,9 +1115,9 @@ export const products: Product[] = [
     ],
     sizes: ['One Size (10cm x 7.5cm)'],
     colors: [
-      { name: 'Charcoal', hex: '#34332F' },
-      { name: 'Taupe', hex: '#A99A87' },
-      { name: 'Black', hex: '#171717' }
+      { name: 'Charcoal', hex: '#49111C' },
+      { name: 'Taupe', hex: '#E1A140' },
+      { name: 'Black', hex: '#49111C' }
     ],
     inStock: true,
     collection: 'Core Essentials',
@@ -1151,9 +1151,9 @@ export const products: Product[] = [
     ],
     sizes: ['One Size (200 x 70 cm)'],
     colors: [
-      { name: 'Warm Ivory', hex: '#F5F1EA' },
-      { name: 'Taupe', hex: '#A99A87' },
-      { name: 'Charcoal', hex: '#34332F' }
+      { name: 'Warm Ivory', hex: '#F9EDF0' },
+      { name: 'Taupe', hex: '#E1A140' },
+      { name: 'Charcoal', hex: '#49111C' }
     ],
     inStock: true,
     collection: 'Spring Atelier 2026',
@@ -1187,7 +1187,7 @@ export const products: Product[] = [
     ],
     sizes: ['38', '39', '40', '41', '42', '43', '44'],
     colors: [
-      { name: 'Black', hex: '#171717' },
+      { name: 'Black', hex: '#49111C' },
       { name: 'Deep Espresso', hex: '#3B2F2F' }
     ],
     inStock: true,
@@ -1222,8 +1222,8 @@ export const products: Product[] = [
     ],
     sizes: ['One Size (42cm x 36cm x 14cm)'],
     colors: [
-      { name: 'Sand', hex: '#D5C7B5' },
-      { name: 'Charcoal', hex: '#34332F' }
+      { name: 'Sand', hex: '#E1A140' },
+      { name: 'Charcoal', hex: '#49111C' }
     ],
     inStock: true,
     collection: 'Core Essentials',

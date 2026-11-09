@@ -122,7 +122,7 @@ export const HeroCampaign: React.FC = () => {
 
   return (
     <section
-      className="relative min-h-[85vh] sm:min-h-[92vh] flex items-center justify-center overflow-hidden bg-[#141413] select-none"
+      className="relative min-h-[85vh] sm:min-h-[92vh] flex items-center justify-center overflow-hidden bg-[#49111C] select-none"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
@@ -153,7 +153,7 @@ export const HeroCampaign: React.FC = () => {
       </AnimatePresence>
 
       {/* Hero Content Stage with Animated Typography */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-[#F5F1EA] py-20">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-[#F9EDF0] py-20">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeSlide.id}
@@ -168,7 +168,7 @@ export const HeroCampaign: React.FC = () => {
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-[0.08em] uppercase font-light leading-[1.04] text-[#F5F1EA] drop-shadow-sm"
+              className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-[0.08em] uppercase font-light leading-[1.04] text-[#F9EDF0] drop-shadow-sm"
             >
               {activeSlide.title}
             </motion.h1>
@@ -178,7 +178,7 @@ export const HeroCampaign: React.FC = () => {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.35 }}
-              className="text-sm sm:text-base md:text-lg text-[#EAE3D8]/90 max-w-2xl mx-auto font-light leading-relaxed tracking-wide font-sans drop-shadow-xs"
+              className="text-sm sm:text-base md:text-lg text-[#F9EDF0]/90 max-w-2xl mx-auto font-light leading-relaxed tracking-wide font-sans drop-shadow-xs"
             >
               {activeSlide.subtitle}
             </motion.p>
@@ -192,7 +192,7 @@ export const HeroCampaign: React.FC = () => {
             >
               <Link
                 to={activeSlide.primaryCta.href}
-                className="w-full sm:w-auto px-8 py-4 bg-[#F5F1EA] text-[#171717] text-xs uppercase tracking-[0.22em] font-medium hover:bg-white transition-all duration-300 shadow-xl flex items-center justify-center space-x-2 group"
+                className="w-full sm:w-auto px-8 py-4 bg-[#F9EDF0] text-[#49111C] text-xs uppercase tracking-[0.22em] font-medium hover:bg-white transition-all duration-300 shadow-xl flex items-center justify-center space-x-2 group"
               >
                 <span>{activeSlide.primaryCta.label}</span>
                 <ArrowRight size={14} className="group-hover:translate-x-1.5 transition-transform" />
@@ -200,7 +200,7 @@ export const HeroCampaign: React.FC = () => {
 
               <Link
                 to={activeSlide.secondaryCta.href}
-                className="w-full sm:w-auto px-8 py-4 bg-transparent border border-[#F5F1EA]/70 text-[#F5F1EA] text-xs uppercase tracking-[0.22em] font-medium hover:bg-white/10 hover:border-white transition-all duration-300 backdrop-blur-xs flex items-center justify-center"
+                className="w-full sm:w-auto px-8 py-4 bg-transparent border border-[#F9EDF0]/70 text-[#F9EDF0] text-xs uppercase tracking-[0.22em] font-medium hover:bg-white/10 hover:border-white transition-all duration-300 backdrop-blur-xs flex items-center justify-center"
               >
                 <span>{activeSlide.secondaryCta.label}</span>
               </Link>

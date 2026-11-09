@@ -44,22 +44,22 @@ export const CartDrawer: React.FC = () => {
                 animate={{ x: 0 }}
                 exit={{ x: '100%' }}
                 transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-                className="w-screen max-w-md bg-[#F5F1EA] shadow-2xl flex flex-col border-l border-[#D5C7B5]"
+                className="w-screen max-w-md bg-[#F9EDF0] shadow-2xl flex flex-col border-l border-[#E1A140]"
               >
                 {/* Header */}
-                <div className="p-6 border-b border-[#D5C7B5] flex items-center justify-between bg-[#EAE3D8]/40">
+                <div className="p-6 border-b border-[#E1A140] flex items-center justify-between bg-[#F9EDF0]/40">
                   <div className="flex items-center space-x-2">
-                    <ShoppingBag size={18} className="text-[#171717]" />
-                    <h2 className="font-serif text-xl tracking-[0.1em] uppercase text-[#171717]">
+                    <ShoppingBag size={18} className="text-[#49111C]" />
+                    <h2 className="font-serif text-xl tracking-[0.1em] uppercase text-[#49111C]">
                       Shopping Bag
                     </h2>
-                    <span className="text-xs text-[#A99A87] font-medium font-sans">
+                    <span className="text-xs text-[#E1A140] font-medium font-sans">
                       ({cart.reduce((a, b) => a + b.quantity, 0)})
                     </span>
                   </div>
                   <button
                     onClick={() => setIsCartOpen(false)}
-                    className="p-1 text-[#6B6963] hover:text-[#171717] transition-colors"
+                    className="p-1 text-[#49111C]/75 hover:text-[#49111C] transition-colors"
                     aria-label="Close Shopping Bag"
                   >
                     <X size={20} />
@@ -67,20 +67,20 @@ export const CartDrawer: React.FC = () => {
                 </div>
 
                 {/* Free Shipping Progress Indicator */}
-                <div className="p-4 bg-[#EAE3D8]/70 border-b border-[#D5C7B5] text-xs">
+                <div className="p-4 bg-[#F9EDF0]/70 border-b border-[#E1A140] text-xs">
                   {freeShippingRemaining > 0 ? (
-                    <p className="text-[#34332F] font-medium mb-1.5">
-                      Add <span className="font-semibold text-[#171717]">{formatCurrency(freeShippingRemaining)}</span> more to qualify for <span className="underline">Complimentary Shipping</span>
+                    <p className="text-[#49111C] font-medium mb-1.5">
+                      Add <span className="font-semibold text-[#49111C]">{formatCurrency(freeShippingRemaining)}</span> more to qualify for <span className="underline">Complimentary Shipping</span>
                     </p>
                   ) : (
-                    <p className="text-[#171717] font-medium mb-1.5 flex items-center">
+                    <p className="text-[#49111C] font-medium mb-1.5 flex items-center">
                       <span className="inline-block w-2 h-2 rounded-full bg-emerald-600 mr-2" />
                       Complimentary Standard Shipping unlocked!
                     </p>
                   )}
-                  <div className="w-full bg-[#D5C7B5] h-1.5 rounded-full overflow-hidden">
+                  <div className="w-full bg-[#E1A140] h-1.5 rounded-full overflow-hidden">
                     <motion.div
-                      className="bg-[#171717] h-full"
+                      className="bg-[#49111C] h-full"
                       initial={{ width: 0 }}
                       animate={{ width: `${shippingProgress}%` }}
                       transition={{ duration: 0.5 }}
@@ -89,18 +89,18 @@ export const CartDrawer: React.FC = () => {
                 </div>
 
                 {/* Items List */}
-                <div className="flex-1 overflow-y-auto p-6 divide-y divide-[#D5C7B5]/60">
+                <div className="flex-1 overflow-y-auto p-6 divide-y divide-[#E1A140]/60">
                   {cart.length === 0 ? (
                     <div className="h-full flex flex-col items-center justify-center text-center py-12">
-                      <ShoppingBag size={48} strokeWidth={1} className="text-[#A99A87] mb-4" />
-                      <h3 className="font-serif text-lg text-[#171717] font-medium">Your bag is empty</h3>
-                      <p className="text-xs text-[#6B6963] max-w-xs mt-1.5 leading-relaxed">
+                      <ShoppingBag size={48} strokeWidth={1} className="text-[#E1A140] mb-4" />
+                      <h3 className="font-serif text-lg text-[#49111C] font-medium">Your bag is empty</h3>
+                      <p className="text-xs text-[#49111C]/75 max-w-xs mt-1.5 leading-relaxed">
                         Explore our timeless essentials curated for the contemporary wardrobe.
                       </p>
                       <Link
                         to="/collections/women"
                         onClick={() => setIsCartOpen(false)}
-                        className="mt-6 inline-flex items-center text-xs uppercase tracking-[0.2em] bg-[#171717] text-[#F5F1EA] px-6 py-3 font-medium hover:bg-[#34332F] transition-colors"
+                        className="mt-6 inline-flex items-center text-xs uppercase tracking-[0.2em] bg-[#49111C] text-[#F9EDF0] px-6 py-3 font-medium hover:bg-[#49111C] transition-colors"
                       >
                         Explore Collection <ArrowRight size={13} className="ml-2" />
                       </Link>
@@ -111,7 +111,7 @@ export const CartDrawer: React.FC = () => {
                         <Link
                           to={`/products/${item.product.slug}`}
                           onClick={() => setIsCartOpen(false)}
-                          className="w-20 h-24 shrink-0 bg-[#EAE3D8] overflow-hidden border border-[#D5C7B5]/80"
+                          className="w-20 h-24 shrink-0 bg-[#F9EDF0] overflow-hidden border border-[#E1A140]/80"
                         >
                           <img
                             src={item.product.image}
@@ -126,20 +126,20 @@ export const CartDrawer: React.FC = () => {
                               <Link
                                 to={`/products/${item.product.slug}`}
                                 onClick={() => setIsCartOpen(false)}
-                                className="font-serif text-sm font-medium text-[#171717] hover:text-[#A99A87] transition-colors"
+                                className="font-serif text-sm font-medium text-[#49111C] hover:text-[#E1A140] transition-colors"
                               >
                                 {item.product.name}
                               </Link>
                               <button
                                 onClick={() => removeFromCart(item.id)}
-                                className="text-[#A99A87] hover:text-red-700 transition-colors p-1"
+                                className="text-[#E1A140] hover:text-red-700 transition-colors p-1"
                                 aria-label="Remove item"
                               >
                                 <Trash2 size={14} />
                               </button>
                             </div>
 
-                            <div className="flex items-center space-x-3 text-[11px] text-[#6B6963] mt-1">
+                            <div className="flex items-center space-x-3 text-[11px] text-[#49111C]/75 mt-1">
                               <span>Size: {item.size}</span>
                               <span>•</span>
                               <span className="flex items-center">
@@ -154,27 +154,27 @@ export const CartDrawer: React.FC = () => {
 
                           <div className="flex items-center justify-between mt-3">
                             {/* Quantity Controls */}
-                            <div className="flex items-center border border-[#D5C7B5] bg-[#EAE3D8]/60">
+                            <div className="flex items-center border border-[#E1A140] bg-[#F9EDF0]/60">
                               <button
                                 onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                                className="p-1.5 text-[#34332F] hover:bg-[#EAE3D8] transition-colors"
+                                className="p-1.5 text-[#49111C] hover:bg-[#F9EDF0] transition-colors"
                                 aria-label="Decrease quantity"
                               >
                                 <Minus size={12} />
                               </button>
-                              <span className="px-2 text-xs font-medium text-[#171717]">
+                              <span className="px-2 text-xs font-medium text-[#49111C]">
                                 {item.quantity}
                               </span>
                               <button
                                 onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                                className="p-1.5 text-[#34332F] hover:bg-[#EAE3D8] transition-colors"
+                                className="p-1.5 text-[#49111C] hover:bg-[#F9EDF0] transition-colors"
                                 aria-label="Increase quantity"
                               >
                                 <Plus size={12} />
                               </button>
                             </div>
 
-                            <span className="text-xs font-semibold text-[#171717]">
+                            <span className="text-xs font-semibold text-[#49111C]">
                               {formatCurrency(item.product.price * item.quantity)}
                             </span>
                           </div>
@@ -186,19 +186,19 @@ export const CartDrawer: React.FC = () => {
 
                 {/* Footer Subtotal & Checkout */}
                 {cart.length > 0 && (
-                  <div className="p-6 border-t border-[#D5C7B5] bg-[#EAE3D8]/50 space-y-3">
-                    <div className="space-y-1.5 text-xs text-[#6B6963]">
+                  <div className="p-6 border-t border-[#E1A140] bg-[#F9EDF0]/50 space-y-3">
+                    <div className="space-y-1.5 text-xs text-[#49111C]/75">
                       <div className="flex justify-between">
                         <span>Subtotal</span>
-                        <span className="font-medium text-[#171717]">{formatCurrency(subtotal)}</span>
+                        <span className="font-medium text-[#49111C]">{formatCurrency(subtotal)}</span>
                       </div>
                       <div className="flex justify-between">
                         <span>Shipping</span>
-                        <span className="font-medium text-[#171717]">
+                        <span className="font-medium text-[#49111C]">
                           {shipping === 0 ? 'Complimentary' : formatCurrency(shipping)}
                         </span>
                       </div>
-                      <div className="flex justify-between text-sm font-semibold text-[#171717] pt-2 border-t border-[#D5C7B5]/60">
+                      <div className="flex justify-between text-sm font-semibold text-[#49111C] pt-2 border-t border-[#E1A140]/60">
                         <span>Estimated Total</span>
                         <span>{formatCurrency(total)}</span>
                       </div>
@@ -208,7 +208,7 @@ export const CartDrawer: React.FC = () => {
                       onClick={() => {
                         setCheckoutModalOpen(true);
                       }}
-                      className="w-full bg-[#171717] text-[#F5F1EA] py-3.5 text-xs uppercase tracking-[0.2em] font-medium hover:bg-[#34332F] transition-colors flex items-center justify-center space-x-2"
+                      className="w-full bg-[#49111C] text-[#F9EDF0] py-3.5 text-xs uppercase tracking-[0.2em] font-medium hover:bg-[#49111C] transition-colors flex items-center justify-center space-x-2"
                     >
                       <span>Proceed to Checkout</span>
                       <ArrowRight size={14} />
@@ -218,7 +218,7 @@ export const CartDrawer: React.FC = () => {
                       <Link
                         to="/cart"
                         onClick={() => setIsCartOpen(false)}
-                        className="text-[11px] uppercase tracking-widest text-[#6B6963] hover:text-[#171717] underline transition-colors"
+                        className="text-[11px] uppercase tracking-widest text-[#49111C]/75 hover:text-[#49111C] underline transition-colors"
                       >
                         View Full Shopping Bag
                       </Link>

@@ -204,29 +204,29 @@ export const CollectionPage: React.FC<CollectionPageProps> = ({
     (priceMax < 5000 ? 1 : 0);
 
   return (
-    <div className="min-h-screen bg-[#F5F1EA]">
+    <div className="min-h-screen bg-[#F9EDF0]">
       {/* Editorial Banner */}
-      <div className="relative h-64 sm:h-80 md:h-[420px] bg-[#171717] overflow-hidden">
+      <div className="relative h-64 sm:h-80 md:h-[420px] bg-[#49111C] overflow-hidden">
         <img
           src={pageBanner}
           alt={pageTitle}
           className="w-full h-full object-cover filter brightness-[0.72] scale-100 hover:scale-105 transition-transform duration-1000 ease-out"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/30" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6 text-[#F5F1EA]">
-          <span className="text-[10px] tracking-[0.35em] uppercase text-[#D5C7B5] mb-2 font-medium">
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6 text-[#F9EDF0]">
+          <span className="text-[10px] tracking-[0.35em] uppercase text-[#E1A140] mb-2 font-medium">
             {pageBadge}
           </span>
-          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl uppercase tracking-[0.12em] font-light text-[#F5F1EA]">
+          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl uppercase tracking-[0.12em] font-light text-[#F9EDF0]">
             {pageTitle}
           </h1>
-          <p className="text-xs sm:text-sm text-[#EAE3D8] mt-3 max-w-xl font-light leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#F9EDF0] mt-3 max-w-xl font-light leading-relaxed">
             {pageSubtitle}
           </p>
 
           {/* If collection view, show subtle indicator */}
           {(collectionMeta || collectionTarget) && (
-            <div className="mt-4 flex items-center space-x-3 text-[11px] uppercase tracking-[0.25em] text-[#D5C7B5]">
+            <div className="mt-4 flex items-center space-x-3 text-[11px] uppercase tracking-[0.25em] text-[#E1A140]">
               <span>Small Batch Atelier</span>
               <span>•</span>
               <span>100% Traceable Fibres</span>
@@ -239,18 +239,18 @@ export const CollectionPage: React.FC<CollectionPageProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         {/* Curated Collection Gender Segment Tabs (if multi-gender collection) */}
         {collectionGenderCounts && !genderTarget && (
-          <div className="mb-8 border-b border-[#D5C7B5] pb-4">
+          <div className="mb-8 border-b border-[#E1A140] pb-4">
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div className="flex items-center space-x-2 sm:space-x-3">
-                <span className="text-[10px] tracking-[0.25em] uppercase text-[#A99A87] font-semibold mr-2 hidden sm:inline">
+                <span className="text-[10px] tracking-[0.25em] uppercase text-[#E1A140] font-semibold mr-2 hidden sm:inline">
                   Atelier Filter:
                 </span>
                 <button
                   onClick={() => handleGenderTabChange('all')}
                   className={`px-4 py-2 text-xs uppercase tracking-[0.18em] transition-all duration-200 ${
                     selectedGenderTab === 'all'
-                      ? 'bg-[#171717] text-[#F5F1EA] font-medium shadow-xs'
-                      : 'bg-[#EAE3D8]/60 text-[#34332F] hover:bg-[#EAE3D8]'
+                      ? 'bg-[#49111C] text-[#F9EDF0] font-medium shadow-xs'
+                      : 'bg-[#F9EDF0]/60 text-[#49111C] hover:bg-[#F9EDF0]'
                   }`}
                 >
                   All Silhouettes ({collectionGenderCounts.all})
@@ -259,8 +259,8 @@ export const CollectionPage: React.FC<CollectionPageProps> = ({
                   onClick={() => handleGenderTabChange('women')}
                   className={`px-4 py-2 text-xs uppercase tracking-[0.18em] transition-all duration-200 ${
                     selectedGenderTab === 'women'
-                      ? 'bg-[#171717] text-[#F5F1EA] font-medium shadow-xs'
-                      : 'bg-[#EAE3D8]/60 text-[#34332F] hover:bg-[#EAE3D8]'
+                      ? 'bg-[#49111C] text-[#F9EDF0] font-medium shadow-xs'
+                      : 'bg-[#F9EDF0]/60 text-[#49111C] hover:bg-[#F9EDF0]'
                   }`}
                 >
                   Women ({collectionGenderCounts.women})
@@ -269,15 +269,15 @@ export const CollectionPage: React.FC<CollectionPageProps> = ({
                   onClick={() => handleGenderTabChange('men')}
                   className={`px-4 py-2 text-xs uppercase tracking-[0.18em] transition-all duration-200 ${
                     selectedGenderTab === 'men'
-                      ? 'bg-[#171717] text-[#F5F1EA] font-medium shadow-xs'
-                      : 'bg-[#EAE3D8]/60 text-[#34332F] hover:bg-[#EAE3D8]'
+                      ? 'bg-[#49111C] text-[#F9EDF0] font-medium shadow-xs'
+                      : 'bg-[#F9EDF0]/60 text-[#49111C] hover:bg-[#F9EDF0]'
                   }`}
                 >
                   Men ({collectionGenderCounts.men})
                 </button>
               </div>
 
-              <div className="text-xs text-[#A99A87] tracking-wider uppercase font-light">
+              <div className="text-xs text-[#E1A140] tracking-wider uppercase font-light">
                 <span>Direct Atelier Dispatch</span>
               </div>
             </div>
@@ -285,29 +285,29 @@ export const CollectionPage: React.FC<CollectionPageProps> = ({
         )}
 
         {/* Top Controls Bar */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 border-b border-[#D5C7B5] gap-4">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 border-b border-[#E1A140] gap-4">
           <div className="flex items-center space-x-4">
             <button
               onClick={() => setIsMobileFilterOpen(!isMobileFilterOpen)}
-              className="lg:hidden flex items-center space-x-2 bg-[#EAE3D8] px-4 py-2 text-xs uppercase tracking-widest text-[#171717] font-medium border border-[#D5C7B5]"
+              className="lg:hidden flex items-center space-x-2 bg-[#F9EDF0] px-4 py-2 text-xs uppercase tracking-widest text-[#49111C] font-medium border border-[#E1A140]"
             >
               <SlidersHorizontal size={14} />
               <span>Filters {activeFiltersCount > 0 && `(${activeFiltersCount})`}</span>
             </button>
 
-            <span className="text-xs text-[#6B6963] uppercase tracking-widest">
-              Showing <span className="font-semibold text-[#171717]">{filteredProducts.length}</span> Pieces
+            <span className="text-xs text-[#49111C]/75 uppercase tracking-widest">
+              Showing <span className="font-semibold text-[#49111C]">{filteredProducts.length}</span> Pieces
             </span>
           </div>
 
           {/* Sort Selector */}
           <div className="flex items-center space-x-2 text-xs">
-            <span className="text-[#6B6963] uppercase tracking-wider">Sort by:</span>
+            <span className="text-[#49111C]/75 uppercase tracking-wider">Sort by:</span>
             <div className="relative">
               <select
                 value={selectedSort}
                 onChange={(e) => setSelectedSort(e.target.value as any)}
-                className="bg-transparent border border-[#D5C7B5] px-3 py-1.5 text-xs text-[#171717] font-medium pr-8 focus:outline-hidden focus:border-[#171717] cursor-pointer"
+                className="bg-transparent border border-[#E1A140] px-3 py-1.5 text-xs text-[#49111C] font-medium pr-8 focus:outline-hidden focus:border-[#49111C] cursor-pointer"
               >
                 <option value="featured">Featured Edit</option>
                 <option value="newest">Newest Arrivals</option>
@@ -315,7 +315,7 @@ export const CollectionPage: React.FC<CollectionPageProps> = ({
                 <option value="price-asc">Price: Low to High</option>
                 <option value="price-desc">Price: High to Low</option>
               </select>
-              <ChevronDown size={13} className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-[#6B6963]" />
+              <ChevronDown size={13} className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-[#49111C]/75" />
             </div>
           </div>
         </div>
@@ -323,16 +323,16 @@ export const CollectionPage: React.FC<CollectionPageProps> = ({
         {/* Content Layout: Sidebar + Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 pt-8">
           {/* Desktop Filters Sidebar */}
-          <div className="hidden lg:block lg:col-span-1 space-y-8 pr-6 border-r border-[#D5C7B5]/60">
+          <div className="hidden lg:block lg:col-span-1 space-y-8 pr-6 border-r border-[#E1A140]/60">
             {/* Header */}
             <div className="flex items-center justify-between">
-              <span className="text-xs uppercase tracking-[0.2em] font-semibold text-[#171717]">
+              <span className="text-xs uppercase tracking-[0.2em] font-semibold text-[#49111C]">
                 Refine Selection
               </span>
               {activeFiltersCount > 0 && (
                 <button
                   onClick={handleResetFilters}
-                  className="text-[11px] text-[#A99A87] hover:text-[#171717] underline uppercase tracking-wider transition-colors"
+                  className="text-[11px] text-[#E1A140] hover:text-[#49111C] underline uppercase tracking-wider transition-colors"
                 >
                   Reset All
                 </button>
@@ -341,7 +341,7 @@ export const CollectionPage: React.FC<CollectionPageProps> = ({
 
             {/* Categories */}
             <div>
-              <h4 className="text-[11px] uppercase tracking-[0.2em] text-[#6B6963] font-medium mb-3">
+              <h4 className="text-[11px] uppercase tracking-[0.2em] text-[#49111C]/75 font-medium mb-3">
                 Categories
               </h4>
               <ul className="space-y-2 text-xs">
@@ -351,12 +351,12 @@ export const CollectionPage: React.FC<CollectionPageProps> = ({
                       onClick={() => handleCategoryChange(cat)}
                       className={`text-left w-full transition-colors flex items-center justify-between py-1 ${
                         selectedCategory === cat
-                          ? 'font-semibold text-[#171717] pl-1 border-l-2 border-[#171717]'
-                          : 'text-[#6B6963] hover:text-[#171717]'
+                          ? 'font-semibold text-[#49111C] pl-1 border-l-2 border-[#49111C]'
+                          : 'text-[#49111C]/75 hover:text-[#49111C]'
                       }`}
                     >
                       <span className="capitalize">{cat === 'all' ? 'All Pieces' : cat}</span>
-                      <span className="text-[10px] text-[#A99A87]">
+                      <span className="text-[10px] text-[#E1A140]">
                         {cat === 'all'
                           ? baseProducts.length
                           : baseProducts.filter((p) => p.category === cat).length}
@@ -369,7 +369,7 @@ export const CollectionPage: React.FC<CollectionPageProps> = ({
 
             {/* Sizes */}
             <div>
-              <h4 className="text-[11px] uppercase tracking-[0.2em] text-[#6B6963] font-medium mb-3">
+              <h4 className="text-[11px] uppercase tracking-[0.2em] text-[#49111C]/75 font-medium mb-3">
                 Sizes
               </h4>
               <div className="flex flex-wrap gap-2">
@@ -379,8 +379,8 @@ export const CollectionPage: React.FC<CollectionPageProps> = ({
                     onClick={() => setSelectedSize(size)}
                     className={`px-3 py-1 text-xs border transition-colors ${
                       selectedSize === size
-                        ? 'border-[#171717] bg-[#171717] text-[#F5F1EA] font-medium'
-                        : 'border-[#D5C7B5] bg-[#EAE3D8]/50 text-[#171717] hover:bg-[#EAE3D8] hover:border-[#34332F]'
+                        ? 'border-[#49111C] bg-[#49111C] text-[#F9EDF0] font-medium'
+                        : 'border-[#E1A140] bg-[#F9EDF0]/50 text-[#49111C] hover:bg-[#F9EDF0] hover:border-[#49111C]'
                     }`}
                   >
                     {size === 'all' ? 'All Sizes' : size}
@@ -392,10 +392,10 @@ export const CollectionPage: React.FC<CollectionPageProps> = ({
             {/* Max Price Filter */}
             <div>
               <div className="flex items-center justify-between text-xs mb-2">
-                <span className="text-[11px] uppercase tracking-[0.2em] text-[#6B6963] font-medium">
+                <span className="text-[11px] uppercase tracking-[0.2em] text-[#49111C]/75 font-medium">
                   Max Price
                 </span>
-                <span className="font-semibold text-[#171717]">₹{priceMax}</span>
+                <span className="font-semibold text-[#49111C]">₹{priceMax}</span>
               </div>
               <input
                 type="range"
@@ -404,9 +404,9 @@ export const CollectionPage: React.FC<CollectionPageProps> = ({
                 step="200"
                 value={priceMax}
                 onChange={(e) => setPriceMax(Number(e.target.value))}
-                className="w-full accent-[#171717] cursor-pointer"
+                className="w-full accent-[#49111C] cursor-pointer"
               />
-              <div className="flex justify-between text-[10px] text-[#A99A87] mt-1">
+              <div className="flex justify-between text-[10px] text-[#E1A140] mt-1">
                 <span>₹500</span>
                 <span>₹5,000</span>
               </div>
@@ -415,12 +415,12 @@ export const CollectionPage: React.FC<CollectionPageProps> = ({
 
           {/* Mobile Filters Drawer Modal */}
           {isMobileFilterOpen && (
-            <div className="fixed inset-0 z-50 lg:hidden overflow-y-auto bg-[#F5F1EA] p-6">
-              <div className="flex items-center justify-between pb-4 border-b border-[#D5C7B5]">
-                <h3 className="font-serif text-xl uppercase tracking-wider text-[#171717]">Filters</h3>
+            <div className="fixed inset-0 z-50 lg:hidden overflow-y-auto bg-[#F9EDF0] p-6">
+              <div className="flex items-center justify-between pb-4 border-b border-[#E1A140]">
+                <h3 className="font-serif text-xl uppercase tracking-wider text-[#49111C]">Filters</h3>
                 <button
                   onClick={() => setIsMobileFilterOpen(false)}
-                  className="p-1 text-[#171717]"
+                  className="p-1 text-[#49111C]"
                 >
                   <X size={22} />
                 </button>
@@ -428,7 +428,7 @@ export const CollectionPage: React.FC<CollectionPageProps> = ({
 
               <div className="py-6 space-y-6">
                 <div>
-                  <h4 className="text-xs uppercase tracking-widest text-[#6B6963] font-semibold mb-3">
+                  <h4 className="text-xs uppercase tracking-widest text-[#49111C]/75 font-semibold mb-3">
                     Categories
                   </h4>
                   <div className="flex flex-wrap gap-2">
@@ -438,8 +438,8 @@ export const CollectionPage: React.FC<CollectionPageProps> = ({
                         onClick={() => handleCategoryChange(cat)}
                         className={`px-3 py-1.5 text-xs border ${
                           selectedCategory === cat
-                            ? 'bg-[#171717] text-white border-[#171717]'
-                            : 'bg-[#EAE3D8]/60 text-[#171717] border-[#D5C7B5]'
+                            ? 'bg-[#49111C] text-white border-[#49111C]'
+                            : 'bg-[#F9EDF0]/60 text-[#49111C] border-[#E1A140]'
                         }`}
                       >
                         {cat === 'all' ? 'All Pieces' : cat}
@@ -449,7 +449,7 @@ export const CollectionPage: React.FC<CollectionPageProps> = ({
                 </div>
 
                 <div>
-                  <h4 className="text-xs uppercase tracking-widest text-[#6B6963] font-semibold mb-3">
+                  <h4 className="text-xs uppercase tracking-widest text-[#49111C]/75 font-semibold mb-3">
                     Sizes
                   </h4>
                   <div className="flex flex-wrap gap-2">
@@ -459,8 +459,8 @@ export const CollectionPage: React.FC<CollectionPageProps> = ({
                         onClick={() => setSelectedSize(size)}
                         className={`px-3 py-1.5 text-xs border ${
                           selectedSize === size
-                            ? 'bg-[#171717] text-white border-[#171717]'
-                            : 'bg-[#EAE3D8]/60 text-[#171717] border-[#D5C7B5]'
+                            ? 'bg-[#49111C] text-white border-[#49111C]'
+                            : 'bg-[#F9EDF0]/60 text-[#49111C] border-[#E1A140]'
                         }`}
                       >
                         {size === 'all' ? 'All Sizes' : size}
@@ -471,7 +471,7 @@ export const CollectionPage: React.FC<CollectionPageProps> = ({
 
                 <div>
                   <div className="flex items-center justify-between text-xs mb-2">
-                    <span className="uppercase tracking-widest text-[#6B6963] font-semibold">
+                    <span className="uppercase tracking-widest text-[#49111C]/75 font-semibold">
                       Max Price: ₹{priceMax}
                     </span>
                   </div>
@@ -482,21 +482,21 @@ export const CollectionPage: React.FC<CollectionPageProps> = ({
                     step="200"
                     value={priceMax}
                     onChange={(e) => setPriceMax(Number(e.target.value))}
-                    className="w-full accent-[#171717]"
+                    className="w-full accent-[#49111C]"
                   />
                 </div>
               </div>
 
-              <div className="pt-6 border-t border-[#D5C7B5] flex gap-3">
+              <div className="pt-6 border-t border-[#E1A140] flex gap-3">
                 <button
                   onClick={handleResetFilters}
-                  className="flex-1 py-3 text-xs uppercase tracking-widest border border-[#D5C7B5] text-[#171717]"
+                  className="flex-1 py-3 text-xs uppercase tracking-widest border border-[#E1A140] text-[#49111C]"
                 >
                   Reset
                 </button>
                 <button
                   onClick={() => setIsMobileFilterOpen(false)}
-                  className="flex-1 py-3 text-xs uppercase tracking-widest bg-[#171717] text-[#F5F1EA]"
+                  className="flex-1 py-3 text-xs uppercase tracking-widest bg-[#49111C] text-[#F9EDF0]"
                 >
                   Apply Filters
                 </button>
@@ -507,14 +507,14 @@ export const CollectionPage: React.FC<CollectionPageProps> = ({
           {/* Product Grid */}
           <div className="lg:col-span-3">
             {filteredProducts.length === 0 ? (
-              <div className="py-24 text-center border border-[#D5C7B5] bg-[#EAE3D8]/40 p-8 shadow-xs">
-                <h3 className="font-serif text-2xl text-[#171717]">No pieces matched your selection</h3>
-                <p className="text-xs text-[#6B6963] mt-2 max-w-sm mx-auto leading-relaxed">
+              <div className="py-24 text-center border border-[#E1A140] bg-[#F9EDF0]/40 p-8 shadow-xs">
+                <h3 className="font-serif text-2xl text-[#49111C]">No pieces matched your selection</h3>
+                <p className="text-xs text-[#49111C]/75 mt-2 max-w-sm mx-auto leading-relaxed">
                   Adjust your filters or reset to browse the complete collection.
                 </p>
                 <button
                   onClick={handleResetFilters}
-                  className="mt-6 px-6 py-2.5 bg-[#171717] text-[#F5F1EA] text-xs uppercase tracking-[0.2em]"
+                  className="mt-6 px-6 py-2.5 bg-[#49111C] text-[#F9EDF0] text-xs uppercase tracking-[0.2em]"
                 >
                   Reset Filters
                 </button>

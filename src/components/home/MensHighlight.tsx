@@ -13,21 +13,21 @@ export const MensHighlight: React.FC = () => {
     .filter((p): p is (typeof products)[0] => Boolean(p));
 
   return (
-    <section className="py-24 bg-[#EAE3D8]/55 border-y border-[#D5C7B5]/80">
+    <section className="py-24 bg-[#F9EDF0]/55 border-y border-[#E1A140]/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-4 border-b border-[#D5C7B5]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-4 border-b border-[#E1A140]">
           <div>
-            <span className="text-[10px] tracking-[0.3em] uppercase text-[#8C7D6B] font-semibold block mb-2">
+            <span className="text-[10px] tracking-[0.3em] uppercase text-[#E1A140] font-semibold block mb-2">
               Contemporary Staples
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#171717] font-light uppercase tracking-wide">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#49111C] font-light uppercase tracking-wide">
               Men's Collection
             </h2>
           </div>
 
           <Link
             to="/collections/men"
-            className="mt-4 md:mt-0 inline-flex items-center text-xs uppercase tracking-[0.2em] font-medium text-[#171717] hover:text-[#8C7D6B] transition-colors group"
+            className="mt-4 md:mt-0 inline-flex items-center text-xs uppercase tracking-[0.2em] font-medium text-[#49111C] hover:text-[#E1A140] transition-colors group"
           >
             <span>View All Men ({products.filter((p) => p.gender === 'men').length} Styles)</span>
             <ArrowRight size={13} className="ml-1.5 group-hover:translate-x-1.5 transition-transform" />

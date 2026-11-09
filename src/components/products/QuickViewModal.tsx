@@ -23,7 +23,7 @@ export const QuickViewModal: React.FC<QuickViewModalProps> = ({ product, isOpen,
   React.useEffect(() => {
     if (product) {
       setSelectedSize(product.sizes[0] || 'Standard');
-      setSelectedColor(product.colors[0] || { name: 'Natural', hex: '#EAE3D8' });
+      setSelectedColor(product.colors[0] || { name: 'Natural', hex: '#F9EDF0' });
       setQuantity(1);
       setAddedAnimation(false);
     }
@@ -60,11 +60,11 @@ export const QuickViewModal: React.FC<QuickViewModalProps> = ({ product, isOpen,
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 15 }}
             transition={{ duration: 0.3 }}
-            className="relative transform overflow-hidden bg-[#F5F1EA] text-left shadow-2xl transition-all sm:max-w-3xl w-full border border-[#D5C7B5]"
+            className="relative transform overflow-hidden bg-[#F9EDF0] text-left shadow-2xl transition-all sm:max-w-3xl w-full border border-[#E1A140]"
           >
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 z-10 p-2 bg-[#F5F1EA]/80 backdrop-blur-xs text-[#171717] hover:text-[#A99A87] transition-colors rounded-full"
+              className="absolute top-4 right-4 z-10 p-2 bg-[#F9EDF0]/80 backdrop-blur-xs text-[#49111C] hover:text-[#E1A140] transition-colors rounded-full"
               aria-label="Close"
             >
               <X size={20} />
@@ -72,7 +72,7 @@ export const QuickViewModal: React.FC<QuickViewModalProps> = ({ product, isOpen,
 
             <div className="grid grid-cols-1 md:grid-cols-2">
               {/* Image side */}
-              <div className="aspect-[3/4] bg-[#EAE3D8] overflow-hidden relative">
+              <div className="aspect-[3/4] bg-[#F9EDF0] overflow-hidden relative">
                 <img
                   src={product.image}
                   alt={product.name}
@@ -80,7 +80,7 @@ export const QuickViewModal: React.FC<QuickViewModalProps> = ({ product, isOpen,
                 />
                 <button
                   onClick={() => toggleWishlist(product.id)}
-                  className="absolute bottom-4 left-4 p-2.5 bg-white/90 backdrop-blur-xs rounded-full text-[#171717] hover:text-red-700 transition-colors shadow-sm"
+                  className="absolute bottom-4 left-4 p-2.5 bg-white/90 backdrop-blur-xs rounded-full text-[#49111C] hover:text-red-700 transition-colors shadow-sm"
                   aria-label="Wishlist"
                 >
                   <Heart
@@ -94,33 +94,33 @@ export const QuickViewModal: React.FC<QuickViewModalProps> = ({ product, isOpen,
               <div className="p-6 md:p-8 flex flex-col justify-between">
                 <div className="space-y-4">
                   <div>
-                    <span className="text-[10px] tracking-[0.25em] uppercase text-[#A99A87] font-semibold">
+                    <span className="text-[10px] tracking-[0.25em] uppercase text-[#E1A140] font-semibold">
                       {product.category}
                     </span>
-                    <h3 className="font-serif text-2xl text-[#171717] mt-1 font-normal">
+                    <h3 className="font-serif text-2xl text-[#49111C] mt-1 font-normal">
                       {product.name}
                     </h3>
                     <div className="flex items-center space-x-3 mt-2">
-                      <span className="text-base font-semibold text-[#171717]">
+                      <span className="text-base font-semibold text-[#49111C]">
                         {formatCurrency(product.price)}
                       </span>
                       {product.originalPrice && (
-                        <span className="text-xs text-[#A99A87] line-through">
+                        <span className="text-xs text-[#E1A140] line-through">
                           {formatCurrency(product.originalPrice)}
                         </span>
                       )}
                     </div>
                   </div>
 
-                  <p className="text-xs text-[#6B6963] leading-relaxed line-clamp-3">
+                  <p className="text-xs text-[#49111C]/75 leading-relaxed line-clamp-3">
                     {product.description}
                   </p>
 
                   {/* Color Selector */}
                   <div>
                     <div className="flex justify-between items-center text-xs mb-2">
-                      <span className="text-[#6B6963]">Colour:</span>
-                      <span className="font-medium text-[#171717]">{selectedColor?.name}</span>
+                      <span className="text-[#49111C]/75">Colour:</span>
+                      <span className="font-medium text-[#49111C]">{selectedColor?.name}</span>
                     </div>
                     <div className="flex space-x-2">
                       {product.colors.map((c) => (
@@ -129,7 +129,7 @@ export const QuickViewModal: React.FC<QuickViewModalProps> = ({ product, isOpen,
                           onClick={() => setSelectedColor(c)}
                           className={`w-6 h-6 rounded-full border-2 transition-transform ${
                             selectedColor?.name === c.name
-                              ? 'border-[#171717] scale-110'
+                              ? 'border-[#49111C] scale-110'
                               : 'border-transparent hover:scale-105'
                           }`}
                           style={{ backgroundColor: c.hex }}
@@ -142,8 +142,8 @@ export const QuickViewModal: React.FC<QuickViewModalProps> = ({ product, isOpen,
                   {/* Size Selector */}
                   <div>
                     <div className="flex justify-between items-center text-xs mb-2">
-                      <span className="text-[#6B6963]">Size:</span>
-                      <span className="font-medium text-[#171717]">{selectedSize}</span>
+                      <span className="text-[#49111C]/75">Size:</span>
+                      <span className="font-medium text-[#49111C]">{selectedSize}</span>
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {product.sizes.map((s) => (
@@ -152,8 +152,8 @@ export const QuickViewModal: React.FC<QuickViewModalProps> = ({ product, isOpen,
                           onClick={() => setSelectedSize(s)}
                           className={`px-3 py-1.5 text-xs font-medium border transition-colors ${
                             selectedSize === s
-                              ? 'border-[#171717] bg-[#171717] text-[#F5F1EA]'
-                              : 'border-[#D5C7B5] bg-[#EAE3D8]/50 text-[#171717] hover:bg-[#EAE3D8] hover:border-[#34332F]'
+                              ? 'border-[#49111C] bg-[#49111C] text-[#F9EDF0]'
+                              : 'border-[#E1A140] bg-[#F9EDF0]/50 text-[#49111C] hover:bg-[#F9EDF0] hover:border-[#49111C]'
                           }`}
                         >
                           {s}
@@ -166,7 +166,7 @@ export const QuickViewModal: React.FC<QuickViewModalProps> = ({ product, isOpen,
                 <div className="pt-6 space-y-3">
                   <button
                     onClick={handleAdd}
-                    className="w-full bg-[#171717] text-[#F5F1EA] py-3 text-xs uppercase tracking-[0.2em] font-medium hover:bg-[#34332F] transition-colors flex items-center justify-center space-x-2"
+                    className="w-full bg-[#49111C] text-[#F9EDF0] py-3 text-xs uppercase tracking-[0.2em] font-medium hover:bg-[#49111C] transition-colors flex items-center justify-center space-x-2"
                   >
                     {addedAnimation ? (
                       <>
@@ -185,7 +185,7 @@ export const QuickViewModal: React.FC<QuickViewModalProps> = ({ product, isOpen,
                     <Link
                       to={`/products/${product.slug}`}
                       onClick={onClose}
-                      className="inline-flex items-center text-[11px] uppercase tracking-widest text-[#6B6963] hover:text-[#171717] transition-colors group"
+                      className="inline-flex items-center text-[11px] uppercase tracking-widest text-[#49111C]/75 hover:text-[#49111C] transition-colors group"
                     >
                       <span>View Full Product Details</span>
                       <ArrowRight size={11} className="ml-1 group-hover:translate-x-1 transition-transform" />

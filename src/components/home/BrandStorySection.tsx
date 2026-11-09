@@ -26,7 +26,7 @@ export const BrandStorySection: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-[#EAE3D8]/40 border-t border-[#D5C7B5]">
+    <section className="py-24 bg-[#F9EDF0]/40 border-t border-[#E1A140]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Text Story Column */}
@@ -38,38 +38,38 @@ export const BrandStorySection: React.FC = () => {
             className="lg:col-span-6 space-y-6"
           >
             <div>
-              <span className="text-[10px] tracking-[0.3em] uppercase text-[#A99A87] font-semibold block mb-3">
+              <span className="text-[10px] tracking-[0.3em] uppercase text-[#E1A140] font-semibold block mb-3">
                 Craftsmanship & Heritage
               </span>
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#171717] font-light uppercase tracking-wide leading-tight">
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#49111C] font-light uppercase tracking-wide leading-tight">
                 The ÉLVARA Philosophy
               </h2>
             </div>
 
-            <p className="text-sm sm:text-base text-[#6B6963] font-light leading-relaxed">
+            <p className="text-sm sm:text-base text-[#49111C]/75 font-light leading-relaxed">
               We cut our clothes for longevity, not trend cycles. Every pattern starts in our Brahmapur, Odisha workshop with natural European linen, long-staple cotton, and Mongolian cashmere. The focus is simple: clean proportions, solid construction, and fabrics that soften with age.
             </p>
 
-            <p className="text-xs sm:text-sm text-[#6B6963] font-light leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#49111C]/75 font-light leading-relaxed">
               Each garment is finished with French interior seams, river shell buttons, and reinforced stress points for dependable daily wear.
             </p>
 
             {/* Editorial Atelier Pillars (Classic & Premium) */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-[#D5C7B5]">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-[#E1A140]">
               {pillars.map((pillar) => (
                 <div key={pillar.title} className="space-y-2">
                   <div className="flex items-center space-x-2">
-                    <span className="font-serif text-xl text-[#A99A87] font-light italic">
+                    <span className="font-serif text-xl text-[#E1A140] font-light italic">
                       {pillar.num}
                     </span>
-                    <span className="text-[9px] uppercase tracking-[0.25em] text-[#A99A87] font-medium">
+                    <span className="text-[9px] uppercase tracking-[0.25em] text-[#E1A140] font-medium">
                       {pillar.tag}
                     </span>
                   </div>
-                  <h4 className="font-serif text-base text-[#171717] font-medium">
+                  <h4 className="font-serif text-base text-[#49111C] font-medium">
                     {pillar.title}
                   </h4>
-                  <p className="text-xs text-[#6B6963] leading-relaxed font-light">
+                  <p className="text-xs text-[#49111C]/75 leading-relaxed font-light">
                     {pillar.desc}
                   </p>
                 </div>
@@ -79,7 +79,7 @@ export const BrandStorySection: React.FC = () => {
             <div className="pt-4">
               <Link
                 to="/pages/our-story"
-                className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-medium text-[#171717] hover:text-[#A99A87] transition-colors group"
+                className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-medium text-[#49111C] hover:text-[#E1A140] transition-colors group"
               >
                 <span>Read Full Brand Manifesto</span>
                 <ArrowRight size={13} className="group-hover:translate-x-1.5 transition-transform" />
@@ -95,7 +95,7 @@ export const BrandStorySection: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="lg:col-span-6"
           >
-            <div className="relative aspect-[4/3] bg-[#EAE3D8] overflow-hidden border border-[#D5C7B5] shadow-sm">
+            <div className="relative aspect-[4/3] bg-[#F9EDF0] overflow-hidden border border-[#E1A140] shadow-sm">
               <img
                 src="/images/categories/shirts.jpg"
                 alt="ÉLVARA Atelier Craftsmanship"
@@ -103,7 +103,7 @@ export const BrandStorySection: React.FC = () => {
                 className="w-full h-full object-cover filter brightness-[0.95] hover:scale-105 transition-transform duration-1000 ease-out"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent flex flex-col justify-end p-6 sm:p-8 text-white">
-                <span className="text-[10px] tracking-[0.3em] uppercase text-[#D5C7B5]">
+                <span className="text-[10px] tracking-[0.3em] uppercase text-[#E1A140]">
                   Small Batch Production
                 </span>
                 <h3 className="font-serif text-xl sm:text-2xl font-light tracking-wide mt-1">

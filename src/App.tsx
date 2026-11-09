@@ -52,7 +52,7 @@ export function App() {
               : { opacity: 0, y: 18, scale: 0.995 }
           }
           transition={{ duration: 1.15, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col min-h-screen bg-[#F5F1EA] text-[#171717]"
+          className="flex flex-col min-h-screen bg-[#F9EDF0] text-[#49111C]"
         >
           {/* Main Navigation Header - Centered ÉLVARA Brand */}
           <Navbar />

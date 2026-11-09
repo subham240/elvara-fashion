@@ -61,24 +61,24 @@ export const SearchModal: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.25 }}
-          className="relative max-w-3xl mx-auto my-8 sm:my-16 bg-[#F5F1EA] shadow-2xl border border-[#D5C7B5] overflow-hidden"
+          className="relative max-w-3xl mx-auto my-8 sm:my-16 bg-[#F9EDF0] shadow-2xl border border-[#E1A140] overflow-hidden"
         >
           {/* Input Header */}
-          <form onSubmit={handleSubmit} className="flex items-center px-6 py-4 border-b border-[#D5C7B5] bg-[#EAE3D8]/50">
-            <Search size={22} className="text-[#34332F] shrink-0" />
+          <form onSubmit={handleSubmit} className="flex items-center px-6 py-4 border-b border-[#E1A140] bg-[#F9EDF0]/50">
+            <Search size={22} className="text-[#49111C] shrink-0" />
             <input
               type="text"
               autoFocus
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search garments, tailoring, silk, linen, oxford shirts..."
-              className="w-full bg-transparent border-none px-4 py-2 text-base text-[#171717] placeholder-[#A99A87] focus:outline-hidden font-sans"
+              className="w-full bg-transparent border-none px-4 py-2 text-base text-[#49111C] placeholder-[#E1A140] focus:outline-hidden font-sans"
             />
             {query && (
               <button
                 type="button"
                 onClick={() => setQuery('')}
-                className="p-1 text-[#6B6963] hover:text-[#171717] mr-2"
+                className="p-1 text-[#49111C]/75 hover:text-[#49111C] mr-2"
               >
                 <X size={16} />
               </button>
@@ -86,7 +86,7 @@ export const SearchModal: React.FC = () => {
             <button
               type="button"
               onClick={() => setIsSearchOpen(false)}
-              className="p-1.5 text-xs uppercase tracking-widest text-[#6B6963] hover:text-[#171717]"
+              className="p-1.5 text-xs uppercase tracking-widest text-[#49111C]/75 hover:text-[#49111C]"
             >
               Close
             </button>
@@ -98,7 +98,7 @@ export const SearchModal: React.FC = () => {
             {!query.trim() ? (
               <div className="space-y-6">
                 <div>
-                  <span className="text-[10px] tracking-[0.25em] uppercase text-[#A99A87] font-semibold block mb-3">
+                  <span className="text-[10px] tracking-[0.25em] uppercase text-[#E1A140] font-semibold block mb-3">
                     Recent Searches
                   </span>
                   <div className="flex flex-wrap gap-2">
@@ -106,7 +106,7 @@ export const SearchModal: React.FC = () => {
                       <button
                         key={term}
                         onClick={() => handleSelectRecent(term)}
-                        className="text-xs bg-[#EAE3D8] hover:bg-[#D5C7B5] text-[#171717] px-3.5 py-1.5 rounded-xs transition-colors"
+                        className="text-xs bg-[#F9EDF0] hover:bg-[#E1A140] text-[#49111C] px-3.5 py-1.5 rounded-xs transition-colors"
                       >
                         {term}
                       </button>
@@ -115,7 +115,7 @@ export const SearchModal: React.FC = () => {
                 </div>
 
                 <div>
-                  <span className="text-[10px] tracking-[0.25em] uppercase text-[#A99A87] font-semibold block mb-3">
+                  <span className="text-[10px] tracking-[0.25em] uppercase text-[#E1A140] font-semibold block mb-3">
                     Popular Categories
                   </span>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -129,7 +129,7 @@ export const SearchModal: React.FC = () => {
                         key={item.name}
                         to={item.path}
                         onClick={() => setIsSearchOpen(false)}
-                        className="p-3 bg-[#EAE3D8]/50 border border-[#D5C7B5] hover:bg-[#EAE3D8] hover:border-[#171717] transition-all text-xs font-medium text-[#171717] block group shadow-2xs"
+                        className="p-3 bg-[#F9EDF0]/50 border border-[#E1A140] hover:bg-[#F9EDF0] hover:border-[#49111C] transition-all text-xs font-medium text-[#49111C] block group shadow-2xs"
                       >
                         <span>{item.name}</span>
                         <ArrowRight size={12} className="mt-1 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -142,13 +142,13 @@ export const SearchModal: React.FC = () => {
               /* Live Results */
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs uppercase tracking-widest text-[#6B6963]">
+                  <span className="text-xs uppercase tracking-widest text-[#49111C]/75">
                     {searchResults.length} {searchResults.length === 1 ? 'Result' : 'Results'} for "{query}"
                   </span>
                   {searchResults.length > 0 && (
                     <button
                       onClick={handleSubmit}
-                      className="text-xs uppercase tracking-widest text-[#171717] underline font-medium"
+                      className="text-xs uppercase tracking-widest text-[#49111C] underline font-medium"
                     >
                       View All
                     </button>
@@ -157,8 +157,8 @@ export const SearchModal: React.FC = () => {
 
                 {searchResults.length === 0 ? (
                   <div className="text-center py-12">
-                    <p className="font-serif text-lg text-[#171717]">No pieces found matching "{query}"</p>
-                    <p className="text-xs text-[#6B6963] mt-2">
+                    <p className="font-serif text-lg text-[#49111C]">No pieces found matching "{query}"</p>
+                    <p className="text-xs text-[#49111C]/75 mt-2">
                       Try searching with broader terms such as "shirt", "trousers", "cashmere", or "blazer".
                     </p>
                   </div>
@@ -167,7 +167,7 @@ export const SearchModal: React.FC = () => {
                     {searchResults.slice(0, 6).map((product) => (
                       <div
                         key={product.id}
-                        className="flex space-x-3 p-3 bg-[#EAE3D8]/50 border border-[#D5C7B5] hover:border-[#171717] hover:bg-[#EAE3D8] transition-all group relative shadow-2xs"
+                        className="flex space-x-3 p-3 bg-[#F9EDF0]/50 border border-[#E1A140] hover:border-[#49111C] hover:bg-[#F9EDF0] transition-all group relative shadow-2xs"
                       >
                         <Link
                           to={`/products/${product.slug}`}
@@ -175,7 +175,7 @@ export const SearchModal: React.FC = () => {
                             addRecentSearch(query);
                             setIsSearchOpen(false);
                           }}
-                          className="w-16 h-20 bg-[#EAE3D8] shrink-0 overflow-hidden"
+                          className="w-16 h-20 bg-[#F9EDF0] shrink-0 overflow-hidden"
                         >
                           <img
                             src={product.image}
@@ -186,7 +186,7 @@ export const SearchModal: React.FC = () => {
 
                         <div className="flex-1 flex flex-col justify-between py-0.5">
                           <div>
-                            <span className="text-[9px] tracking-widest uppercase text-[#A99A87] block">
+                            <span className="text-[9px] tracking-widest uppercase text-[#E1A140] block">
                               {product.category}
                             </span>
                             <Link
@@ -195,19 +195,19 @@ export const SearchModal: React.FC = () => {
                                 addRecentSearch(query);
                                 setIsSearchOpen(false);
                               }}
-                              className="font-serif text-sm text-[#171717] group-hover:text-[#A99A87] transition-colors font-medium line-clamp-1 mt-0.5"
+                              className="font-serif text-sm text-[#49111C] group-hover:text-[#E1A140] transition-colors font-medium line-clamp-1 mt-0.5"
                             >
                               {product.name}
                             </Link>
                           </div>
 
                           <div className="flex items-center justify-between">
-                            <span className="text-xs font-semibold text-[#171717]">
+                            <span className="text-xs font-semibold text-[#49111C]">
                               {formatCurrency(product.price)}
                             </span>
                             <button
                               onClick={() => toggleWishlist(product.id)}
-                              className="p-1 text-[#6B6963] hover:text-red-700 transition-colors"
+                              className="p-1 text-[#49111C]/75 hover:text-red-700 transition-colors"
                               aria-label="Wishlist"
                             >
                               <Heart

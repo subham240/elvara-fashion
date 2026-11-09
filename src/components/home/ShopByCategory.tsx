@@ -6,18 +6,18 @@ import { categoriesData } from '../../data/products';
 
 export const ShopByCategory: React.FC = () => {
   return (
-    <section className="py-24 bg-[#EAE3D8]/35 border-b border-[#D5C7B5]/60">
+    <section className="py-24 bg-[#F9EDF0]/35 border-b border-[#E1A140]/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div>
-            <span className="text-[10px] tracking-[0.3em] uppercase text-[#8C7D6B] font-semibold block mb-2">
+            <span className="text-[10px] tracking-[0.3em] uppercase text-[#E1A140] font-semibold block mb-2">
               Curated Architecture
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#171717] font-light uppercase tracking-wide">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#49111C] font-light uppercase tracking-wide">
               Shop by Category
             </h2>
           </div>
-          <p className="text-xs sm:text-sm text-[#6B6963] max-w-md mt-3 md:mt-0 font-light leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#49111C]/75 max-w-md mt-3 md:mt-0 font-light leading-relaxed">
             Wardrobe staples designed to be mixed, layered, and worn year-round in natural fibres.
           </p>
         </div>
@@ -34,7 +34,7 @@ export const ShopByCategory: React.FC = () => {
             >
               <Link
                 to={cat.route}
-                className="group block relative aspect-[3/4] bg-[#DCD4C6] overflow-hidden border border-[#C5B7A4] shadow-xs"
+                className="group block relative aspect-[3/4] bg-[#F9EDF0] overflow-hidden border border-[#E1A140] shadow-xs"
               >
                 <img
                   src={cat.image}
@@ -42,17 +42,17 @@ export const ShopByCategory: React.FC = () => {
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 filter brightness-[0.96]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent flex flex-col justify-end p-4 text-[#F5F1EA]">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent flex flex-col justify-end p-4 text-[#F9EDF0]">
                   <div className="flex items-center justify-between">
                     <div>
-                      <span className="text-[9px] tracking-widest uppercase text-[#D5C7B5] block">
+                      <span className="text-[9px] tracking-widest uppercase text-[#E1A140] block">
                         {cat.count}
                       </span>
-                      <h3 className="font-serif text-lg text-white font-medium group-hover:text-[#EAE3D8] transition-colors">
+                      <h3 className="font-serif text-lg text-white font-medium group-hover:text-[#F9EDF0] transition-colors">
                         {cat.name}
                       </h3>
                     </div>
-                    <div className="w-6 h-6 rounded-full bg-white/20 backdrop-blur-xs flex items-center justify-center text-white group-hover:bg-[#F5F1EA] group-hover:text-[#171717] transition-all">
+                    <div className="w-6 h-6 rounded-full bg-white/20 backdrop-blur-xs flex items-center justify-center text-white group-hover:bg-[#F9EDF0] group-hover:text-[#49111C] transition-all">
                       <ArrowUpRight size={13} />
                     </div>
                   </div>

@@ -190,7 +190,7 @@ export const ShopProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const product = products.find((p) => p.id === productId);
     if (!product) return;
     const selectedSize = size || product.sizes[0] || 'Standard';
-    const selectedColor = color || product.colors[0] || { name: 'Natural', hex: '#EAE3D8' };
+    const selectedColor = color || product.colors[0] || { name: 'Natural', hex: '#F9EDF0' };
     addToCart(product, selectedSize, selectedColor, 1);
     toggleWishlist(productId);
   };

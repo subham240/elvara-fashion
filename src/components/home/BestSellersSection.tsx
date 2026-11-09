@@ -11,19 +11,19 @@ export const BestSellersSection: React.FC = () => {
     .filter((p): p is (typeof products)[0] => Boolean(p));
 
   return (
-    <section className="py-24 bg-[#181816] text-[#F5F1EA] border-y border-[#34332F] relative overflow-hidden">
+    <section className="py-24 bg-[#49111C] text-[#F9EDF0] border-y border-[#49111C] relative overflow-hidden">
       {/* Ambient warm radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#A99A87]/6 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#E1A140]/6 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <span className="text-[10px] tracking-[0.35em] uppercase text-[#D5C7B5] font-medium block mb-2.5">
+          <span className="text-[10px] tracking-[0.35em] uppercase text-[#E1A140] font-medium block mb-2.5">
             Curated Atelier Edit
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#F5F1EA] font-light uppercase tracking-wide">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#F9EDF0] font-light uppercase tracking-wide">
             The Permanent Bestsellers
           </h2>
-          <p className="text-xs sm:text-sm text-[#A99A87] mt-3 font-light leading-relaxed max-w-lg mx-auto">
+          <p className="text-xs sm:text-sm text-[#E1A140] mt-3 font-light leading-relaxed max-w-lg mx-auto">
             Our most requested pieces, celebrated for architectural drape, certified natural fibres, and enduring construction.
           </p>
         </div>
@@ -43,7 +43,7 @@ export const BestSellersSection: React.FC = () => {
         </div>
 
         {/* Subtle Bottom Guarantee Banner */}
-        <div className="mt-14 pt-8 border-t border-[#34332F]/80 flex flex-col sm:flex-row items-center justify-between text-[10px] uppercase tracking-[0.25em] text-[#A99A87] text-center sm:text-left gap-3">
+        <div className="mt-14 pt-8 border-t border-[#49111C]/80 flex flex-col sm:flex-row items-center justify-between text-[10px] uppercase tracking-[0.25em] text-[#E1A140] text-center sm:text-left gap-3">
           <span>Small Batch Production Runs</span>
           <span>100% GOTS Organic Cotton & French Flax Linen</span>
           <span>Complimentary Delivery Pan-India Above ₹2,999</span>
