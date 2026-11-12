@@ -206,6 +206,12 @@
       if (data && data.decision_token) {
         self.latestDecisionToken = data.decision_token;
         sessionStorage.setItem('bp_decision_token', data.decision_token);
+
+        // Silent Proof-of-Work execution for VERIFY / challenged sessions
+        if (data.action === 'verify' && data.pow_challenge) {
+          self.solveAndSubmitPoW(data.pow_challenge);
+        }
+
         if (self.onDecisionCallback) {
           self.onDecisionCallback({
             action: data.action,
@@ -218,6 +224,88 @@
       // Re-queue on connection failure
       self.eventQueue = eventsToSend.concat(self.eventQueue);
     });
+  };
+
+  // Fast async SHA-256 using native Web Crypto API
+  async function computeSha256Hex(str) {
+    if (window.crypto && window.crypto.subtle) {
+      const buffer = new TextEncoder().encode(str);
+      const hashBuffer = await window.crypto.subtle.digest('SHA-256', buffer);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      return hashArray.map(function(b) { return b.toString(16).padStart(2, '0'); }).join('');
+    }
+    var h = 0;
+    for (var i = 0; i < str.length; i++) {
+      h = ((h << 5) - h) + str.charCodeAt(i);
+      h |= 0;
+    }
+    return Math.abs(h).toString(16).padStart(8, '0');
+  }
+
+  BotPulseSDK.prototype.solveProofOfWork = async function(challenge) {
+    var seed = challenge.seed;
+    var difficulty = challenge.difficulty || 3;
+    var prefix = '0'.repeat(difficulty);
+    var startTime = performance.now();
+    var nonce = 0;
+
+    while (true) {
+      var candidate = seed + ':' + nonce;
+      var hash = await computeSha256Hex(candidate);
+      if (hash.startsWith(prefix)) {
+        var durationMs = performance.now() - startTime;
+        return {
+          challenge_id: challenge.challenge_id,
+          seed: challenge.seed,
+          difficulty: difficulty,
+          expires_at: challenge.expires_at,
+          signature: challenge.signature,
+          nonce: nonce,
+          hash: hash,
+          time_taken_ms: Math.round(durationMs * 10) / 10
+        };
+      }
+      nonce++;
+      if (nonce % 500 === 0) {
+        await new Promise(function(r) { setTimeout(r, 0); });
+      }
+    }
+  };
+
+  BotPulseSDK.prototype.solveAndSubmitPoW = async function(challenge) {
+    var self = this;
+    try {
+      console.log('[BotPulse Security] Executing silent Proof-of-Work hardware challenge (diff=' + challenge.difficulty + ')...');
+      var solution = await this.solveProofOfWork(challenge);
+      solution.session_id = this.sessionId;
+      solution.site_id = this.siteKey;
+
+      var verifyUrl = this.endpoint + '/prevention/pow/verify';
+      var resp = await fetch(verifyUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(solution)
+      });
+      if (resp.ok) {
+        var result = await resp.json();
+        if (result.verified && result.elevated_token) {
+          self.latestDecisionToken = result.elevated_token;
+          sessionStorage.setItem('bp_decision_token', result.elevated_token);
+          console.log('[BotPulse Security] Proof-of-Work verified in ' + solution.time_taken_ms + 'ms! Upgraded to ALLOW.');
+          if (self.onDecisionCallback) {
+            self.onDecisionCallback({
+              action: 'allow',
+              riskScore: 4,
+              token: result.elevated_token,
+              pow_verified: true,
+              time_taken_ms: solution.time_taken_ms
+            });
+          }
+        }
+      }
+    } catch (err) {
+      console.warn('[BotPulse Security] Proof-of-Work solver exception:', err);
+    }
   };
 
   var instance = new BotPulseSDK();
