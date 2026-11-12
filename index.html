@@ -12,6 +12,23 @@
   </head>
   <body style="background-color: #F9EDF0; color: #49111C;" class="bg-[#F9EDF0] text-[#49111C] antialiased selection:bg-[#49111C] selection:text-[#F9EDF0]">
     <div id="root" style="background-color: #F9EDF0; min-height: 100vh;"></div>
+    <!-- BotPulse Real-Time AI Bot Detection & Prevention SDK -->
+    <script src="/botpulse.js"></script>
+    <script>
+      if (window.BotPulse) {
+        var isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        window.BotPulse.init({
+          siteKey: "bp_pub_alvera_live_7c4f19e",
+          endpoint: isLocal
+            ? "http://localhost:8000/api/v1"
+            : "https://frederick-associated-accurately-prizes.trycloudflare.com/api/v1",
+          enabled: true,
+          onDecision: function(decision) {
+            console.log("[BotPulse Security] Signed Prevention Decision:", decision);
+          }
+        });
+      }
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

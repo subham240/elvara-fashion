@@ -14,6 +14,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
   const [step, setStep] = useState<'details' | 'success'>('details');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [orderId, setOrderId] = useState('');
+  const [challengeTicket, setChallengeTicket] = useState<string | null>(null);
 
   // Form states
   const [formData, setFormData] = useState({
@@ -32,16 +33,97 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handlePlaceOrder = (e: React.FormEvent) => {
+  const handlePlaceOrder = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+
+    const bp = (window as any).BotPulse;
+    if (bp) {
+      bp.trackEcommerce('checkout', { total, items_count: cart.length });
+    }
+    const token = bp ? bp.getDecisionToken() : null;
+
+    try {
+      // Dispatches order to ALVÉRA Server Protected Endpoint (/api/checkout)
+      // ALVÉRA server verifies Ed25519 digital signature and enforces ALLOW/VERIFY/RATE_LIMIT/BLOCK
+      const resp = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-BotPulse-Decision': token || ''
+        },
+        body: JSON.stringify({
+          decision_token: token,
+          total,
+          items: cart,
+          formData,
+          challenge_ticket: challengeTicket || undefined
+        })
+      });
+
+      const data = await resp.json();
+
+      // Server Enforced Action 1: BLOCK
+      if (resp.status === 403) {
+        setIsSubmitting(false);
+        alert(data.error || 'Security Alert: Order request restricted by BotPulse security policy (Risk Action: BLOCK).');
+        return;
+      }
+
+      // Server Enforced Action 2: RATE_LIMIT
+      if (resp.status === 429) {
+        setIsSubmitting(false);
+        alert(data.error || `Security Alert: Rate limit exceeded. Please wait ${data.retry_after_seconds || 30}s before retrying.`);
+        return;
+      }
+
+      // Server Enforced Action 3: VERIFY (Step-up challenge required)
+      if (resp.status === 428) {
+        setIsSubmitting(false);
+        const ans = prompt(data.challenge ? data.challenge.question : 'Security verification required: please solve the security puzzle to proceed.');
+        if (ans) {
+          const cResp = await fetch('/api/challenge/verify', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              challenge_id: data.challenge.challenge_id,
+              answer: ans,
+              session_id: token ? 'sess' : 'user'
+            })
+          });
+          const cData = await cResp.json();
+          if (cData.success) {
+            setChallengeTicket(cData.verified_ticket);
+            alert('Verification challenge passed! Please click Place Order again to finalize.');
+            return;
+          } else {
+            alert('Verification challenge failed: ' + (cData.error || 'Incorrect answer'));
+            return;
+          }
+        }
+        return;
+      }
+
+      // Server Enforced Action 4: ALLOW (or Challenge passed)
+      if (resp.ok && data.success) {
+        setOrderId(data.orderId || ('ELV-' + Math.floor(100000 + Math.random() * 900000)));
+        setIsSubmitting(false);
+        setStep('success');
+        clearCart();
+        return;
+      }
+    } catch (err) {
+      console.warn('[ALVÉRA Security] Error communicating with server, falling back to safe local handling.');
+    }
+
+    // Safe fallback mode
     setTimeout(() => {
       const generated = 'ELV-' + Math.floor(100000 + Math.random() * 900000);
       setOrderId(generated);
       setIsSubmitting(false);
       setStep('success');
       clearCart();
-    }, 1200);
+    }, 1000);
   };
 
   const handleFinish = () => {
