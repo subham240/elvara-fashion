@@ -220,7 +220,8 @@
           });
         }
       }
-    }).catch(function() {
+    }).catch(function(err) {
+      console.warn('[BotPulse SDK] Telemetry delivery failed to ' + targetUrl, err);
       // Re-queue on connection failure
       self.eventQueue = eventsToSend.concat(self.eventQueue);
     });

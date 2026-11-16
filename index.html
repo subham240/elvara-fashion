@@ -15,19 +15,44 @@
     <!-- BotPulse Real-Time AI Bot Detection & Prevention SDK -->
     <script src="/botpulse.js"></script>
     <script>
-      if (window.BotPulse) {
+      (function() {
+        if (!window.BotPulse) return;
         var isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        
+        // 1. Check URL query parameters (?bp_api=https://... or ?api=https://...)
+        var queryEndpoint = null;
+        try {
+          var params = new URLSearchParams(window.location.search);
+          var p = params.get('bp_api') || params.get('api');
+          if (p) {
+            queryEndpoint = p.replace(/\/+$/, '');
+            localStorage.setItem('bp_api_url', queryEndpoint);
+          }
+        } catch (e) {}
+
+        // 2. Check saved localStorage endpoint
+        var savedEndpoint = null;
+        try {
+          savedEndpoint = localStorage.getItem('bp_api_url');
+        } catch (e) {}
+
+        // 3. Fallback endpoint
+        var fallbackEndpoint = isLocal
+          ? "http://localhost:8000/api/v1"
+          : "https://configuring-inns-basics-applicant.trycloudflare.com/api/v1";
+
+        var activeEndpoint = (queryEndpoint || savedEndpoint || fallbackEndpoint).replace(/\/+$/, '');
+
         window.BotPulse.init({
           siteKey: "bp_pub_alvera_live_7c4f19e",
-          endpoint: isLocal
-            ? "http://localhost:8000/api/v1"
-            : "https://configuring-inns-basics-applicant.trycloudflare.com/api/v1",
+          endpoint: activeEndpoint,
           enabled: true,
           onDecision: function(decision) {
             console.log("[BotPulse Security] Signed Prevention Decision:", decision);
           }
         });
-      }
+        console.log("[BotPulse Security] Active Telemetry Endpoint:", activeEndpoint);
+      })();
     </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
