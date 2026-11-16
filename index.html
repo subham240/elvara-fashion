@@ -19,7 +19,12 @@
         if (!window.BotPulse) return;
         var isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
         
-        // 1. Check URL query parameters (?bp_api=https://... or ?api=https://...)
+        // 1. Fallback endpoint (active tunnel or localhost)
+        var fallbackEndpoint = isLocal
+          ? "http://localhost:8000/api/v1"
+          : "https://dos-profits-fires-fluid.trycloudflare.com/api/v1";
+
+        // 2. Check URL query parameters (?bp_api=https://... or ?api=https://...)
         var queryEndpoint = null;
         try {
           var params = new URLSearchParams(window.location.search);
@@ -30,18 +35,20 @@
           }
         } catch (e) {}
 
-        // 2. Check saved localStorage endpoint
+        // 3. Check saved localStorage endpoint and clean stale tunnels
         var savedEndpoint = null;
         try {
           savedEndpoint = localStorage.getItem('bp_api_url');
+          if (savedEndpoint && savedEndpoint.indexOf('.trycloudflare.com') !== -1 && savedEndpoint !== fallbackEndpoint) {
+            localStorage.removeItem('bp_api_url');
+            savedEndpoint = null;
+          }
         } catch (e) {}
 
-        // 3. Fallback endpoint
-        var fallbackEndpoint = isLocal
-          ? "http://localhost:8000/api/v1"
-          : "https://ridge-xhtml-acc-bali.trycloudflare.com/api/v1";
-
         var activeEndpoint = (queryEndpoint || savedEndpoint || fallbackEndpoint).replace(/\/+$/, '');
+        if (activeEndpoint.endsWith('/telemetry')) {
+          activeEndpoint = activeEndpoint.replace(/\/telemetry$/, '');
+        }
 
         window.BotPulse.init({
           siteKey: "bp_pub_alvera_live_7c4f19e",
