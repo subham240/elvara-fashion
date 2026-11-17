@@ -84,6 +84,22 @@
       });
     }, { passive: true });
 
+    // Touch movement tracking for mobile and tablet devices
+    window.addEventListener('touchmove', function(e) {
+      var now = performance.now();
+      if (now - self.lastMouseTime < 45) return;
+      self.lastMouseTime = now;
+      if (e.touches && e.touches[0]) {
+        self.recordEvent('mouse_move', {
+          x: Math.round(e.touches[0].clientX),
+          y: Math.round(e.touches[0].clientY),
+          screen_w: window.innerWidth,
+          screen_h: window.innerHeight,
+          touch: true
+        });
+      }
+    }, { passive: true });
+
     // Click tracking
     window.addEventListener('click', function(e) {
       var target = e.target;
@@ -222,8 +238,8 @@
       }
     }).catch(function(err) {
       console.warn('[BotPulse SDK] Telemetry delivery failed to ' + targetUrl, err);
-      // Re-queue on connection failure
-      self.eventQueue = eventsToSend.concat(self.eventQueue);
+      // Re-queue on connection failure, capped at 50 to prevent buffer overflow
+      self.eventQueue = eventsToSend.concat(self.eventQueue).slice(-50);
     });
   };
 

@@ -18,37 +18,37 @@
       (function() {
         if (!window.BotPulse) return;
         var isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-        
-        // 1. Production endpoint (Vercel HTTPS proxy to AWS EC2) or localhost
-        var fallbackEndpoint = isLocal
+        var isHttps = window.location.protocol === 'https:';
+
+        // 1. Permanent production endpoint (Vercel HTTPS proxy to AWS EC2) or localhost
+        var defaultEndpoint = isLocal
           ? "http://localhost:8000/api/v1"
           : "https://botpulse-final.vercel.app/api/v1";
 
-        // 2. Check URL query parameters (?bp_api=https://... or ?api=https://...)
-        var queryEndpoint = null;
+        // 2. Allow optional query parameter override (?bp_api=https://... or ?api=https://...)
+        var activeEndpoint = defaultEndpoint;
         try {
           var params = new URLSearchParams(window.location.search);
-          var p = params.get('bp_api') || params.get('api');
-          if (p) {
-            queryEndpoint = p.replace(/\/+$/, '');
-            localStorage.setItem('bp_api_url', queryEndpoint);
+          var customApi = params.get('bp_api') || params.get('api');
+          if (customApi) {
+            activeEndpoint = customApi.replace(/\/+$/, '');
           }
         } catch (e) {}
 
-        // 3. Check saved localStorage endpoint and clean stale tunnels
-        var savedEndpoint = null;
-        try {
-          savedEndpoint = localStorage.getItem('bp_api_url');
-          if (savedEndpoint && (savedEndpoint.indexOf('.trycloudflare.com') !== -1 || (savedEndpoint.indexOf('localhost') !== -1 && !isLocal))) {
-            localStorage.removeItem('bp_api_url');
-            savedEndpoint = null;
-          }
-        } catch (e) {}
+        // 3. Safety: If page is loaded over HTTPS, never allow insecure http:// endpoints (prevents browser Mixed Content blocking)
+        if (isHttps && activeEndpoint.startsWith('http://')) {
+          console.warn('[BotPulse Security] Insecure HTTP endpoint detected on HTTPS storefront. Upgrading to production HTTPS endpoint.');
+          activeEndpoint = "https://botpulse-final.vercel.app/api/v1";
+        }
 
-        var activeEndpoint = (queryEndpoint || savedEndpoint || fallbackEndpoint).replace(/\/+$/, '');
         if (activeEndpoint.endsWith('/telemetry')) {
           activeEndpoint = activeEndpoint.replace(/\/telemetry$/, '');
         }
+
+        // Clean any old stale localStorage entries
+        try {
+          localStorage.removeItem('bp_api_url');
+        } catch (e) {}
 
         window.BotPulse.init({
           siteKey: "bp_pub_alvera_live_7c4f19e",
