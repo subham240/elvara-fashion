@@ -45,12 +45,8 @@ export function App() {
       <Router>
         <ScrollToTop />
         <motion.div
-          initial={{ opacity: 0, y: 18, scale: 0.995 }}
-          animate={
-            pageRevealed
-              ? { opacity: 1, y: 0, scale: 1 }
-              : { opacity: 0, y: 18, scale: 0.995 }
-          }
+          initial={{ opacity: 0 }}
+          animate={{ opacity: pageRevealed ? 1 : 0 }}
           transition={{ duration: 1.15, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col min-h-screen bg-[#F9EDF0] text-[#49111C]"
         >
