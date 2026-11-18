@@ -86,11 +86,11 @@ export function verifyDecisionToken(token, requiredScope = null) {
     }
   } else if (alg === 'HS256') {
     // Backward compatibility for HMAC-SHA256
-    const secret = process.env.BOTPULSE_SECRET_KEY || 'botpulse_super_secret_signing_key_2026';
+    const secret = process.env.BOTPULSE_SECRET_KEY || 'b9f71c4820d8e847b2c58971fce81a8b302c46a819b12e3e528b17b6d194c7a2';
     const hmac = crypto.createHmac('sha256', secret);
     hmac.update(dataToVerify);
     const expectedSig = hmac.digest();
-    sigValid = crypto.timingSafeEqual(expectedSig, signature);
+    sigValid = expectedSig.length === signature.length && crypto.timingSafeEqual(expectedSig, signature);
   } else {
     return { valid: false, error: `Unsupported signing algorithm: ${alg}`, action: 'BLOCK' };
   }
