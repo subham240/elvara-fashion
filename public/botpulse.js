@@ -1,6 +1,6 @@
 /**
- * BotPulse Browser Tracking SDK (Universal IIFE Bundle v1.3.0)
- * Non-invasive behavioral telemetry & silent SHA-256 Proof-of-Work for ÉLVARA Fashion & Protected Web Applications.
+ * BotPulse Browser Tracking SDK (Universal IIFE Bundle v1.4.0)
+ * Non-invasive behavioral telemetry, Resemble.AI Human/Agent verdict bridge & silent SHA-256 Proof-of-Work for ÉLVARA Fashion.
  */
 (function(window) {
   'use strict';
@@ -21,6 +21,9 @@
     this.eventQueue = [];
     this.timer = null;
     this.resembleToken = null;
+    this.resembleVerdict = null;
+    this.resembleBound = false;
+    this.lastResembleVerdictKey = null;
     this.apiKey = null;
     this.geminiApiKey = null;
     this.onDecisionCallback = null;
@@ -68,6 +71,7 @@
 
     this.initSession();
     this.bindListeners();
+    this.bindResembleListener();
     this.startBatchTimer();
     this.trackPageView();
     console.log('[BotPulse SDK] Initialized successfully. Session:', this.sessionId);
@@ -75,6 +79,84 @@
 
   BotPulseSDK.prototype.setResembleToken = function(token) {
     this.resembleToken = token;
+  };
+
+  BotPulseSDK.prototype.setResembleVerdict = function(detail) {
+    if (!detail || typeof detail !== 'object' || !detail.verdict) return;
+    var normalized = {
+      verdict: String(detail.verdict).toLowerCase(),
+      kind: detail.kind || null,
+      classification: detail.classification || null,
+      operator: detail.operator || null,
+      activity: detail.activity || null,
+      action: detail.action || null,
+      sessionId: detail.sessionId || detail.sid || null,
+      windowId: detail.windowId || null
+    };
+    var key = JSON.stringify(normalized);
+    if (this.lastResembleVerdictKey === key) return;
+    this.lastResembleVerdictKey = key;
+    this.resembleVerdict = normalized;
+
+    console.log('[BotPulse SDK] Resemble.AI verdict captured:', normalized.verdict, normalized.kind || '');
+    this.recordEvent('resemble_verdict', normalized);
+
+    var self = this;
+    // Optionally retrieve signed Resemble verdict token if enabled on project
+    try {
+      if (window.ResembleAgentDetection && typeof window.ResembleAgentDetection.getToken === 'function') {
+        window.ResembleAgentDetection.getToken(0).then(function(tok) {
+          if (tok) self.resembleToken = tok;
+          self.flush(false);
+        }).catch(function() {
+          self.flush(false);
+        });
+        return;
+      }
+    } catch (e) {}
+
+    this.flush(false);
+  };
+
+  BotPulseSDK.prototype.bindResembleListener = function() {
+    if (this.resembleBound || typeof window === 'undefined') return;
+    this.resembleBound = true;
+    var self = this;
+
+    // 1. Standard Resemble.AI CustomEvent listener (handles live + mid-visit verdict changes)
+    try {
+      window.addEventListener('resemble:verdict', function(e) {
+        if (e && e.detail) {
+          self.setResembleVerdict(e.detail);
+        }
+      });
+    } catch (e) {}
+
+    // 2. Register with ResembleAgentDetection.onVerdict (also replays verdict if already decided before init)
+    var hooked = false;
+    var tryHookOnVerdict = function() {
+      if (hooked) return true;
+      try {
+        if (window.ResembleAgentDetection && typeof window.ResembleAgentDetection.onVerdict === 'function') {
+          hooked = true;
+          window.ResembleAgentDetection.onVerdict(function(detail) {
+            self.setResembleVerdict(detail);
+          });
+          return true;
+        }
+      } catch (e) {}
+      return false;
+    };
+
+    if (!tryHookOnVerdict()) {
+      var attempts = 0;
+      var pollId = setInterval(function() {
+        attempts++;
+        if (tryHookOnVerdict() || attempts >= 20) {
+          clearInterval(pollId);
+        }
+      }, 500);
+    }
   };
 
   BotPulseSDK.prototype.setApiKey = function(key) {
@@ -261,6 +343,7 @@
       visitor_id: this.visitorId,
       user_agent: navigator.userAgent,
       resemble_token: this.resembleToken,
+      resemble_verdict: this.resembleVerdict,
       api_key: this.apiKey,
       gemini_api_key: this.geminiApiKey,
       events: eventsToSend
